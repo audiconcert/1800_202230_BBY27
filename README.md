@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * Hello I'm Chelsey and I really like this program.
+* Hi, my name is Eric
 	
 ## Technologies
 Technologies used for this project:
