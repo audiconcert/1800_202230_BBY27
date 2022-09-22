@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+Hello, my name is Scott. I am very excited about this program class becuase I have the chance to design my own working app that can make an impact in this real world!
 	
 ## Technologies
 Technologies used for this project:
