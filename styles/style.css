@@ -13,10 +13,10 @@
 }
 .welcome-back > h1 {
     font-size: 300%;
-    border: 2px solid;
 }
-.quick-analytics {
+.quick-analytics-home {
     text-decoration: none;
+    color: rgb(0, 136, 255);
 }
 .qa-grid {
     grid-template-areas:
@@ -42,6 +42,39 @@
     justify-self: start;
 }
 .qa-description {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 175%;
+}
+.savings-home {
+    text-decoration: none;
+    color: rgb(0, 136, 255);
+}
+.save-grid {
+    grid-template-areas:
+    'qa-logo qa-heading qa-heading qa-heading'
+    'qa-logo qa-description qa-description qa-description';
+    display: grid;
+    grid-gap: 0px;
+    border: 2px solid;
+    align-content: center;
+    border-radius: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.save-logo {
+    grid-area: qa-logo;
+    align-self: center;
+    margin-left: 1vw;
+}
+.save-heading {
+    grid-column: 2;
+    font-size: 300%;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+}
+.save-description {
     grid-column: 2;
     grid-row: 2;
     font-size: 175%;
