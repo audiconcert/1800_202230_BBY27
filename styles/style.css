@@ -3,3 +3,7 @@
 .material-icons.md-40 { font-size: 40px; }
 .material-icons.md-48 { font-size: 48px; }
 
+#mainNavbar, .navbar-brand {
+    justify-content: center;
+    font-size: 150%;
+}
