@@ -3,7 +3,10 @@ h1 {
     font-size: 300%;
     font-weight: bold;
 }
-.btn {
+.btn1 {
     margin-top: 50px;
     font-size: 400%;
+}
+.category {
+    font-size: 200%;
 }
