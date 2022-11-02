@@ -16,12 +16,17 @@
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+    </script>
     <!-- Other libraries go here -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
     <link href="styles/style.css" rel="stylesheet">
-
+    
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
 </head>
@@ -32,39 +37,11 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container-fluid" id="mainNavbar">
-            <a class="navbar-brand text-light" href="#">Streams</a>
-        </div>
-    </nav>
-    <div class="welcome-back">
-        <h1 class="welcome-back-heading">Welcome back, </h1>
-    </div>
-    <!--Quick analytics button-->
-    <a class="quick-analytics-home" href="#">
-        <div class="qa-grid">
-            <span class="material-icons qa-logo md-100">signal_cellular_alt</span>
-            <p class="qa-heading">Quick Analytics</p>
-            <p class="qa-description">View your reports and check on Ernie.</p>
-        </div>
-    </a><br>
-    <!--Savings button-->
-    <a class="savings-home" href="#">
-        <div class="save-grid">
-            <span class="material-icons save-logo md-100">savings</span>
-            <p class="save-heading">Savings</p>
-            <p class="save-description">Track your savings and view your goals.</p>
-        </div>
-    </a>
+    <nav id="navbarPlaceholder"></nav>
+    <div id="savings-home">Savings home</div>
 
-
-    <footer class="navbar justify-content-evenly bg-primary fixed-bottom">
-        <div class="container py-3">
-            <i class="material-icons md-40 text-light">home</i>
-            <i class="material-icons md-48 text-light">edit_note</i>
-            <i class="material-icons md-40 text-light">account_circle</i>
-        </div>
-    </footer>
+    
+    <nav id="footerPlaceholder"></nav>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -72,6 +49,7 @@
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
+    <script src="./scripts/skeleton.js"></script>
 
 </body>
 
