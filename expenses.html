@@ -16,7 +16,7 @@
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Other libraries go here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -27,7 +27,7 @@
     <!-- Link to styles of your own -->
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/log.css" rel="stylesheet">
-    
+
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
 </head>
@@ -38,22 +38,30 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <nav id="navbarPlaceholder"></nav>
+    <nav id="navbarPlaceholder" class="test"></nav>
     <h1 id="log-menu">What category was the expense?</h1>
     <div class="text-center">
-        <a href="expenses.html" class="btn btn-info category">Food & Beverage</a>
+        <a href="addExpense.html" class="btn btn-secondary category" id="food">Food & Beverage</a>
     </div>
     <br>
     <div class="text-center">
-        <a href="#" class="btn btn-info category">Transportation</a>
+        <a href="addExpense.html" class="btn btn-secondary category" id="trans">Transportation</a>
     </div>
     <br>
     <div class="text-center">
-        <a href="#" class="btn btn-info category">Clothing</a>
+        <a href="addExpense.html" class="btn btn-secondary category" id="clothes">Clothing</a>
     </div>
     <br>
     <div class="text-center">
-        <a href="#" class="btn btn-info category">Games / Tech</a>
+        <a href="addExpense.html" class="btn btn-secondary category" id="tech">Games / Tech</a>
+    </div>
+    <br>
+    <div class="text-center">
+        <a href="addExpense.html" class="btn btn-secondary category" id="hotel">Accomodation (Clubs, hotels etc)</a>
+    </div>
+    <br>
+    <div class="text-center">
+        <a href="addExpense.html" class="btn btn-secondary category" id="other">Other</a>
     </div>
     <nav id="footerPlaceholder"></nav>
 
