@@ -5,27 +5,11 @@
     text-align: center;
     margin-top: 10%;
 }
-
-.login {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 300%;
-}
-
-.sign {
-    margin: 0;
-    position: absolute;
-    font-size: 300%;
-    top: 55%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
 h2 {
     text-align: center;
     font-size: 250%;
+}
+.btn {
+    padding: 10px;
+    font-size: 200%;
 }
