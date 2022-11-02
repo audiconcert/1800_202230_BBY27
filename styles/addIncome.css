@@ -26,3 +26,9 @@ h1 {
     grid-column: 2 / span 1;
     grid-row: 6 / span 1;
 }
+
+.button {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    margin-top: 2%;
+}
