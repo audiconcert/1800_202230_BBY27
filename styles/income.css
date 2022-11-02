@@ -1,0 +1,27 @@
+#container {
+    display:grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+    grid-auto-rows: 15vh;
+}
+
+h1 {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    font-size: 50pt;
+    text-align:center;
+}
+
+#userIncome {
+    border-radius: 25px;
+    background-color:rgb(188, 183, 183);
+    padding: 5%;
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 4;
+}
+
+#btn {
+    grid-column: 5 / span 1;
+    grid-row: 6 / span 1;
+}
+
+
