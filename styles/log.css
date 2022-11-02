@@ -20,3 +20,10 @@ img {
     padding: 4%;
     font-size: 250%;
 }
+.otherstuff {
+    font-size: 70%;
+    text-align: center;
+}
+.bc {
+    grid-area: bc;
+}
