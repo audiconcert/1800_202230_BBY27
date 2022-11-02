@@ -53,26 +53,43 @@
     <div id="container">
       <h1>Add Income</h1>
 
+      
       <input
         class="form-control form-control-lg source"
         type="text"
         placeholder="Source Name"
         aria-label=".form-control-lg example"
         pattern="[A-Za-z]"
+        required="required"
       />
 
-      <input
+     
+        <input
         class="form-control form-control-lg amount"
         type="number"
         placeholder="Amount $"
         aria-label=".form-control-lg example"
-      />
+        required="required"
+        />
 
-      <input
-        class="form-control form-control-lg period"
-        type="date"
-        aria-label=".form-control-lg example"
-      />
+      <div class="input-group mb-3 period">
+        <input type="date" class="form-control" aria-label="Text input with dropdown button">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Frequency</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">One Time</a></li>
+          <li><a class="dropdown-item" href="#">Weekly</a></li>
+          <li><a class="dropdown-item" href="#">Bi-Weekly</a></li>
+          <li><a class="dropdown-item" href="#">Monthly</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Customize</a></li>
+        </ul>
+      </div>
+
+        <a href="income.html" class="btn btn-outline-success btn-lg button">
+            Save
+        </a>
+       
+    </div>
 
     <nav id="footerPlaceholder"></nav>
 
