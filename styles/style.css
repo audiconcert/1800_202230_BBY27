@@ -42,15 +42,14 @@ body {
     align-self: center;
 }
 .qa-heading {
-    grid-column: 2;
+    grid-area: qa-heading;
     font-size: 300%;
     grid-row: 1;
     align-self: start;
     justify-self: start;
 }
 .qa-description {
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: qa-description;
     font-size: 175%;
 }
 .savings-home {
@@ -59,8 +58,8 @@ body {
 }
 .save-grid {
     grid-template-areas:
-    'qa-logo qa-heading qa-heading qa-heading'
-    'qa-logo qa-description qa-description qa-description';
+    'save-logo save-heading save-heading save-heading'
+    'save-logo save-description save-description save-description';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -70,19 +69,23 @@ body {
     margin-right: 5%;
 }
 .save-logo {
-    grid-area: qa-logo;
+    grid-area: save-logo;
     align-self: center;
     margin-left: 1vw;
 }
 .save-heading {
-    grid-column: 2;
+    grid-area: save-heading;
     font-size: 300%;
-    grid-row: 1;
     align-self: start;
     justify-self: start;
 }
 .save-description {
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: save-description;
     font-size: 175%;
+}
+.container {
+    margin-top: 2%;
+}
+.backbtn {
+    justify-content: start;
 }
