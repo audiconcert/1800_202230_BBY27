@@ -1,3 +1,10 @@
+@font-face {
+    font-family: josefin;
+    src: url(JosefinSans-Regular.ttf);
+}
+body {
+    font-family: josefin;
+}
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-40 { font-size: 40px; }
