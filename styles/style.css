@@ -19,16 +19,16 @@ body {
     padding: 4%;
 }
 .welcome-back > h1 {
-    font-size: 300%;
+    font-size: 250%;
 }
 .quick-analytics-home {
     text-decoration: none;
-    color: rgb(0, 136, 255);
+    color: rgb(0, 146, 36);
 }
 .qa-grid {
     grid-template-areas:
-    'qa-logo qa-heading qa-heading qa-heading'
-    'qa-logo qa-description qa-description qa-description';
+    'qa-heading qa-heading qa-heading qa-heading'
+    'ernie qa-description qa-description qa-description';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -42,15 +42,18 @@ body {
     align-self: center;
 }
 .qa-heading {
+    margin-top: 2%;
     grid-area: qa-heading;
-    font-size: 300%;
-    grid-row: 1;
+    font-size: 175%;
+    letter-spacing: 6px;
+    font-weight: bold;
     align-self: start;
-    justify-self: start;
+    justify-self: center;
 }
 .qa-description {
     grid-area: qa-description;
-    font-size: 175%;
+    font-size: 150%;
+    align-self: center;
 }
 .savings-home {
     text-decoration: none;
@@ -58,8 +61,8 @@ body {
 }
 .save-grid {
     grid-template-areas:
-    'save-logo save-heading save-heading save-heading'
-    'save-logo save-description save-description save-description';
+    'save-heading save-heading save-heading save-heading'
+    'save-logo save-logo save-description save-description';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -68,24 +71,34 @@ body {
     margin-left: 5%;
     margin-right: 5%;
 }
-.save-logo {
-    grid-area: save-logo;
+span {
+    grid-area: save-heading;
     align-self: center;
-    margin-left: 1vw;
+    margin-left: 5%;
 }
 .save-heading {
+    margin-top: 2%;
     grid-area: save-heading;
-    font-size: 300%;
-    align-self: start;
-    justify-self: start;
+    font-size: 175%;
+    letter-spacing: 6px;
+    font-weight: bold;
+    justify-self: center;
+    align-self: center;
 }
 .save-description {
     grid-area: save-description;
-    font-size: 175%;
+    font-size: 150%;
 }
 .container {
     margin-top: 2%;
 }
 .backbtn {
     justify-content: start;
+}
+img {
+    grid-area: ernie;
+    width: 70%;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 15%;
 }

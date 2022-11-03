@@ -18,7 +18,9 @@ img {
 }
 .food {
     padding: 4%;
+    display: grid;
     font-size: 250%;
+    grid-gap: 5%;
 }
 .otherstuff {
     font-size: 40%;
