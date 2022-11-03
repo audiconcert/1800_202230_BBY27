@@ -3,16 +3,19 @@
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
 }
-
+body {
+    margin-top: 20px;
+}
 h1 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    font-size: 50pt;
+    font-size: 30pt;
+    font-weight: bold;
     text-align:center;
 }
 
 #userSavings {
-    border-radius: 25px;
+    border-radius: 20px;
     background-color:rgb(188, 183, 183);
     padding: 5%;
     grid-column: 2 / span 1;
@@ -22,6 +25,8 @@ h1 {
 .button {
     grid-column: 2 / span 1;
     grid-row: 6 / span 1;
+    justify-content: center;
+    align-self: center;
 }
 
 
