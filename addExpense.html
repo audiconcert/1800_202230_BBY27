@@ -44,13 +44,13 @@
 
     <div id="source">
       <p>Where did you spend your money?</p>
-      <input class="form-control form-control-lg" type="text" placeholder="Name"
+      <input id="source" class="form-control form-control-lg" type="text" placeholder="Name"
       aria-label=".form-control-lg example" required="required" />
     </div>
     
     <div id="amount">
       <p>How much did you spend?</p>
-      <input class="form-control form-control-lg" type="number" placeholder="$"
+      <input id="amount" class="form-control form-control-lg" type="number" placeholder="$"
       aria-label=".form-control-lg example" required="required" />
     </div>
     
@@ -61,12 +61,12 @@
           What kind of expense is this?
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><button class="dropdown-item" type="button">Food & Beverage</button></li>
-          <li><button class="dropdown-item" type="button">Clothes</button></li>
-          <li><button class="dropdown-item" type="button">Transportation (Gas, insurance, bus etc)</button></li>
-          <li><button class="dropdown-item" type="button">Games or Technology</button></li>
-          <li><button class="dropdown-item" type="button">Accomodation (Clubs, hotels etc)</button></li>
-          <li><button class="dropdown-item" type="button">Other</button></li>
+          <li><button class="dropdown-item" type="button" id="food">Food & Beverage</button></li>
+          <li><button class="dropdown-item" type="button" id="food">Clothes</button></li>
+          <li><button class="dropdown-item" type="button" id="trans">Transportation (Gas, insurance, bus etc)</button></li>
+          <li><button class="dropdown-item" type="button" id="tech">Games or Technology</button></li>
+          <li><button class="dropdown-item" type="button" id="hotel">Accomodation (Clubs, hotels etc)</button></li>
+          <li><button class="dropdown-item" type="button" id="other">Other</button></li>
       </ul>
   </div>
   
