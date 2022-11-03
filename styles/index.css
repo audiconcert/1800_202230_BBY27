@@ -3,7 +3,6 @@
     color: rgb(0, 157, 255);
     font-weight: bold;
     text-align: center;
-    margin-top: 10%;
 }
 h2 {
     text-align: center;
@@ -12,4 +11,7 @@ h2 {
 .btn {
     padding: 15px;
     font-size: 200%;
+}
+.content {
+    margin-top: 10%;
 }

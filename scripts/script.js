@@ -3,7 +3,7 @@ function sayHello() {
 }
 
 function foodSelect() {
-    localStorage.setItem('item', $('#').val())
+    localStorage.setItem('item', $('#elementID').val())
 }
 function transSelect() {
     document.getElementById('trans')
