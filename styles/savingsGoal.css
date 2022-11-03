@@ -2,14 +2,15 @@
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
-    padding: 2% 2%;
-    margin-top: 4%;
+}
+body {
+    margin-top: 30px;
 }
 
 h1 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    font-size: 40pt;
+    font-size: 30pt;
     font-weight: bold;
     text-align: center;
 }

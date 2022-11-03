@@ -8,6 +8,7 @@ body {
     padding-top: 60px;
 }
 
+
 .nav {
     justify-content: center;
 }
@@ -82,12 +83,13 @@ span {
 .qa-description {
     grid-area: qa-description;
     font-size: 150%;
+    margin-left: 20px;
     align-self: center;
 }
 
 .savings-home {
     text-decoration: none;
-    color: rgb(0, 136, 255);
+    color: #0091ca;
 }
 
 .save-grid {
@@ -126,11 +128,16 @@ span {
 
 img {
     grid-area: ernie;
-    width: 70%;
+    width: 40pt;
+    margin-left: 5px;
     justify-self: center;
     align-self: center;
-    margin-bottom: 15%;
+    margin-bottom: 30%;
 }
+
 .mainBody {
     overflow: auto;
+}
+.more {
+    font-size: 200%;
 }
