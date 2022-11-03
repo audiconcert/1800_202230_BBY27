@@ -19,10 +19,10 @@ span {
     align-self: center;
 }
 .bg-BCIT {
-    background-color: #00ff95;
+    background-color: #78b090;
 }
 .bg-BCIT2 {
-    background-color: #373737;
+    background-color: #78b090;
 }
 
 .material-icons.md-18 {
@@ -35,6 +35,12 @@ span {
 
 .material-icons.md-40 {
     font-size: 40px;
+}
+#name-goes-here {
+    font-size: 100%;
+}
+a {
+    text-decoration: none;
 }
 
 .material-icons.md-48 {
@@ -55,7 +61,7 @@ span {
 
 .quick-analytics-home {
     text-decoration: none;
-    color: rgb(0, 146, 36);
+    color: rgb(108, 184, 127);
 }
 
 .qa-grid {
@@ -95,7 +101,7 @@ span {
 
 .savings-home {
     text-decoration: none;
-    color: #0091ca;
+    color: #5dab7f;
 }
 
 .save-grid {

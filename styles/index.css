@@ -1,6 +1,6 @@
 .title,h1 {
     font-size: 210%;
-    color: rgb(0, 157, 255);
+    color: #78b090;
     font-weight: bold;
     text-align: center;
 }
@@ -11,7 +11,4 @@ h2 {
 .btn {
     padding: 15px;
     font-size: 200%;
-}
-.content {
-    margin-top: 10%;
 }
