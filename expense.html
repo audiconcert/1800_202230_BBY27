@@ -26,7 +26,6 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
     <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/addExpense.css" rel="stylesheet">
     <link href="styles/expense.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
@@ -35,37 +34,17 @@
 
 <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
     <nav id="navbarPlaceholder" class="test"></nav>
-    <h1 id="log-menu">What category was the expense?</h1>
-    <div class="body">
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="food">Food & Beverage</a>
-        </div>
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="trans">Transportation</a>
-        </div>
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="clothes">Clothing</a>
-        </div>
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="tech">Games / Tech</a>
-        </div>
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="hotel">Accomodation (Clubs, hotels etc)</a>
-        </div>
-        <div class="text-center">
-            <a href="addExpense.html" class="btn btn-secondary category" id="other">Other</a>
-        </div>
-    </div>
-    <nav id="footerPlaceholder"></nav>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+    <div id="expenseBody">
+        <h1>Expenses</h1>
+        <div id="expense-notfound">Nothing yet. Add expenses to view them here.</div>
+        <a href="addExpense.html" class="btn btn-outline-success btn-lg button">
+            Add
+        </a>
+    </div>
+    
+    <nav id="footerPlaceholder"></nav>
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>

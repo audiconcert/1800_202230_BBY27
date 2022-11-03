@@ -12,6 +12,7 @@ body {
 .nav {
     justify-content: center;
 }
+
 #title,
 span {
     font-size: 200%;
@@ -88,7 +89,7 @@ span {
 
 .savings-home {
     text-decoration: none;
-    color: #00a524;
+    color: #0091ca;
 }
 
 .save-grid {
@@ -133,6 +134,10 @@ img {
     align-self: center;
     margin-bottom: 30%;
 }
+
 .mainBody {
     overflow: auto;
+}
+.more {
+    font-size: 200%;
 }

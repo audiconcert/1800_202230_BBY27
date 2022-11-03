@@ -2,7 +2,9 @@
     display:grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
-    padding: 2% 2%;
+}
+body {
+    margin-top: 30px;
 }
 body {
     margin-top: 20px;

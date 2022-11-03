@@ -1,5 +1,26 @@
+#expenseBody {
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-auto-rows: 10vh;
+    display: grid;
+}
+body {
+    margin-top: 30px;
+}
 h1 {
-    padding: 4%;
-    font-size: 220%;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 30pt;
     font-weight: bold;
+    text-align: center;
+}
+
+#expense-notfound {
+    grid-column: 2 / span 1;
+    grid-row: 2;
+    justify-self: center;
+}
+.button {
+    grid-column: 2 / span 1;
+    justify-content: center;
+    align-self: center;
 }
