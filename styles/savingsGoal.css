@@ -42,7 +42,6 @@ h1 {
 #amount {
     grid-area: amt;
     border-style: groove;
-    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -81,8 +80,5 @@ h1 {
 .button {
     grid-column: 2 / span 1;
     grid-row: 6 / span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
