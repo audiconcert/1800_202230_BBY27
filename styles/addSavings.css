@@ -3,12 +3,13 @@
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
     padding: 2% 2%;
+    margin-top: 4%;
 }
 
 h1 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    font-size: 40pt;
+    font-size: 30pt;
     text-align: center;
 }
 
@@ -33,5 +34,8 @@ h1 {
 .button {
     grid-column: 2 / span 1;
     grid-row: 7 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2%;
 }
