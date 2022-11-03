@@ -18,6 +18,12 @@ span {
     font-size: 200%;
     align-self: center;
 }
+.bg-BCIT {
+    background-color: #00ff95;
+}
+.bg-BCIT2 {
+    background-color: #373737;
+}
 
 .material-icons.md-18 {
     font-size: 18px;
