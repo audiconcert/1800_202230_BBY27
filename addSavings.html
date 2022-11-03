@@ -36,9 +36,10 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
+
     <!-- Link to styles of your own -->
     <link href="styles/style.css" rel="stylesheet" />
-    <link href="styles/addIncome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/addSavings.css" />
 
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   </head>
@@ -51,50 +52,44 @@
     <nav id="navbarPlaceholder"></nav>
 
     <div id="container">
-      <h1>New Income</h1>
+      <h1>New Savings Goal</h1>
 
-      <div id="source">
-        <p>Where is this income from?</p>
+      <div id="name">
+        <p>What would you like to name your goal?</p>
         <input
         class="form-control form-control-lg"
         type="text"
         placeholder="Name"
-        aria-label=".form-control-lg example"
         required="required"
-      />
+        aria-label=".form-control-lg example"
+        />
       </div>
       
       <div id="amount">
-        <p>How much is the income?</p>
+        <p>How much do you want to save?</p>
         <input
         class="form-control form-control-lg"
         type="number"
         placeholder="$"
-        aria-label=".form-control-lg example"
         required="required"
+        aria-label=".form-control-lg example"
+        />
+      </div>
+      
+      <div id="date">
+        <p>When do you want to achieve this goal by?</p>
+        <input
+        class="form-control form-control-lg"
+        type="date"
+        placeholder=".form-control-lg"
+        aria-label=".form-control-lg example"
         />
       </div>
 
-      <div id="period">
-        <p>When did you receive this income and how frequently do you receive it?</p>
-        <div class="input-group mb-3">
-          <input type="date" class="form-control" aria-label="Text input with dropdown button">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Frequency</button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">One Time</a></li>
-            <li><a class="dropdown-item" href="#">Weekly</a></li>
-            <li><a class="dropdown-item" href="#">Bi-Weekly</a></li>
-            <li><a class="dropdown-item" href="#">Monthly</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item py-5" href="#">Customize</a></li>
-          </ul>
-        </div>
-      </div>
-     
-      <a href="income.html" class="btn btn-outline-success btn-lg button">
-          Save
+      <a href="#" class="btn btn-outline-success btn-lg button">
+        Save
       </a>
-       
+      
     </div>
 
     <nav id="footerPlaceholder"></nav>
