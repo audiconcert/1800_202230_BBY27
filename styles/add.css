@@ -45,5 +45,4 @@ h1 {
 .button {
     grid-column: 2 / span 1;
     grid-row: 8 / span 1;
-    align-self: center;
 }

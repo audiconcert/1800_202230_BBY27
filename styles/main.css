@@ -7,8 +7,6 @@ body {
     font-family: josefin;
     padding-top: 60px;
 }
-
-
 .nav {
     justify-content: center;
 }
@@ -19,12 +17,29 @@ span {
     align-self: center;
 }
 .bg-BCIT {
-    background-color: #78b090;
+    background-color: #73a589;
 }
 .bg-BCIT2 {
-    background-color: #78b090;
+    background-color: #aae1c2;
 }
 
+.btn-1 {
+    align-self: center;
+    background-color: rgb(107, 137, 110);
+    color: white;
+}
+.btn-1:hover {
+    color:rgb(197, 158, 61);
+}
+.btn-2 {
+    align-self: center;
+    border-color: rgb(107, 137, 110);
+    color:rgb(107, 137, 110);
+}
+.btn-2:hover {
+    background-color: rgb(107, 137, 110);
+    color:white;
+}
 .material-icons.md-18 {
     font-size: 18px;
 }
@@ -152,4 +167,8 @@ img {
 }
 .more {
     font-size: 200%;
+}
+
+.round {
+    border-radius: 25px;
 }
