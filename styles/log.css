@@ -1,15 +1,16 @@
 h1 {
     padding: 4%;
-    font-size: 300%;
+    font-size: 220%;
     font-weight: bold;
 }
 .btn1 {
-    margin-top: 50px;
-    font-size: 400%;
+    margin-top: 0px;
+    font-size: 250%;
 }
 .category {
-    font-size: 200%;
+    font-size: 140%;
     color: white;
+    padding: 2%;
     background-color: rgb(0, 166, 255);
 }
 img {
@@ -18,5 +19,15 @@ img {
 }
 .food {
     padding: 4%;
+    display: grid;
     font-size: 250%;
+    grid-gap: 5%;
+}
+.otherstuff {
+    font-size: 40%;
+    text-align: end;
+    
+}
+.bc {
+    grid-area: bc;
 }
