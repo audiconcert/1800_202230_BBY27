@@ -2,37 +2,59 @@
     font-family: josefin;
     src: url(JosefinSans-Regular.ttf);
 }
+
 body {
     font-family: josefin;
     padding-top: 60px;
 }
+
 .nav {
     justify-content: center;
 }
-#title, span {
+
+#title,
+span {
     font-size: 200%;
     align-self: center;
 }
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-40 { font-size: 40px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-100 { font-size: 100px; }
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-40 {
+    font-size: 40px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-100 {
+    font-size: 100px;
+}
 
 .welcome-back {
     padding: 4%;
 }
-.welcome-back > h1 {
+
+.welcome-back>h1 {
     font-size: 250%;
 }
+
 .quick-analytics-home {
     text-decoration: none;
     color: rgb(0, 146, 36);
 }
+
 .qa-grid {
     grid-template-areas:
-    'qa-heading qa-heading qa-heading qa-heading'
-    'ernie qa-description qa-description qa-description';
+        'qa-heading qa-heading qa-heading qa-heading'
+        'ernie qa-description qa-description qa-description';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -41,10 +63,12 @@ body {
     margin-left: 5%;
     margin-right: 5%;
 }
+
 .qa-logo {
     grid-area: qa-logo;
     align-self: center;
 }
+
 .qa-heading {
     margin-top: 2%;
     grid-area: qa-heading;
@@ -54,19 +78,22 @@ body {
     align-self: start;
     justify-self: center;
 }
+
 .qa-description {
     grid-area: qa-description;
     font-size: 150%;
     align-self: center;
 }
+
 .savings-home {
     text-decoration: none;
     color: rgb(0, 136, 255);
 }
+
 .save-grid {
     grid-template-areas:
-    'save-heading save-heading save-heading save-heading'
-    'save-logo save-logo save-description save-description';
+        'save-heading save-heading save-heading save-heading'
+        'save-logo save-logo save-description save-description';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -75,11 +102,13 @@ body {
     margin-left: 5%;
     margin-right: 5%;
 }
+
 span {
     grid-area: save-heading;
     align-self: center;
     margin-left: 5%;
 }
+
 .save-heading {
     margin-top: 2%;
     grid-area: save-heading;
@@ -89,14 +118,19 @@ span {
     justify-self: center;
     align-self: center;
 }
+
 .save-description {
     grid-area: save-description;
     font-size: 150%;
 }
+
 img {
     grid-area: ernie;
     width: 70%;
     justify-self: center;
     align-self: center;
     margin-bottom: 15%;
+}
+.mainBody {
+    overflow: auto;
 }
