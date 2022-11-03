@@ -38,3 +38,9 @@ h1 {
     font-size: 300%;
     align-self: center;
 }
+.category {
+    font-size: 140%;
+    color: white;
+    padding: 2%;
+    background-color: rgb(0, 166, 255);
+}
