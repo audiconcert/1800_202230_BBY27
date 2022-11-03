@@ -26,8 +26,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!-- Link to styles of your own -->
   <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/addExpense.css" rel="stylesheet" />
-  <link href="styles/log.css" rel="stylesheet" />
+  <link href="styles/add.css" rel="stylesheet" />
 
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 </head>
@@ -42,26 +41,39 @@
 
   <div id="container">
     <h1>New Expense</h1>
-    <input class="form-control form-control-lg source" type="text" placeholder="Source Name"
-      aria-label=".form-control-lg example" pattern="[A-Za-z]" required="required" />
-    <input class="form-control form-control-lg amount" type="number" placeholder="Amount $"
-      aria-label=".form-control-lg example" required="required" />
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            What kind of expense is this?
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <li><button class="dropdown-item" type="button">Food & Beverage</button></li>
-            <li><button class="dropdown-item" type="button">Clothes</button></li>
-            <li><button class="dropdown-item" type="button">Transportation (Gas, insurance, bus etc)</button></li>
-            <li><button class="dropdown-item" type="button">Games or Technology</button></li>
-            <li><button class="dropdown-item" type="button">Accomodation (Clubs, hotels etc)</button></li>
-            <li><button class="dropdown-item" type="button">Other</button></li>
-        </ul>
-    </div>
 
-  <div class="input-group mb-3 period">
+    <div id="source">
+      <p>Where did you spend your money?</p>
+      <input class="form-control form-control-lg" type="text" placeholder="Name"
+      aria-label=".form-control-lg example" required="required" />
+    </div>
+    
+    <div id="amount">
+      <p>How much did you spend?</p>
+      <input class="form-control form-control-lg" type="number" placeholder="$"
+      aria-label=".form-control-lg example" required="required" />
+    </div>
+    
+    
+    <div id="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          What kind of expense is this?
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" type="button">Food & Beverage</button></li>
+          <li><button class="dropdown-item" type="button">Clothes</button></li>
+          <li><button class="dropdown-item" type="button">Transportation (Gas, insurance, bus etc)</button></li>
+          <li><button class="dropdown-item" type="button">Games or Technology</button></li>
+          <li><button class="dropdown-item" type="button">Accomodation (Clubs, hotels etc)</button></li>
+          <li><button class="dropdown-item" type="button">Other</button></li>
+      </ul>
+  </div>
+  
+      
+<div id="period">
+  <p>When did you spend this money and how often do you spend it?</p>
+  <div class="input-group mb-3">
     <input type="date" class="form-control" aria-label="Text input with dropdown button">
     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
       aria-expanded="false">Frequency</button>
@@ -75,12 +87,16 @@
       </li>
       <li><a class="dropdown-item" href="#">Customize</a></li>
     </ul>
-
   </div>
+</div>
+  
 
-  <a href="expense.html" class="btn btn-outline-success btn-lg button">
-    Save
-  </a>
+  
+    <a href="expense.html" class="btn btn-outline-success btn-lg button">
+      Save
+    </a>
+  
+  
 
   </div>
 
