@@ -23,11 +23,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
     <link href="styles/style.css" rel="stylesheet">
 
@@ -67,8 +63,18 @@
     <footer class="navbar justify-content-evenly bg-primary test fixed-bottom">
         <div class="container">
             <a href="/main.html"><i class="material-icons md-40 text-light">home</i></a>
-            <a href="/log.html"><i class="material-icons md-48 text-light">edit_note</i></a>
-            <i class="material-icons md-40 text-light">account_circle</i>
+            <a href="/log.html"><i class="material-icons md-48 text-light">add_circle</i></a>
+            <div class="btn-group dropup">
+                <i class="btn btn-primary dropdown-toggle material-icons md-40 text-light" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    account_circle
+                </i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
