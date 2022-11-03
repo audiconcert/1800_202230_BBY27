@@ -25,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
-    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
@@ -37,46 +37,30 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <nav id="navbarPlaceholder"></nav>
-
-    <div class="welcome-back">
-        <h1 class="welcome-back-heading">Welcome back, <span id="name-goes-here"></span></h1>
+    <nav id="navbarPlaceholderHome"></nav>
+    <div id="mainBody">
+        <div class="welcome-back">
+            <h1 class="welcome-back-heading">Welcome back, <span id="name-goes-here"></span></h1>
+        </div>
+        <!--Quick analytics button-->
+        <a class="quick-analytics-home" href="./analytics.html">
+            <div class="qa-grid">
+                <p class="qa-heading">QUICK ANALYTICS</p>
+                <img src="images/ernie.jpg" id="ernie" alt="ernie">
+                <p class="qa-description">View your reports and check on Ernie.</p>
+            </div>
+        </a><br>
+        <!--Savings button-->
+        <a class="savings-home" href="./savings.html">
+            <div class="save-grid">
+                <span class="material-icons save-logo md-48">savings</span>
+                <p class="save-heading">SAVINGS</p>
+                <p class="save-description">Track your savings and view your goals.</p>
+            </div>
+        </a>
     </div>
-    <!--Quick analytics button-->
-    <a class="quick-analytics-home" href="./analytics.html">
-        <div class="qa-grid">
-            <p class="qa-heading">QUICK ANALYTICS</p>
-            <img src="images/ernie.jpg" id="ernie" alt="ernie">
-            <p class="qa-description">View your reports and check on Ernie.</p>
-        </div>
-    </a><br>
-    <!--Savings button-->
-    <a class="savings-home" href="./savings.html">
-        <div class="save-grid">
-            <span class="material-icons save-logo md-48">savings</span>
-            <p class="save-heading">SAVINGS</p>
-            <p class="save-description">Track your savings and view your goals.</p>
-        </div>
-    </a>
 
     <nav id="footerPlaceholder"></nav>
-    <footer class="navbar justify-content-evenly bg-primary test fixed-bottom">
-        <div class="container">
-            <a href="/main.html"><i class="material-icons md-40 text-light">home</i></a>
-            <a href="/log.html"><i class="material-icons md-48 text-light">add_circle</i></a>
-            <div class="btn-group dropup">
-                <i class="btn btn-primary dropdown-toggle material-icons md-40 text-light" type="button"
-                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    account_circle
-                </i>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
