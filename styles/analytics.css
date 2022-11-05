@@ -1,0 +1,12 @@
+body {
+    margin-top: 30px;
+}
+#dateRange {
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-auto-rows: 7vh;
+    justify-items: start;
+}
+.track {
+    grid-column: 2;
+}
