@@ -34,7 +34,7 @@ span {
 .btn-2 {
     align-self: center;
     border-color: rgb(107, 137, 110);
-    color:rgb(107, 137, 110);
+    color:#6b896e;
 }
 .btn-2:hover {
     background-color: rgb(107, 137, 110);
