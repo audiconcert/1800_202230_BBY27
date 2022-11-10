@@ -20,12 +20,3 @@ function insertName() {
     });
 }
 insertName(); //run the function
-
-function writeIncome(name, amt, frequency) {
-    const db = getDatabase();
-    set(ref(db, 'users/' + user.uid + income), {
-        source: name,
-        amount: amount,
-        period: frequency
-    });
-}

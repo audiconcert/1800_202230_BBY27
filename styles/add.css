@@ -33,6 +33,10 @@ h1 {
 
 }
 
+.favourites {
+    grid-column: 2 / span 1;
+    grid-row: 9;
+}
 
 /* for expenses page*/
 #dropdown {

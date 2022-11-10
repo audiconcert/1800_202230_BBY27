@@ -29,6 +29,7 @@ var uiConfig = {
                 .catch(function (error) {
                     console.log("Error adding new user: " + error);
                 });
+            
         } else {
             return true;
         }

@@ -23,6 +23,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!-- Link to styles of your own -->
   <link href="styles/main.css" rel="stylesheet" />
@@ -111,9 +112,9 @@
       </div>
     </div>
 
+    <a href="expense.html" onclick="alert('Added to favourites!');addFavourite()" type="button" class="btn btn-2 favourites round">Add to Favourites</a>
 
-
-    <a onclick="addExpense()" href="expense.html" class="btn btn-2 btn-lg button round">
+    <a onclick="addExpense()" class="btn btn-2 btn-lg button round">
       Save
     </a>
 
@@ -129,6 +130,7 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
+  <script src="./scripts/expense.js"></script>
   <script src="./scripts/firebaseAPI_BBY27.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
