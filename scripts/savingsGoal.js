@@ -1,4 +1,4 @@
-function showFavourite() {
+function showGoals() {
     let favouritestemplate = document.getElementById("favouritestemplate");
     let favouriteCardGroup = document.getElementById("favouriteCardGroup");
 
@@ -8,23 +8,22 @@ function showFavourite() {
             var userID = user.uid;
             console.log(userID);
 
-            currentUser.collection("favourites")
-                .limit(10)
+            currentUser.collection("savings")
                 .get()
                 .then(function (snap) {
-                    snap.forEach(function (doc) {       
-                        var amount = doc.data().amount;
+                    snap.forEach(function (doc) {
+                        var goalAmount = doc.data().amount;
                         var name = doc.data().name;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-title').innerHTML = amount;  
-                        testFavouriteCard.querySelector('.card-length').innerHTML = name; 
+                        testFavouriteCard.querySelector('.card-title').innerHTML = "$" + goalAmount;
+                        testFavouriteCard.querySelector('.card-length').innerHTML = name;
                         favouriteCardGroup.appendChild(testFavouriteCard);
                     })
                 })
         }
     })
 }
-showFavourite();
+showGoals();
 
 
 

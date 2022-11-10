@@ -1,121 +1,9 @@
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 10vh;
-    margin-top: 3%;
-}
-
-h1 {
-    grid-row: 1 / span 1;
-    font-size: 30pt;
-    font-weight: bold;
-    text-align: center;
-}
-
-.button {
-    grid-row: 2 / span 1;
-    display: flex;
-    justify-content: center;
-}
-
-.oneGoal {
-    grid-column: 1;
-    grid-row: 3;
-    display: grid;
-    grid-template-columns: 24vw 2vw 24vw;
-    grid-auto-rows: 10vh;
-    grid-template-areas: 
-    'name name name'
-    'savedamount b goalamount'
-    'startdate b bydate'
-    'button button button'
-}
-
-.goalName {
-    grid-area: name;
-}
-
-.savedAmount {
-    grid-area: savedamount;
-}
-
-.goalAmount {
-    grid-area: goalamount;
-}
-
-.startedDate {
-    grid-area: startdate;
-}
-
-.byDate {
-    grid-area: bydate;
-}
-
-.buttons {
-    grid-area: button;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-    'contribute edit delete'
-}
-
-#contribute {
-    grid-area: contribute;
-}
-
-#edit {
-    grid-area: edit;
-}
-
-#delete {
-    grid-area: delete;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #container {
+#savingBody {
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
 }
+
 body {
     margin-top: 30px;
 }
@@ -123,75 +11,18 @@ body {
 h1 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    font-size: 30pt;
-    font-weight: bold;
+    margin-top: 3%;
     text-align: center;
 }
 
-#newGoal {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 2;
-
-    display:grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 10% 50% 20% 20%;
-    grid-template-areas: 
-    'name name name name name'
-    'amt amt amt amt edit'
-    'date date date date b'
-    'contribute contribute contribute contribute delete';
-     grid-gap: 1.5em;
-}
-
-#newGoal p {
-    font-size: x-large;
-}
-
-#newGoal > p  {
-    grid-area: name;
-    font-size: 26pt;
-}
-
-#amount {
-    grid-area: amt;
-    border-style: groove;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-}
-
-#amount p {
-    font-size: xx-large;
-}
-
-#date {
-    grid-area: date;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#date p {
-    font-size: medium;
-}
-
-#edit {
-    grid-area: edit;
-    display: flex;
-    align-items: center;
-}
-
-#contribute {
-    grid-area: contribute;
-}
-
-#delete {
-    grid-area: delete;
-
-}
-
 .button {
-    grid-column: 2 / span 1;
-    grid-row: 6 / span 1;
+    grid-column: 2;
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: center;
 }
- */
+
+.card {
+    grid-column: 2 / span 1;
+    grid-row: 4;
+}

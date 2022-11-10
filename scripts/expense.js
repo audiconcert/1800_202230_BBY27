@@ -9,7 +9,7 @@ function showFavourite() {
             var userID = user.uid;
             console.log(userID);
 
-            currentUser.collection("savings")
+            currentUser.collection("expenses")
                 .limit(10)
                 .get()
                 .then(function (snap) {
