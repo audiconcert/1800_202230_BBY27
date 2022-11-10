@@ -20,7 +20,7 @@ function addExpense() {
                 userID: userID,
                 amount: amount,
             }).then(() => {
-                window.location.href = "expenses.html"; //new line added
+                window.location.href = "expense.html"; //new line added
             })
         };
     });
@@ -44,12 +44,12 @@ function addFavourite() {
             var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             console.log(userID);
-            db.collection("users").doc(user.uid).collection("expenses").doc("favourites").add({
+            db.collection("users").doc(user.uid).collection("favourites").add({
                 source: source,
                 userID: user.uid,
                 amount: amount,
-            // }).then(() => {
-            //     window.location.href = "expenses.html"; //new line added
+            }).then(() => {
+                window.location.href = "expense.html"; //new line added
             })
         };
     });
