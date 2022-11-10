@@ -24,6 +24,10 @@ h1 {
     grid-row: 3 / span 1;
     justify-self: center;
 }
+.card {
+    grid-column: 2 / span 1;
+    grid-row: 3;
+}
 
 .saved {
     grid-column: 2 / span 1;
@@ -32,7 +36,23 @@ h1 {
 
 .button {
     grid-column: 2 / span 1;
-    grid-row: 7 / span 1;
+    grid-row: 3 / span 1;
+    justify-content: center;
+}
+
+.favourites-template {
+    grid-column: 2 / span 1;
+    grid-row: 4;
+    justify-content: center;
+}
+
+.favourites-title {
+    grid-column: 2 / span 1;
+    grid-row: 5;
+    justify-content: center;
+}
+.actual-button {
+    color: white;
     justify-content: center;
 }
 
