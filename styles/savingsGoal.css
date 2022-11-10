@@ -1,4 +1,117 @@
-#container {
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 10vh;
+    margin-top: 3%;
+}
+
+h1 {
+    grid-row: 1 / span 1;
+    font-size: 30pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button {
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: center;
+}
+
+.oneGoal {
+    grid-column: 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 24vw 2vw 24vw;
+    grid-auto-rows: 10vh;
+    grid-template-areas: 
+    'name name name'
+    'savedamount b goalamount'
+    'startdate b bydate'
+    'button button button'
+}
+
+.goalName {
+    grid-area: name;
+}
+
+.savedAmount {
+    grid-area: savedamount;
+}
+
+.goalAmount {
+    grid-area: goalamount;
+}
+
+.startedDate {
+    grid-area: startdate;
+}
+
+.byDate {
+    grid-area: bydate;
+}
+
+.buttons {
+    grid-area: button;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'contribute edit delete'
+}
+
+#contribute {
+    grid-area: contribute;
+}
+
+#edit {
+    grid-area: edit;
+}
+
+#delete {
+    grid-area: delete;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #container {
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
@@ -81,4 +194,4 @@ h1 {
     grid-column: 2 / span 1;
     grid-row: 6 / span 1;
 }
-
+ */
