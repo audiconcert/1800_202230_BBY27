@@ -58,6 +58,7 @@
         <p>What would you like to name your goal?</p>
         <input
         class="form-control form-control-lg round"
+        id="name"
         type="text"
         placeholder="Name"
         required="required"
@@ -69,6 +70,7 @@
         <p>How much do you want to save?</p>
         <input
         class="form-control form-control-lg round"
+        id="savingsAmount"
         type="number"
         placeholder="$"
         required="required"
@@ -86,7 +88,7 @@
         />
       </div>
 
-      <a href="savingsGoal.html" class="btn btn-2 btn-lg button round">
+      <a onclick="addSavings()" class="btn btn-2 btn-lg button round">
         Save
       </a>
       
@@ -101,5 +103,6 @@
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/addSavings.js"></script>
   </body>
 </html>
