@@ -2,6 +2,7 @@ function addSavings() {
     console.log("in");
     let Name = document.getElementById("name").value;
     let Amount = document.getElementById("savingsAmount").value;
+    let Contributions = document.getElementById("contributions").value;
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -12,6 +13,7 @@ function addSavings() {
                 name: Name,
                 userID: userID,
                 amount: Amount,
+                Contributions: Contributions
             }).then(() => {
                 window.location.href = "savingsGoal.html"; //new line added
             })
