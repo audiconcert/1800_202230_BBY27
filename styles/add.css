@@ -42,19 +42,25 @@ h1 {
 
 #periodExpense {
     grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    font-size: large;
+}
+
+#periodIncome {
+    grid-column: 2 / span 1;
     grid-row: 6 / span 1;
     font-size: large;
 }
 
 .favourites {
     grid-column: 2 / span 1;
-    grid-row: 11;
+    grid-row: 9;
 }
 
 /* for expenses page*/
 #dropdown {
     grid-column: 2 / span 1;
-    grid-row: 5;
+    grid-row: 6;
     align-self: center;
     justify-self: center;
 }
@@ -62,4 +68,8 @@ h1 {
 .button {
     grid-column: 2 / span 1;
     grid-row: 10 / span 1;
+}
+.buttonIncome {
+    grid-column: 2 / span 1;
+    grid-row: 8 / span 1;
 }

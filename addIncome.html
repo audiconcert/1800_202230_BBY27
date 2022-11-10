@@ -58,6 +58,7 @@
         <input
         class="form-control form-control-lg round"
         type="text"
+        id="incomeSource"
         placeholder="Name"
         aria-label=".form-control-lg example"
         required="required"
@@ -69,13 +70,14 @@
         <input
         class="form-control form-control-lg round"
         type="number"
+        id="incomeAmount"
         placeholder="$"
         aria-label=".form-control-lg example"
         required="required"
         />
       </div>
 
-      <div id="period">
+      <div id="periodIncome">
         <p>When did you receive this income and how frequently do you receive it?</p>
         <div class="input-group mb-3">
           <input type="date" class="form-control round" aria-label="Text input with dropdown button">
@@ -91,7 +93,7 @@
         </div>
       </div>
      
-      <a href="income.html" class="btn btn-2 btn-lg button round">
+      <a onclick="addIncome()" class="btn btn-2 btn-lg buttonIncome round">
           Save
       </a>
        
@@ -106,5 +108,6 @@
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/addIncome.js"></script>
   </body>
 </html>
