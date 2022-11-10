@@ -1,3 +1,5 @@
+import { getDatabase, ref, set } from "firebase/database";
+
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -18,3 +20,12 @@ function insertName() {
     });
 }
 insertName(); //run the function
+
+function writeIncome(name, amt, frequency) {
+    const db = getDatabase();
+    set(ref(db, 'users/' + user.uid + income), {
+        source: name,
+        amount: amount,
+        period: frequency
+    });
+}
