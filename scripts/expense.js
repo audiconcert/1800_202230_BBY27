@@ -1,14 +1,14 @@
 function addExpense() {
     console.log("in");
-    let source = document.getElementById("locale").value;
-    let amount = document.getElementById("amt").value;
+    let Source = document.getElementById("locale").value;
+    let Amount = document.getElementById("amt").value;
     // let food = document.getElementById("food").value;
     // let trans = document.getElementById("trans").value;
     // let clothes = document.getElementById("clothes").value;
     // let tech = document.getElementById("tech").value;
     // let hotel = document.getElementById("hotel").value;
     // let other = document.getElementById("other").value;
-    // let date = document.getElementById("date").value;
+    let Date = document.getElementById("date").value;
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -16,9 +16,10 @@ function addExpense() {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                source: source,
+                source: Source,
                 userID: userID,
-                amount: amount,
+                amount: Amount,
+                date: Date
             }).then(() => {
                 window.location.href = "expenses.html"; //new line added
             })
