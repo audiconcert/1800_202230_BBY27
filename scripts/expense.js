@@ -29,13 +29,16 @@ showFavourite();
 
 function addExistingFavourite() {
     console.log("in");
-    let amount = document.getElementById(".card-title").value;
-    let source = document.getElementById(".card-length").value;
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             console.log(userID);
+            currentUser.collection("favourites")
+                .limit(10)
+                .get()
+            var amount = doc.data().amount;
+            var source = doc.data().source;
             currentUser.collection("expenses").add({
                 source: source,
                 userID: user.uid,
