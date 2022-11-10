@@ -1,4 +1,3 @@
-import { getDatabase, ref, set } from "firebase/database";
 
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
