@@ -27,6 +27,10 @@ function showGoals() {
 }
 showGoals();
 
+function setGoalData(id) {
+    localStorage.setItem('name', id);
+}
+
 
 
 
