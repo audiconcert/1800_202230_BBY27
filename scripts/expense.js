@@ -19,10 +19,10 @@ function showFavourite() {
                         var source = doc.data().source;
                         var date = doc.data().date;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-title1').innerHTML = "$" + amount;
+                        testFavouriteCard.querySelector('.card-title').innerHTML = "$" + amount;
                         testFavouriteCard.querySelector('.card-length').innerHTML = source;
                         testFavouriteCard.querySelector('.card-text').innerHTML = date;
-                        testFavouriteCard.querySelector('.card-title1').setAttribute("id", "ctitle" + i);
+                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                         testFavouriteCard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                         testFavouriteCard.querySelector('.card-length').setAttribute("id", "clength" + i);
                         favouriteCardGroup.appendChild(testFavouriteCard);
