@@ -25,12 +25,10 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/analytics.css" rel="stylesheet" />
     <link href="styles/icon.ico" rel="icon">
-    
-
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-
 </head>
 
 <body>
@@ -39,52 +37,42 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
 
-    <nav id="navbarPlaceholderHome"></nav>
-    <div id="mainBody">
-        <div class="welcome-back">
-            <h1 class="welcome-back-heading">Good to see you,<h1 id="name-goes-here"></span></h1>
+    <nav id="navbarPlaceholder"></nav>
+
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid" id="mainNavbar">
+            <a class="navbar-brand text-light" href="#">Streams</a>
         </div>
-        <!--Quick analytics button-->
-        <a class="savings-home" href="./analyticsRange.html">
-            <div class="save-grid">
-                <span class="material-icons save-logo md-48">park</span>
-                <p class="save-heading">THE FOREST</p>
-            </div>
-        </a><br>
-        <!--Savings button-->
-        <a class="savings-home" href="./savingsGoal.html">
-            <div class="save-grid">
-                <span class="material-icons save-logo md-48">savings</span>
-                <p class="save-heading">SAVINGS</p>
-            </div>
-        </a><br>
-        <a class="savings-home" href="./expense.html">
-            <div class="save-grid">
-                <span class="material-icons save-logo md-48">account_balance</span>
-                <p class="save-heading">EXPENSES</p>
-            </div>
-        </a>
+    </nav> -->
+
+    <h1>The Forest</h1>
+    <h2>View your analytics.</h2>
+
+    <div class="container">
+        <div id="period">
+            <p>From:</p>
+            <input class="form-control form-control-lg round" type="date" id="date" placeholder=".form-control-lg"
+                aria-label=".form-control-lg example" />
+        </div>
         <br>
-        <a class="savings-home" href="./income.html">
-            <div class="save-grid">
-                <span class="material-icons save-logo md-48">payments</span>
-                <p class="save-heading">INCOME</p>
-            </div>
-        </a>
+        <div id="period2">
+            <p>To:</p>
+            <input class="form-control form-control-lg round" type="date" id="date" placeholder=".form-control-lg"
+                aria-label=".form-control-lg example" />
+        </div>
         <br>
+        <br>
+        <a href="analytics.html" class="btn btn-2 btn-lg button round">
+            View
+        </a>
     </div>
-
     <nav id="footerPlaceholder"></nav>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
 
 </body>
-
-</html>
