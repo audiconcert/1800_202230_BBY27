@@ -38,7 +38,7 @@ function addFavourite() {
     // let tech = document.getElementById("tech").value;
     // let hotel = document.getElementById("hotel").value;
     // let other = document.getElementById("other").value;
-    // let date = document.getElementById("date").value;
+    let date = document.getElementById("date").value;
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -49,6 +49,7 @@ function addFavourite() {
                 source: source,
                 userID: user.uid,
                 amount: amount,
+                date: date
             }).then(() => {
                 window.location.href = "expense.html"; //new line added
             })
