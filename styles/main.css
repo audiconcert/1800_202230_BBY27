@@ -113,3 +113,7 @@ span {
 .round {
     border-radius: 25px;
 }
+hr {
+    width: 80vw;
+    grid-column: 2 / span 1;
+}
