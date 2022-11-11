@@ -2,12 +2,6 @@ function addExpense() {
     console.log("in");
     let Source = document.getElementById("locale").value;
     let Amount = document.getElementById("amt").value;
-    // let food = document.getElementById("food").value;
-    // let trans = document.getElementById("trans").value;
-    // let clothes = document.getElementById("clothes").value;
-    // let tech = document.getElementById("tech").value;
-    // let hotel = document.getElementById("hotel").value;
-    // let other = document.getElementById("other").value;
     let Date = document.getElementById("date").value;
 
     firebase.auth().onAuthStateChanged(user => {
@@ -32,12 +26,6 @@ function addFavourite() {
     console.log("in");
     let source = document.getElementById("locale").value;
     let amount = document.getElementById("amt").value;
-    // let food = document.getElementById("food").value;
-    // let trans = document.getElementById("trans").value;
-    // let clothes = document.getElementById("clothes").value;
-    // let tech = document.getElementById("tech").value;
-    // let hotel = document.getElementById("hotel").value;
-    // let other = document.getElementById("other").value;
     let date = document.getElementById("date").value;
 
     firebase.auth().onAuthStateChanged(user => {
