@@ -1,7 +1,7 @@
 function addSavings() {
     console.log("in");
     let Name = document.getElementById("name").value;
-    let Amount = document.getElementById("savingsAmount").value;
+    let SavingsAmount = document.getElementById("savingsAmount").value;
     let Date = document.getElementById("date").value;
     let Contributions = document.getElementById("contributions").value;
 
@@ -13,7 +13,7 @@ function addSavings() {
             db.collection("users").doc(user.uid).collection("savings").add({
                 name: Name,
                 userID: userID,
-                amount: Amount,
+                amount: SavingsAmount,
                 date: Date,
                 contributions: Contributions
             }).then(() => {

@@ -42,39 +42,36 @@
 
     <nav id="navbarPlaceholder"></nav>
 
-    <div id="container">
-        <h1>Savings</h1>
+    <div id="savingsBody">
+        <h1>Savings Goals</h1>
 
-        <div id="newGoal">
-            <p>New Goal</p>
-
-            <div id="amount" class="round">
-                <p>$0.00</span> / $0.00</span></p>
+        <div class="container favourites-title">
+          <div class="container">
+            <a href="addSavings.html" class="btn btn-2 btn-lg button round">
+                Add
+            </a>
+            <div id="favouriteCardGroup" class="row row-cols-auto">
             </div>
-
-            <div id="date">
-                <p>Started [date] | Achieve by [date]</p>
-            </div>
-
-            <div id="edit">
-                <a class="btn btn-2 btn-lg round" href="addSavings.html" role="button">Edit</a>
-            </div>
-
-            <div id="contribute">
-                <a class="btn btn-2 btn-lg round" href="contributeSavings.html" role="button">Contribute</a>
-            </div>
-
-            <div id="delete">
-                <button class="btn btn-outline-danger btn-lg round" type="submit">Delete</button>
-            </div>
-
+          </div>
         </div>
-        
-        <a href="addSavings.html" class="btn btn-2 btn-lg button round">
-            Add
-        </a>
 
-    </div>
+        <template id="favouritestemplate">
+          <div class="card">
+            <img class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">placeholder</h5>
+              <p class="card-length">placeholder</p>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" class="btn button round actual-button bg-BCIT" id="get-details delete-button" style="float: right">Delete</a>
+              <a href="#" class="btn button round acual-button bg-BCIT" id="get-details edit-button" style="float: right">Edit</a>
+              <a onclick="alert('Added to expenses!');addExistingFavourite()" href="#" class="btn button round actual-button bg-BCIT" id="get-details add-button" style="float: right">Add</a>
+            </div>
+          </div>
+        </template>
+    
+
+      </div>
     
     <nav id="footerPlaceholder"></nav>
 
@@ -85,6 +82,7 @@
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY27.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/savingsGoal.js"></script>
 
 </body>
 
