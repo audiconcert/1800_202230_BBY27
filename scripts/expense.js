@@ -36,9 +36,11 @@ showFavourite();
 
 function addExistingFavourite() {
     console.log("in");
-    let Source = document.getElementById("ctitle");
-    let Amount = document.getElementById("ctext");
-    let Date = document.getElementById("clength");
+    var i = 1;
+    let Source = document.getElementById("ctitle")
+    let Amount = document.getElementById("ctext")
+    let Date = document.getElementById("clength")
+
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);

@@ -33,6 +33,10 @@ h1 {
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
     justify-content: center;
+}   
+.edit-budget {
+    grid-column: 2 / span 1;
+    grid-row: 2;
 }
 
 .favourites-template {
