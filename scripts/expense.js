@@ -16,9 +16,11 @@ function showFavourite() {
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
+                        var date = doc.data().date;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
                         testFavouriteCard.querySelector('.card-title').innerHTML = "$" + amount;
                         testFavouriteCard.querySelector('.card-length').innerHTML = source;
+                        testFavouriteCard.querySelector('.card-text').innerHTML = date;
                         favouriteCardGroup.appendChild(testFavouriteCard);
                     })
                 })
