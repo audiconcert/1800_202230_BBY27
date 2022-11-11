@@ -70,47 +70,6 @@ a {
 .welcome-back>h1 {
     font-size: 250%;
 }
-
-.quick-analytics-home {
-    text-decoration: none;
-    color: rgb(108, 184, 127);
-}
-
-.qa-grid {
-    grid-template-areas:
-        'qa-heading qa-heading qa-heading qa-heading'
-        'ernie qa-description qa-description qa-description';
-    display: grid;
-    grid-gap: 0px;
-    border: 2px solid;
-    align-content: center;
-    border-radius: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.qa-logo {
-    grid-area: qa-logo;
-    align-self: center;
-}
-
-.qa-heading {
-    margin-top: 2%;
-    grid-area: qa-heading;
-    font-size: 175%;
-    letter-spacing: 6px;
-    font-weight: bold;
-    align-self: start;
-    justify-self: center;
-}
-
-.qa-description {
-    grid-area: qa-description;
-    font-size: 150%;
-    margin-left: 20px;
-    align-self: center;
-}
-
 .savings-home {
     text-decoration: none;
     color: #5dab7f;
@@ -118,8 +77,7 @@ a {
 
 .save-grid {
     grid-template-areas:
-        'save-heading save-heading save-heading save-heading'
-        'save-logo save-logo save-description save-description';
+        'save-logo save-logo save-heading save-heading';
     display: grid;
     grid-gap: 0px;
     border: 2px solid;
@@ -130,9 +88,10 @@ a {
 }
 
 span {
-    grid-area: save-heading;
+    grid-area: save-logo;
     align-self: center;
     margin-left: 5%;
+    justify-self: center;
 }
 
 .save-heading {
@@ -141,15 +100,9 @@ span {
     font-size: 175%;
     letter-spacing: 6px;
     font-weight: bold;
-    justify-self: center;
-    align-self: center;
+    justify-self: start;
+    align-self: start;
 }
-
-.save-description {
-    grid-area: save-description;
-    font-size: 150%;
-}
-
 .mainBody {
     overflow: auto;
 }
