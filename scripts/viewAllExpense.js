@@ -19,7 +19,7 @@ function showExpenses() {
 
                         //update title and text and image
                         newcard.querySelector('.card-title').innerHTML = source;
-                        newcard.querySelector('.card-text').innerHTML = amount;
+                        newcard.querySelector('.card-text').innerHTML = "$" + amount;
                         newcard.querySelector('.card-length').innerHTML = date;
 
                         //give unique ids to all elements for future use

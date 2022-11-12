@@ -17,14 +17,17 @@ function showFavourite() {
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
+                        var category = doc.data().category;
                         var date = doc.data().date;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
                         testFavouriteCard.querySelector('.card-title').innerHTML = "$" + amount;
                         testFavouriteCard.querySelector('.card-length').innerHTML = source;
+                        testFavouriteCard.querySelector('.card-length2').innerHTML = category;
                         testFavouriteCard.querySelector('.card-text').innerHTML = date;
                         testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                         testFavouriteCard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                         testFavouriteCard.querySelector('.card-length').setAttribute("id", "clength" + i);
+                        testFavouriteCard.querySelector('.card-length2').setAttribute("id", "clength" + i);
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
                     })
@@ -35,9 +38,9 @@ function showFavourite() {
 showFavourite();
 
 function addExistingFavourite() {
-    let Amount = document.getElementById("ctitle");
-    let Date = document.getElementById("ctext");
-    let Source = document.getElementById("clength");
+    let Amount = document.getElementById("ctitle" + i);
+    let Date = document.getElementById("ctext" + i);
+    let Source = document.getElementById("clength" + i);
     console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -52,4 +55,8 @@ function addExistingFavourite() {
             })
         }
     })
+}
+
+function setFavouriteData(id){
+    localStorage.setItem ('hikeID', id);
 }

@@ -40,67 +40,37 @@
   <nav id="navbarPlaceholder"></nav>
 
 
-  <div id="container">
-    <h1>New Expense</h1>
-    <div id="source">
-      <p>Where did you spend your money?</p>
-      <input id="locale" class="form-control form-control-lg round" type="text" placeholder="Name"
-        aria-label=".form-control-lg example" required="required" />
+  <form action="expense.html" class="container" id="form">
+    <h1>Add Expense</h1>
+    <div class="form-group form-source">
+      <label class="label" for="exampleFormControlInput1">Where did you spend money?</label>
+      <input name="source" type="text" class="form-control round required" id="locale" placeholder="Source" required="required">
     </div>
-
-    <div id="amount">
-      <p>How much did you spend?</p>
-      <input id="amt" class="form-control form-control-lg round" type="number" placeholder="$"
-        aria-label=".form-control-lg example" required="required" />
+    <div class="form-group form-amount">
+      <label class="label" for="exampleFormControlInput1">How much did you spend?</label>
+      <input name="amount" type="number" min="0" max="100000000" step="0.01" class="form-control round required" id="amt" placeholder="$" required="required">
     </div>
-
-
-    <div id="dropdown">
-      <button class="btn bg-BCIT dropdown-toggle round" type="button" id="dropdownMenuExpense" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        What kind of expense is this?
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <li><button class="dropdown-item" type="button" id="food">Food & Beverage</button></li>
-        <li><button class="dropdown-item" type="button" id="food">Clothes</button></li>
-        <li><button class="dropdown-item" type="button" id="trans">Transportation (Gas, insurance, bus etc)</button>
-        </li>
-        <li><button class="dropdown-item" type="button" id="tech">Games or Technology</button></li>
-        <li><button class="dropdown-item" type="button" id="hotel">Accomodation (Clubs, hotels etc)</button></li>
-        <li><button class="dropdown-item" type="button" id="other">Other</button></li>
-      </ul>
+    <div class="form-group form-category">
+      <label class="label" for="exampleFormControlSelect1">What kind of purchase was it?</label>
+      <select name="category" class="form-control round required" id="category" required="required">
+        <option>Food & Beverage</option>
+        <option>Clothing</option>
+        <option>Technology (Games/MTX, Hardware etc)</option>
+        <option>Hotels, Clubs, Gambling etc</option>
+        <option>Transportation (Gas, Insurance etc)</option>
+        <option>Subscription (Netflix, Spotify etc)</option>
+        <option>Other</option>
+      </select>
     </div>
-
-
-    <div id="periodExpense">
-      <p>When did you spend this money and how often do you spend it?</p>
-      <div class="input-group mb-3">
-        <input id="date" type="date" class="form-control round" aria-label="Text input with dropdown button">
-        <button class="btn btn-outline-secondary dropdown-toggle round" type="button" data-bs-toggle="dropdown"
-          aria-expanded="false">Frequency</button>
-        <ul class="dropdown-menu dropdown-menu-end round">
-          <li><a class="dropdown-item" href="#">One Time</a></li>
-          <li><a class="dropdown-item" href="#">Weekly</a></li>
-          <li><a class="dropdown-item" href="#">Bi-Weekly</a></li>
-          <li><a class="dropdown-item" href="#">Monthly</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Customize</a></li>
-        </ul>
-      </div>
+    <div class="form-group form-date">
+      <label class="label" for="exampleFormControlInput1">When was it?</label>
+      <input name="date" type="date" class="form-control round required" id="date" required="required">
     </div>
-
-    <a onclick="alert('Added to favourites!');addFavourite();addExpense()" type="button" class="btn btn-2 favourites round">Add to
-      Favourites</a>
-
-    <a type="submit" onclick="addExpense()" class="btn btn-2 btn-lg button round">
-      Save
-    </a>
-
-  </div>
-
-
+    <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round">
+    </input>
+    <input id="save" value="Add + Save" type="submit"
+      class="btn btn-2 btn-lg form-favourites favourites round"></input>
+  </form>
   <nav id="footerPlaceholder"></nav>
 
   <!---------------------------------------------->
