@@ -13,7 +13,6 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-<<<<<<< HEAD
                 source: Source,
                 userID: userID,
                 amount: parseFloat(Amount),
@@ -23,7 +22,7 @@ form.addEventListener('submit', (e) => {
             })
         };
     });
-}
+});
 
 
 function addFavourite() {
@@ -46,7 +45,6 @@ function addFavourite() {
         };
     });
 }
-=======
                 source: form.source.value,
                 amount: parseFloat(form.amount.value),
                 category: form.category.value,
@@ -58,7 +56,6 @@ function addFavourite() {
         }
     })
 })
->>>>>>> 8daf371bc642e5494a76d238edf4bf3e681e7c28
 
 favourite.addEventListener('click', (e) => {
     if (form.amount.value > ''
