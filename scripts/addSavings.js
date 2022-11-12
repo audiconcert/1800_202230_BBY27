@@ -13,9 +13,9 @@ function addSavings() {
             db.collection("users").doc(user.uid).collection("savings").add({
                 name: Name,
                 userID: userID,
-                amount: SavingsAmount,
+                amount: parseFloat(SavingsAmount),
                 date: Date,
-                contributions: Contributions
+                contributions: parseFloat(Contributions)
             }).then(() => {
                 window.location.href = "savingsGoal.html"; //new line added
             })

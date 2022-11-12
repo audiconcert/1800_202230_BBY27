@@ -11,7 +11,7 @@ function addIncome() {
             db.collection("users").doc(user.uid).collection("income").add({
                 name: Name,
                 userID: userID,
-                amount: Amount,
+                amount: parseFloat(Amount),
             }).then(() => {
                 window.location.href = "income.html"; //new line added
             })

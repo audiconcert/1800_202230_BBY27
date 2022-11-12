@@ -1,4 +1,4 @@
-
+var i = 1;
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
     let favouriteCardGroup = document.getElementById("favouriteCardGroup");
@@ -13,7 +13,7 @@ function showFavourite() {
                 .limit(10)
                 .get()
                 .then(function (snap) {
-                    var i = 1;
+
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
@@ -35,11 +35,10 @@ function showFavourite() {
 showFavourite();
 
 function addExistingFavourite() {
-    console.log("in");
-    let Source = document.getElementById("ctitle")
-    let Amount = document.getElementById("ctext")
-    let Date = document.getElementById("clength")
-
+    let Amount = document.getElementById("ctitle");
+    let Date = document.getElementById("ctext");
+    let Source = document.getElementById("clength");
+    console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
@@ -48,9 +47,9 @@ function addExistingFavourite() {
             currentUser.collection("expenses").add({
                 source: Source,
                 userID: userID,
-                amount: Amount,
+                amount: parseFloat(Amount),
                 date: Date
             })
-        };
-    });
+        }
+    })
 }

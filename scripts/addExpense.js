@@ -1,19 +1,21 @@
+
+
 function addExpense() {
     console.log("in");
     let Source = document.getElementById("locale").value;
     let Amount = document.getElementById("amt").value;
     let Date = document.getElementById("date").value;
+    
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
                 source: Source,
                 userID: userID,
-                amount: Amount,
-                date: Date
+                amount: parseFloat(Amount),
+                date: firebase.firestore.Timestamp.fromDate(new Date(Date))
             }).then(() => {
                 window.location.href = "expense.html"; //new line added
             })
