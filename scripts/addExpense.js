@@ -40,11 +40,7 @@ function addFavourite() {
                 source: source,
                 userID: user.uid,
                 amount: amount,
-                date: date
-            })
-        };
-    });
-}
+                date: date,
                 source: form.source.value,
                 amount: parseFloat(form.amount.value),
                 category: form.category.value,
@@ -55,7 +51,7 @@ function addFavourite() {
             form.date.value = ''
         }
     })
-})
+};
 
 favourite.addEventListener('click', (e) => {
     if (form.amount.value > ''
