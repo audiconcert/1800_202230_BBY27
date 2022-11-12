@@ -40,8 +40,6 @@ function addFavourite() {
                 userID: user.uid,
                 amount: amount,
                 date: date
-            }).then(() => {
-                window.location.href = "expense.html"; //new line added
             })
         };
     });

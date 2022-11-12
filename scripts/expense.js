@@ -13,7 +13,7 @@ function showFavourite() {
                 .limit(10)
                 .get()
                 .then(function (snap) {
-
+               
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
@@ -35,9 +35,13 @@ function showFavourite() {
 showFavourite();
 
 function addExistingFavourite() {
-    let Amount = document.getElementById("ctitle");
-    let Date = document.getElementById("ctext");
-    let Source = document.getElementById("clength");
+    const Amount = document.querySelector('.card-title');
+    const Source = document.querySelector('.card-length');
+    const Date = document.querySelector('.card-text');
+    let title = Amount.getAttribute("ctitle"+i);
+    let length = Source.getAttribute("clength"+i);
+    let text = Date.getAttribute("ctext"+i);
+
     console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -45,10 +49,10 @@ function addExistingFavourite() {
             var userID = user.uid;
             console.log(userID);
             currentUser.collection("expenses").add({
-                source: Source,
+                source: length,
                 userID: userID,
-                amount: parseFloat(Amount),
-                date: Date
+                amount: parseFloat(title),
+                date: text
             })
         }
     })
