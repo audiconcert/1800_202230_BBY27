@@ -45,6 +45,26 @@
   </head>
 
   <body>
+
+    <template id="contributeTemplate">
+      <div class="card">
+        <h1 class="goalName">placeholder</h1>
+        <p>How much do you want to contribute?</p>
+        <div class="input-group input-group-lg">
+          <input
+          type="number"
+          pattern="[0-9]"
+          id="contribution"
+          class="form-control input"
+          aria-label="Dollar amount (with dot and two decimal places)"
+        />
+        <span class="input-group-text goalAmount"><b>placeholder</b></span>
+        </div>
+                      
+
+      </div>
+
+    </template>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -52,20 +72,13 @@
     <nav id="navbarPlaceholder"></nav>
 
     <div id="container">
-      <h1 id="goal">Goal Name</h1>
 
-      <div id="input">
-        <p>How much do you want to contribute?</p>
-        <div class="input-group input-group-lg">
-          <input
-            type="number"
-            pattern="[0-9]"
-            class="form-control"
-            aria-label="Dollar amount (with dot and two decimal places)"
-          />
-          <span class="input-group-text" id="goalAmount"><b>/ placeholder</b></span>
+      <div class="container">
+        <div id="contributeGroup"> 
         </div>
       </div>
+
+      
 
       <a href="savingsGoal.html" class="btn btn-2 btn-lg button round">
         Save
@@ -84,3 +97,27 @@
     <script src="./scripts/contributeSavings.js"></script>
   </body>
 </html>
+
+
+           <!-- <div id="goalGroup">
+
+                  <template id="goalTemplate">
+                    <h1 class="goalName">Goal Name</h1>
+                    <p>How much do you want to contribute?</p>
+            
+                    <div class="input-group input-group-lg">
+            
+                      <!-- <input
+                        type="number"
+                        pattern="[0-9]"
+                        id="contribution"
+                        class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)"
+                      />
+                      <span class="input-group-text goalAmount"><b>placeholder</b></span>
+                       -->
+                    </div>
+            
+                  </template>
+
+                </div> -->

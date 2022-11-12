@@ -10,7 +10,7 @@ function addSavings() {
             var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             console.log(userID);
-            db.collection("users").doc(user.uid).collection("savings").add({
+            currentUser.collection("savings").add({
                 name: Name,
                 userID: userID,
                 amount: SavingsAmount,
