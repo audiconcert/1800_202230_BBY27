@@ -1,25 +1,26 @@
-function addSavings() {
-    console.log("in");
-    let Name = document.getElementById("name").value;
-    let SavingsAmount = document.getElementById("savingsAmount").value;
-    let Date = document.getElementById("date").value;
-    let Contributions = document.getElementById("contributions").value;
+const name = document.getElementById('name')
+const amount = document.getElementById('amt')
+const date = document.getElementById('date')
+const contributions = document.getElementById('contributions')
+const form = document.getElementById('form')
 
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
             var userID = user.uid;
             console.log(userID);
-            currentUser.collection("savings").add({
-                name: Name,
-                userID: userID,
-                amount: parseFloat(SavingsAmount),
-                date: Date,
-                contributions: parseFloat(Contributions)
-            }).then(() => {
-                window.location.href = "savingsGoal.html"; //new line added
-            })
-        };
-    });
-}
-
+            db.collection("users").doc(user.uid).collection("savings").add({
+                name: form.name.value,
+                amount: parseFloat(form.amount.value),
+                contributions: parseFloat(form.contributions.value),
+                date: form.date.value,
+            });
+            form.name.value = ''
+            form.amount.value = ''
+            form.date.value = ''
+            form.contributions.value = ''
+        }
+    })
+})

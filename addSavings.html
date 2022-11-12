@@ -51,61 +51,27 @@
 
     <nav id="navbarPlaceholder"></nav>
 
-    <div id="container">
-      <h1>New Savings Goal</h1>
-
-      <div id="source">
-        <p>What would you like to name your goal?</p>
-        <input
-        class="form-control form-control-lg round"
-        id="name"
-        type="text"
-        placeholder="Name"
-        required="required"
-        aria-label=".form-control-lg example"
-        />
+    <form action="expense.html" class="container" id="form">
+      <h1>Add Savings Goal</h1>
+      <div class="form-group form-source">
+        <label class="label" for="exampleFormControlInput1">What are you saving for?</label>
+        <input name="name" type="text" class="form-control round required" id="name" placeholder="Name" required="required">
       </div>
-      
-      <div id="amount">
-        <p>How much do you want to save?</p>
-        <input
-        class="form-control form-control-lg round"
-        id="savingsAmount"
-        type="number"
-        placeholder="$"
-        required="required"
-        aria-label=".form-control-lg example"
-        />
+      <div class="form-group form-amount">
+        <label class="label" for="exampleFormControlInput1">How much do you want to save?</label>
+        <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="100000000" step=”any” class="form-control round required" id="amt" placeholder="$" required="required">
       </div>
-
-      <div id="contribute">
-        <p>How much have you already saved?</p>
-        <input
-        class="form-control form-control-lg round"
-        id="contributions"
-        type="number"
-        placeholder="$"
-        required="required"
-        aria-label=".form-control-lg example"
-        />
+      <div class="form-group form-category">
+        <label class="label" for="exampleFormControlInput1">How much have you already saved?</label>
+        <input name="contributions" type="number" min="0" max="100000000" step=”any” class="form-control round required" id="contributions" placeholder="$" required="required">
       </div>
-      
-      <div id="period">
-        <p>When do you want to achieve this goal by?</p>
-        <input
-        class="form-control form-control-lg round"
-        type="date"
-        id="date"
-        placeholder=".form-control-lg"
-        aria-label=".form-control-lg example"
-        />
+      <div class="form-group form-date">
+        <label class="label" for="exampleFormControlInput1">When do you want to achieve your goal by?</label>
+        <input name="date" type="date" class="form-control round required"  id="date" required="required">
       </div>
-
-      <a onclick="addSavings()" class="btn btn-2 btn-lg button round">
-        Save
-      </a>
-      
-    </div>
+      <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round">
+      </input>
+    </form>
 
     <nav id="footerPlaceholder"></nav>
 
