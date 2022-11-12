@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
                 source: form.source.value,
-                amount: form.amount.value,
+                amount: parseFloat(form.amount.value),
                 category: form.category.value,
                 date: form.date.value
             });
@@ -53,52 +53,3 @@ favourite.addEventListener('click', (e) => {
         })
     }
 })
-
-// function addExpense() {
-//     console.log("in");
-//     let Source = document.getElementById("locale").value;
-//     let Amount = document.getElementById("amt").value;
-//     let Date = document.getElementById("date").value;
-//     let Category = document.getElementById("category").value;
-
-
-//     firebase.auth().onAuthStateChanged(user => {
-//         if (user) {
-//             var userID = user.uid;
-//             console.log(userID);
-//             db.collection("users").doc(user.uid).collection("expenses").add({
-//                 source: Source,
-//                 amount: parseFloat(Amount),
-//                 date: Date,
-//                 category: Category
-//             }).then(() => {
-//                 window.location.href = "expense.html"; //new line added
-//             })
-//         };
-//     });
-// }
-
-
-// function addFavourite() {
-//     console.log("in");
-//     let source = document.getElementById("locale").value;
-//     let amount = document.getElementById("amt").value;
-//     let date = document.getElementById("date").value;
-//     let Category = document.getElementById("category").value;
-
-//     firebase.auth().onAuthStateChanged(user => {
-//         if (user) {
-//             var userID = user.uid;
-//             console.log(userID);
-//             db.collection("users").doc(user.uid).collection("favourites").add({
-//                 source: source,
-//                 amount: amount,
-//                 date: date,
-//                 category: Category
-//             }).then(() => {
-//                 window.location.href = "expense.html"; //new line added
-//             })
-//         };
-//     });
-// }
-
