@@ -39,13 +39,13 @@ favourite.addEventListener('click', (e) => {
                     source: form.source.value,
                     amount: parseFloat(amount.value),
                     category: form.category.value,
-                    date: form.date.value
+                    date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
                 });
                 db.collection("users").doc(user.uid).collection("expenses").add({
                     source: form.source.value,
                     amount: parseFloat(amount.value),
                     category: form.category.value,
-                    date: form.date.value
+                    date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
                 });
                 form.source.value = ''
                 form.amount.value = ''
