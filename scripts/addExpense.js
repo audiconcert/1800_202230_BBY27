@@ -13,11 +13,11 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                source: Source,
+                source: source,
                 userID: userID,
-                amount: parseFloat(Amount),
+                amount: parseFloat(amount),
                 date: firebase.firestore.Timestamp.fromDate(new Date(Date))
-            })
+            });
         };
     })
 });
