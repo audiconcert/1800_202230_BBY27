@@ -4,6 +4,7 @@ const date = document.getElementById('date')
 const form = document.getElementById('form')
 
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
@@ -11,9 +12,9 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("income").add({
-                name: form.name.value,
-                amount: parseFloat(form.amount.value),
-                date: form.date.value,
+                name: name.value,
+                amount: parseFloat(amount.value),
+                date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
             });
             form.name.value = ''
             form.amount.value = ''

@@ -15,7 +15,7 @@ form.addEventListener('submit', (e) => {
                 name: Name.value,
                 amount: parseFloat(amount.value),
                 contributions: parseFloat(contributions.value),
-                date: date.value,
+                date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
             });
             Name.value = ''
             amount.value = ''
