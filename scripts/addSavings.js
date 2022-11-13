@@ -22,5 +22,5 @@ form.addEventListener('submit', (e) => {
             date.value = ''
             contributions.value = ''
         }
-    })--
+    })
 })
