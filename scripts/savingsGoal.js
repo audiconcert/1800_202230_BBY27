@@ -11,7 +11,7 @@ function showGoals() {
             currentUser.collection("savings")
                 .get()
                 .then(function (snap) {
-                    var i =1;
+                  
                     snap.forEach(function (doc) {
                         var goalAmount = doc.data().amount;
                         var contributions = doc.data().contributions;
@@ -20,15 +20,14 @@ function showGoals() {
                         testFavouriteCard.querySelector('.card-title1').innerHTML = "$" + contributions;
                         testFavouriteCard.querySelector('.card-title2').innerHTML = "/  $" + goalAmount;
                         testFavouriteCard.querySelector('.card-length').innerHTML = name;
-                        // testFavouriteCard.querySelector('card-title1').setAttribute("id", "ctitle1" +i);
-
-                        // testFavouriteCard.querySelector('.contribute').onclick = () => 
+                    
                         favouriteCardGroup.appendChild(testFavouriteCard);
-                    })
-                })
-        }
-    })
-}
+                    });
+                });
+            };
+        
+    });
+};
 showGoals();
 
 // function setGoalData(id) {
