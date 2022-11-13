@@ -35,13 +35,13 @@ favourite.addEventListener('click', (e) => {
                 console.log(userID);
                 db.collection("users").doc(user.uid).collection("favourites").add({
                     source: form.source.value,
-                    amount: form.amount.value,
+                    amount: parseFloat(amount.value),
                     category: form.category.value,
                     date: form.date.value
                 });
                 db.collection("users").doc(user.uid).collection("expenses").add({
                     source: form.source.value,
-                    amount: form.amount.value,
+                    amount: parseFloat(amount.value),
                     category: form.category.value,
                     date: form.date.value
                 });
