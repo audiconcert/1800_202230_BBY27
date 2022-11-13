@@ -13,15 +13,17 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                source: source,
-                userID: userID,
-                amount: parseFloat(amount),
+                source: source.value,
+                userID: userID.value,
+                amount: parseFloat(amount.value),
                 date: firebase.firestore.Timestamp.fromDate(new Date(Date))
             });
+            form.source.value = ''
+            form.amount.value = ''
+            form.date.value = ''
         };
     })
-});
-
+})
 favourite.addEventListener('click', (e) => {
     if (form.amount.value > ''
         && form.source.value > ''
@@ -33,13 +35,13 @@ favourite.addEventListener('click', (e) => {
                 console.log(userID);
                 db.collection("users").doc(user.uid).collection("favourites").add({
                     source: form.source.value,
-                    amount: form.amount.value,
+                    amount: parseFloat(amount.value),
                     category: form.category.value,
                     date: form.date.value
                 });
                 db.collection("users").doc(user.uid).collection("expenses").add({
                     source: form.source.value,
-                    amount: form.amount.value,
+                    amount: parseFloat(amount.value),
                     category: form.category.value,
                     date: form.date.value
                 });
