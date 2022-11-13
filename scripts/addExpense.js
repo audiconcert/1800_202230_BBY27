@@ -22,10 +22,11 @@ form.addEventListener('submit', (e) => {
             form.source.value = ''
             form.amount.value = ''
             form.date.value = ''
-            console.log(date)
         };
     })
 })
+
+
 favourite.addEventListener('click', (e) => {
     if (form.amount.value > ''
         && form.source.value > ''

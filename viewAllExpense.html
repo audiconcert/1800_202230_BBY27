@@ -47,22 +47,21 @@
         <!-- Templates for general use, not displayed -->
         <template id="expenseCardTemplate">
             <div class="card py-2" style="width: 100%;">
-                <div class="card-body" >
-                    <h5 class="card-title" style="text-align:center;">Card title</h5>
-                    <p class="card-length">Card length</p>
-                    <br>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                <div class="card-body">
+                    <p class="card-amount" style="text-align:center;font-size: 1.8em;"></p>
+                    <h5 class="card-title" style="text-align:center;font-size: 1.5em;"></h5>
+                    <p class="card-category" style="text-align:center;color: rgb(107, 137, 110);"></p>
+                    <p class="card-date" style="text-align:center;color: rgb(107, 137, 110);"></p>
                 </div>
                 <div class="buttons">
                     <a onclick="alert('Added to expenses!');addExistingFavourite()"
-                      class="btn button round actual-button bg-BCIT" id="get-details delete-button"
-                      style="float: right">Add</a>
+                        class="btn button round actual-button bg-BCIT" id="get-details delete-button"
+                        style="float: right">Add</a>
                     <a href="#" class="btn button round acual-button bg-BCIT" id="get-details edit-button"
-                      style="float: right">Edit</a>
+                        style="float: right">Edit</a>
                     <a href="#" class="btn button round actual-button bg-BCIT" id="get-details add-button"
-                      style="float: right">Delete</a>
-                  </div>
+                        style="float: right">Delete</a>
+                </div>
             </div>
         </template>
 

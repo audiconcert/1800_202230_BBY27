@@ -1,4 +1,6 @@
 var i = 1;
+
+
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
     let favouriteCardGroup = document.getElementById("favouriteCardGroup");
@@ -18,16 +20,16 @@ function showFavourite() {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
                         var category = doc.data().category;
-                        var date = doc.data().date;
+                        var date = doc.data().date.toDate().toLocaleDateString();
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-title').innerHTML = "$" + amount;
-                        testFavouriteCard.querySelector('.card-length').innerHTML = source;
-                        testFavouriteCard.querySelector('.card-length2').innerHTML = category;
-                        testFavouriteCard.querySelector('.card-text').innerHTML = date;
-                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                        testFavouriteCard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                        testFavouriteCard.querySelector('.card-length').setAttribute("id", "clength" + i);
-                        testFavouriteCard.querySelector('.card-length2').setAttribute("id", "clength" + i);
+                        testFavouriteCard.querySelector('.card-amount').innerHTML = "$" + amount;
+                        testFavouriteCard.querySelector('.card-title').innerHTML = source;
+                        testFavouriteCard.querySelector('.card-category').innerHTML = category;
+                        testFavouriteCard.querySelector('.card-date').innerHTML = date;
+                        testFavouriteCard.querySelector('.card-amount').setAttribute("id", "ctitle" + i);
+                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctext" + i);
+                        testFavouriteCard.querySelector('.card-category').setAttribute("id", "clength" + i);
+                        testFavouriteCard.querySelector('.card-date').setAttribute("id", "clength" + i);
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
                     })
