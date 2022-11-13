@@ -13,15 +13,15 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                source: form.source.value,
-                amount: parseFloat(form.amount.value),
-                category: form.category.value,
-                // date: firebase.firestore.Timestamp.fromDate(new Date(date))
+                source: source.value,
+                userID: userID.value,
+                amount: parseFloat(amount.value),
+                date: firebase.firestore.Timestamp.fromDate(new Date(Date))
             });
             form.source.value = ''
             form.amount.value = ''
             form.date.value = ''
-        }
+        };
     })
 })
 favourite.addEventListener('click', (e) => {

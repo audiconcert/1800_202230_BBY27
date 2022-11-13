@@ -1,4 +1,4 @@
-const name = document.getElementById('name')
+const Name = document.getElementById('name')
 const amount = document.getElementById('amt')
 const date = document.getElementById('date')
 const contributions = document.getElementById('contributions')
@@ -12,15 +12,15 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("savings").add({
-                name: form.name.value,
-                amount: parseFloat(form.amount.value),
-                contributions: parseFloat(form.contributions.value),
-                date: form.date.value,
+                name: Name.value,
+                amount: parseFloat(amount.value),
+                contributions: parseFloat(contributions.value),
+                date: date.value,
             });
-            form.name.value = ''
-            form.amount.value = ''
-            form.date.value = ''
-            form.contributions.value = ''
+            Name.value = ''
+            amount.value = ''
+            date.value = ''
+            contributions.value = ''
         }
     })
 })
