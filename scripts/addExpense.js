@@ -2,9 +2,10 @@
 const source = document.getElementById('locale')
 const amount = document.getElementById('amt')
 const category = document.getElementById('category')
-const date = document.getElementById('date')
 const form = document.getElementById('form')
 const favourite = document.getElementById('save')
+var date = document.getElementById('date')
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -14,13 +15,14 @@ form.addEventListener('submit', (e) => {
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
                 source: source.value,
-                userID: userID.value,
+                category: form.category.value,
                 amount: parseFloat(amount.value),
-                date: firebase.firestore.Timestamp.fromDate(new Date(Date))
+                date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
             });
             form.source.value = ''
             form.amount.value = ''
             form.date.value = ''
+            console.log(date)
         };
     })
 })
