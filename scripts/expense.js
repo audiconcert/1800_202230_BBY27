@@ -20,7 +20,7 @@ function showFavourite() {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
                         var category = doc.data().category;
-                        var date = doc.data().date.toDate().toLocaleDateString();
+                        var date = doc.data().date;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
                         testFavouriteCard.querySelector('.card-amount').innerHTML = "$" + amount;
                         testFavouriteCard.querySelector('.card-title').innerHTML = source;
