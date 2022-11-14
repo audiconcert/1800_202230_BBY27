@@ -80,15 +80,20 @@ function deleteFavourite() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
-            var userID = user.uid;
-            console.log(userID);
-            currentUser.collection("favourites")
-                .get()
-                .delete().then(() => {
-                    console.log("Document successfully deleted!");
-                }).catch((error) => {
-                    console.error("Error removing document: ", error);
-                })
+            currentUser.collection("favourites").doc(/*the document*/).delete().then(() => {
+                alert("Expense successfully deleted.")
+            })
+        }
+    })
+}
+
+function deleteExpense() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var currentUser = db.collection("users").doc(user.uid);
+            currentUser.collection("expenses").doc(/*the document*/).delete().then(() => {
+                alert("Expense successfully deleted.")
+            })
         }
     })
 }
