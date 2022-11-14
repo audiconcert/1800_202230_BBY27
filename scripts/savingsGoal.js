@@ -18,15 +18,15 @@ function showGoals() {
                         var name = doc.data().name;
                         var date = doc.data().date;
                         let testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-title1').innerHTML = "$" + contributions;
-                        testFavouriteCard.querySelector('.card-title2').innerHTML = "/  $" + goalAmount;
-                        testFavouriteCard.querySelector('.card-length').innerHTML = name;
-                        testFavouriteCard.querySelector('.card-text').innerHTML = date;
+                        testFavouriteCard.querySelector('.card-contributions').innerHTML = "$" + contributions;
+                        testFavouriteCard.querySelector('.card-goalAmount').innerHTML = "/  $" + goalAmount;
+                        testFavouriteCard.querySelector('.card-name').innerHTML = name;
+                        testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
-                        testFavouriteCard.querySelector('.card-title1').setAttribute("id", "ctitle1" + i);
-                        testFavouriteCard.querySelector('.card-title2').setAttribute("id", "ctitle2" + i);
-                        testFavouriteCard.querySelector('.card-length').setAttribute("id", "clength" + i);
-                        testFavouriteCard.querySelector('.card-text').setAttribute("id", "ctext" + i);
+                        testFavouriteCard.querySelector('.card-contributions').setAttribute("id", "ctitle1" + i);
+                        testFavouriteCard.querySelector('.card-goalAmount').setAttribute("id", "ctitle2" + i);
+                        testFavouriteCard.querySelector('.card-name').setAttribute("id", "clength" + i);
+                        testFavouriteCard.querySelector('.card-date').setAttribute("id", "ctext" + i);
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
                     })
@@ -35,6 +35,5 @@ function showGoals() {
         
     })
 }
-
 showGoals();
                

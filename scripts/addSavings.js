@@ -17,10 +17,10 @@ form.addEventListener('submit', (e) => {
                 contributions: parseFloat(contributions.value),
                 date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
             });
-            Name.value = ''
-            amount.value = ''
-            date.value = ''
-            contributions.value = ''
-        }
+            form.Name.value = ''
+            form.amount.value = ''
+            form.date.value = ''
+            form.contributions.value = ''
+        };
     })
 })
