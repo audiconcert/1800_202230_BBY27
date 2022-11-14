@@ -26,8 +26,8 @@ function showGoals() {
 
                         testGoals.querySelector('.card-contributions').setAttribute("id", "ctitle1" + i);
                         testGoals.querySelector('.card-goalAmount').setAttribute("id", "ctitle2" + i);
-                        testGoals.querySelector('.card-name').setAttribute("id", "clength" + i);
-                        testGoals.querySelector('.card-date').setAttribute("id", "ctext" + i);
+                        testGoals.querySelector('.card-name').setAttribute("id", "cname" + i);
+                        testGoals.querySelector('.card-date').setAttribute("id", "cdate" + i);
                         goalsCardGroup.appendChild(testGoals);
                         i++;
                     })
@@ -37,4 +37,20 @@ function showGoals() {
     })
 }
 showGoals();
+
+// function editGoal() {
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//             var currentUser = db.collection("users").doc(user.uid);
+//             var userID = user.uid;
+//             console.log(userID);
+
+//             currentUser.collection("savings").get().then((userSaving) => {
+//                 var 
+//             })
+
+
+//         }
+//     })
+// }
                

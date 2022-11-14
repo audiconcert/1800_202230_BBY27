@@ -7,31 +7,63 @@ body {
     grid-auto-rows: 58px;
     justify-content: center;
 }
+h1 {
+    justify-self: center;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-weight: bold;
+}
+#form {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 11;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80% 10% 10%;
+}
+
+#savingsGoalFields {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
 .form-source {
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
     justify-self: center;
 }
 .form-amount {
-    grid-column: 2 / span 1;
-    grid-row: 4;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
     justify-self: center;
 }
 .form-category {
-    grid-column: 2 / span 1;
-    grid-row: 6;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
     justify-self: center;
 }
 .form-date {
-    grid-column: 2 / span 1;
-    grid-row: 8;
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
     justify-self: center;
 }
 .form-add {
-    grid-column: 2 / span 1;
-    grid-row: 10;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
     width: 80vw;
     justify-self: center;
+}
+#add {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+#save {
+    grid-column: 1 / span 1; 
+    grid-row: 3 / span 1;
 }
 .form-favourites {
     grid-column: 2 / span 1;
@@ -39,11 +71,7 @@ body {
     width: 80vw;
     justify-self: center;
 }
-h1 {
-    justify-self: center;
-    grid-column: 2 / span 1;
-    font-weight: bold;
-}
+
 .form-control {
     width: 80vw;
     height: 50px;
