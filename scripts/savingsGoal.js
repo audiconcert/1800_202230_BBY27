@@ -1,4 +1,5 @@
 var i = 1;
+
 function showGoals() {
     let favouritestemplate = document.getElementById("goalstemplate");
     let favouriteCardGroup = document.getElementById("goalsCardGroup");
