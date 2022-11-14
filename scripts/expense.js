@@ -15,7 +15,7 @@ function showFavourite() {
                 .limit(10)
                 .get()
                 .then(function (snap) {
-
+                   
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
@@ -26,10 +26,17 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-title').innerHTML = source;
                         testFavouriteCard.querySelector('.card-category').innerHTML = category;
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
-                        testFavouriteCard.querySelector('.card-amount').setAttribute("id", "ctitle" + i);
-                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctext" + i);
-                        testFavouriteCard.querySelector('.card-category').setAttribute("id", "clength" + i);
-                        testFavouriteCard.querySelector('.card-date').setAttribute("id", "clength" + i);
+
+                        // testFavouriteCard.querySelector('.card-amount').setAttribute("id", "camount" + i);
+                        // testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+                        // testFavouriteCard.querySelector('.card-category').setAttribute("id", "ccategory" + i);
+                        // testFavouriteCard.querySelector('.card-date').setAttribute("id", "cdate" + i);
+
+                        testFavouriteCard.querySelector('.card-amount').setAttribute("id", amount);
+                        testFavouriteCard.querySelector('.card-title').setAttribute("id", source);
+                        testFavouriteCard.querySelector('.card-category').setAttribute("id", category);
+                        testFavouriteCard.querySelector('.card-date').setAttribute("id", date);
+
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
                     })
@@ -40,12 +47,14 @@ function showFavourite() {
 showFavourite();
 
 function addExistingFavourite() {
-    const Amount = document.querySelector('.card-title');
-    const Source = document.querySelector('.card-length');
-    const Date = document.querySelector('.card-text');
-    let title = Amount.getAttribute("ctitle" + i);
-    let length = Source.getAttribute("clength" + i);
-    let text = Date.getAttribute("ctext" + i);
+
+
+    const Amount = document.querySelector('.card-amount').getAttribute("id");
+    const Source = document.querySelector('.card-title').getAttribute("id");
+    const Date = document.querySelector('.card-date').getAttribute("id");
+    // let title = Amount.getAttribute("camount" + i);
+    // let length = Source.getAttribute("ctitle" + i);
+    // let text = Date.getAttribute("cdate" + i);
 
     console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
@@ -54,14 +63,19 @@ function addExistingFavourite() {
             var userID = user.uid;
             console.log(userID);
             currentUser.collection("expenses").add({
-                source: length,
+                source: Source,
                 userID: userID,
-                amount: parseFloat(title),
-                date: text
+                amount: parseFloat(Amount),
+                date: Date
             })
         }
     })
 }
+
+
+
+
+
 function deleteFavourite() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
