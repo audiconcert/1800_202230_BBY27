@@ -1,8 +1,8 @@
 var i = 1;
 
 function showGoals() {
-    let favouritestemplate = document.getElementById("goalstemplate");
-    let favouriteCardGroup = document.getElementById("goalsCardGroup");
+    let goalsTemplate = document.getElementById("goalsTemplate");
+    let goalsCardGroup = document.getElementById("goalsCardGroup");
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -18,17 +18,17 @@ function showGoals() {
                         var contributions = doc.data().contributions;
                         var name = doc.data().name;
                         var date = doc.data().date;
-                        let testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-contributions').innerHTML = "$" + contributions;
-                        testFavouriteCard.querySelector('.card-goalAmount').innerHTML = "/  $" + goalAmount;
-                        testFavouriteCard.querySelector('.card-name').innerHTML = name;
-                        testFavouriteCard.querySelector('.card-date').innerHTML = date;
+                        let testGoals = goalsTemplate.content.cloneNode(true);
+                        testGoals.querySelector('.card-contributions').innerHTML = "$" + contributions;
+                        testGoals.querySelector('.card-goalAmount').innerHTML = "/  $" + goalAmount;
+                        testGoals.querySelector('.card-name').innerHTML = name;
+                        testGoals.querySelector('.card-date').innerHTML = date;
 
-                        testFavouriteCard.querySelector('.card-contributions').setAttribute("id", "ctitle1" + i);
-                        testFavouriteCard.querySelector('.card-goalAmount').setAttribute("id", "ctitle2" + i);
-                        testFavouriteCard.querySelector('.card-name').setAttribute("id", "clength" + i);
-                        testFavouriteCard.querySelector('.card-date').setAttribute("id", "ctext" + i);
-                        favouriteCardGroup.appendChild(testFavouriteCard);
+                        testGoals.querySelector('.card-contributions').setAttribute("id", "ctitle1" + i);
+                        testGoals.querySelector('.card-goalAmount').setAttribute("id", "ctitle2" + i);
+                        testGoals.querySelector('.card-name').setAttribute("id", "clength" + i);
+                        testGoals.querySelector('.card-date').setAttribute("id", "ctext" + i);
+                        goalsCardGroup.appendChild(testGoals);
                         i++;
                     })
                 })
