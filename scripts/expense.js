@@ -1,4 +1,4 @@
-var i = 1;
+
 
 
 function showFavourite() {
@@ -15,27 +15,22 @@ function showFavourite() {
                 .limit(10)
                 .get()
                 .then(function (snap) {
-                   
+                    var i = 1;
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
                         var category = doc.data().category;
                         var date = doc.data().date;
-                        let testFavouriteCard = favouritestemplate.content.cloneNode(true);
+                        var testFavouriteCard = favouritestemplate.content.cloneNode(true);
                         testFavouriteCard.querySelector('.card-amount').innerHTML = "$" + amount;
                         testFavouriteCard.querySelector('.card-title').innerHTML = source;
                         testFavouriteCard.querySelector('.card-category').innerHTML = category;
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
-
-                        // testFavouriteCard.querySelector('.card-amount').setAttribute("id", "camount" + i);
-                        // testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                        // testFavouriteCard.querySelector('.card-category').setAttribute("id", "ccategory" + i);
+              
+                        testFavouriteCard.querySelector('.card-amount').setAttribute("id", "camount" + i);
+                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "csource" + i);
+                        testFavouriteCard.querySelector('.card-category').setAttribute("id", "ccategory" + i);
                         // testFavouriteCard.querySelector('.card-date').setAttribute("id", "cdate" + i);
-
-                        testFavouriteCard.querySelector('.card-amount').setAttribute("id", amount);
-                        testFavouriteCard.querySelector('.card-title').setAttribute("id", source);
-                        testFavouriteCard.querySelector('.card-category').setAttribute("id", category);
-                        testFavouriteCard.querySelector('.card-date').setAttribute("id", date);
 
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
@@ -46,15 +41,13 @@ function showFavourite() {
 }
 showFavourite();
 
+
 function addExistingFavourite() {
 
-
-    const Amount = document.querySelector('.card-amount').getAttribute("id");
-    const Source = document.querySelector('.card-title').getAttribute("id");
-    const Date = document.querySelector('.card-date').getAttribute("id");
-    // let title = Amount.getAttribute("camount" + i);
-    // let length = Source.getAttribute("ctitle" + i);
-    // let text = Date.getAttribute("cdate" + i);
+    const Amount = testFavouriteCard.querySelector('.card-amount').getAttribute("id");
+    const Source = document.querySelector('.card-title').getAttribute();
+    const Category = document.querySelector('.card-category').getAttribute();
+    const Date = firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
 
     console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
@@ -64,6 +57,7 @@ function addExistingFavourite() {
             console.log(userID);
             currentUser.collection("expenses").add({
                 source: Source,
+                category: Category,
                 userID: userID,
                 amount: parseFloat(Amount),
                 date: Date
