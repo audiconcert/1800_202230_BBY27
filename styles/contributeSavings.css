@@ -2,16 +2,40 @@
     display:grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-auto-rows: 10vh;
-    margin-top: 3%;
-    
+    margin-top: 3%;  
 }
 
-#goalName {
+.formcontainer {
     grid-column: 2 / span 1;
+    grid-row: 1 / span 3;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 15% 80%;
+}
+.formcontainer p {
+    grid-column: 1;
+    grid-row: 2 / span 1;
+}
+
+.goalName {
+    grid-column: 1;
     grid-row: 1 / span 1;
-    justify-self: center;
+    text-align: center;
     font-size: 30pt;
     font-weight: bold;
+}
+
+.input {
+    grid-column: 1;
+    grid-row: 3 / span 1;
+}
+
+
+
+/* #contribution {
+    grid-column: 1;
+    grid-row: 2 / span 1;
 }
 
 #input {
@@ -26,4 +50,4 @@
 .button {
     grid-column: 2 / span 1;
     grid-row: 4 / span 1;
-}
+} */

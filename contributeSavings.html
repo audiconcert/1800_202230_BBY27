@@ -45,26 +45,6 @@
   </head>
 
   <body>
-
-    <template id="contributeTemplate">
-      <div class="card">
-        <h1 class="goalName">placeholder</h1>
-        <p>How much do you want to contribute?</p>
-        <div class="input-group input-group-lg">
-          <input
-          type="number"
-          pattern="[0-9]"
-          id="contribution"
-          class="form-control input"
-          aria-label="Dollar amount (with dot and two decimal places)"
-        />
-        <span class="input-group-text goalAmount"><b>placeholder</b></span>
-        </div>
-                      
-
-      </div>
-
-    </template>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -73,12 +53,20 @@
 
     <div id="container">
 
-      <div class="container">
-        <div id="contributeGroup"> 
+      <div class="formcontainer">
+        <h1 class="goalName">placeholder</h1>
+        <p>How much do you want to contribute?</p>
+        <div class="input-group input-group-lg contribution">
+          <input
+          type="number"
+          pattern="[0-9]"
+          id="contribution"
+          class="form-control"
+          aria-label="Dollar amount (with dot and two decimal places)"
+        />
+        <span class="input-group-text goalAmount"><b>placeholder</b></span>
         </div>
       </div>
-
-      
 
       <a href="savingsGoal.html" class="btn btn-2 btn-lg button round">
         Save

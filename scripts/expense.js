@@ -28,12 +28,16 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
               
                         testFavouriteCard.querySelector('.card-amount').setAttribute("id", "camount" + i);
-                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "csource" + i);
+                        testFavouriteCard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                         testFavouriteCard.querySelector('.card-category').setAttribute("id", "ccategory" + i);
                         // testFavouriteCard.querySelector('.card-date').setAttribute("id", "cdate" + i);
 
                         favouriteCardGroup.appendChild(testFavouriteCard);
+
+                        document.querySelector('#add').addEventListener("click", addExistingFavourite(i));
+
                         i++;
+
                     })
                 })
         }
@@ -41,13 +45,15 @@ function showFavourite() {
 }
 showFavourite();
 
+// document.getElementById("add").addEventListener("click", addExistingFavourite);
 
-function addExistingFavourite() {
 
-    const Amount = testFavouriteCard.querySelector('.card-amount').getAttribute("id");
-    const Source = document.querySelector('.card-title').getAttribute();
-    const Category = document.querySelector('.card-category').getAttribute();
-    const Date = firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
+function addExistingFavourite(i) {
+
+    const Amount = document.querySelector('.card-amount').getAttribute("id");
+    const Source = document.querySelector('.card-title').getAttribute("id");
+    const Category = document.querySelector('.card-category').getAttribute("id");
+    // const Date = firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
 
     console.log(Source);
     firebase.auth().onAuthStateChanged(user => {
@@ -60,7 +66,7 @@ function addExistingFavourite() {
                 category: Category,
                 userID: userID,
                 amount: parseFloat(Amount),
-                date: Date
+                // date: Date
             })
         }
     })
