@@ -12,13 +12,16 @@ function showFavourite() {
             console.log(userID);
 
             currentUser.collection("favourites")
-                .limit(10)
+                .limit(50)
+                .orderBy("date") 
                 .get()
                 .then(function (snap) {
-                    
+
                     snap.forEach(function (doc) {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
+                        // line 23 is new, go to expense.js to see more
+                        var expenseID = doc.data().expenseID;
                         var category = doc.data().category;
                         var date = doc.data().date;
                         var testFavouriteCard = favouritestemplate.content.cloneNode(true);
@@ -27,11 +30,13 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-category').innerHTML = category;
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
-                        testFavouriteCard.querySelector('.card-title').id = 'add-source' + i;
-                        testFavouriteCard.querySelector('.card-amount').id = 'add-amount' + i;
-                        testFavouriteCard.querySelector('.card-category').id = 'add-category' + i;
-                        testFavouriteCard.querySelector('.card-date').id = 'add-date' + i;
-
+                        // from demo 11
+                        testFavouriteCard.querySelector('.card-title').id = 'f-source';
+                        testFavouriteCard.querySelector('.card-amount').id = 'f-amount';
+                        testFavouriteCard.querySelector('.card-category').id = 'f-category';
+                        testFavouriteCard.querySelector('.card-date').id = 'f-date';
+                        testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
+                        testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
                         favouriteCardGroup.appendChild(testFavouriteCard);
                         i++;
                     })
@@ -41,78 +46,28 @@ function showFavourite() {
 }
 showFavourite();
 
-
-function addExistingFavourite() {
-
-    const Amount = document.getElementById('#add-amount' + i)
-    const Source = document.getElementById('#add-source' + i)
-    const Category = document.getElementById('#add-category' + i)
-    // const Date = firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
-    console.log(Amount);
+// LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+function addExistingFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
-            var userID = user.uid;
-            console.log(userID);
-            currentUser.collection("expenses").add({
-                source: Source,
-                category: Category,
-                userID: userID,
-                amount: parseFloat(Amount),
-                // date: Date
-            })
-        }
-    })
-}
-// const source = document.getElementById('locale')
-// const amount = document.getElementById('amt')
-// const category = document.getElementById('category')
-// const form = document.getElementById('form')
-// const favourite = document.getElementById('save')
-// var date = document.getElementById('date')
-
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     firebase.auth().onAuthStateChanged(user => {
-//         if (user) {
-//             var userID = user.uid;
-//             console.log(userID);
-//             db.collection("users").doc(user.uid).collection("expenses").add({
-//                 source: source.value,
-//                 category: form.category.value,
-//                 amount: parseFloat(amount.value),
-//                 date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
-//             });
-//             form.source.value = ''
-//             form.amount.value = ''
-//             form.date.value = ''
-//         };
-//     })
-// })
-
-
-
-
-
-function deleteFavourite() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
-            currentUser.collection("favourites").doc(/*the document*/).delete().then(() => {
-                alert("Expense successfully deleted.")
-            })
-        }
-    })
-}
-
-function deleteExpense() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
-            currentUser.collection("expenses").doc(/*the document*/).delete().then(() => {
-                alert("Expense successfully deleted.")
-            })
-        }
+            currentUser.collection("favourites").where("expenseID", "==", expenseID)
+                .get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        currentUser.collection("expenses").add({
+                            amount: doc.data().amount,
+                            source: doc.data().source,
+                            expenseID: doc.data().expenseID,
+                            category: doc.data().category,
+                            date: doc.data().date
+                        })
+                    })
+                })
+                .then(function () {
+                    var addID = 'add-' + expenseID;
+                    document.getElementById(addID).innerText = 'Added!';
+                }) 
+            }
     })
 }
