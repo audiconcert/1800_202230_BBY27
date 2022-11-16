@@ -28,11 +28,7 @@ function contributeSavings() {
             })
             .catch((error) => {
                 console.log("Error getting documents: ", error);
-            });
-
-                
-            
-            
+            });  
     
         }
     

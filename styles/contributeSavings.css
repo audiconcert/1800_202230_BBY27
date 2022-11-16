@@ -5,49 +5,24 @@
     margin-top: 3%;  
 }
 
-.formcontainer {
+h1 {
     grid-column: 2 / span 1;
-    grid-row: 1 / span 3;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20% 15% 80%;
-}
-.formcontainer p {
-    grid-column: 1;
-    grid-row: 2 / span 1;
-}
-
-.goalName {
-    grid-column: 1;
     grid-row: 1 / span 1;
     text-align: center;
-    font-size: 30pt;
-    font-weight: bold;
+
 }
 
-.input {
-    grid-column: 1;
-    grid-row: 3 / span 1;
-}
-
-
-
-/* #contribution {
-    grid-column: 1;
+p {
+    grid-column: 2 / span 1;
     grid-row: 2 / span 1;
 }
 
-#input {
+.contribution {
     grid-column: 2 / span 1;
-    grid-row: 2 / span 2;
-}
-
-#input p {
-    font-size: 1.1em;
+    grid-row: 3 / span 1;
 }
 
 .button {
     grid-column: 2 / span 1;
-    grid-row: 4 / span 1;
-} */
+    grid-row: 5 / span 1;
+}

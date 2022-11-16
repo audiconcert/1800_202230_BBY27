@@ -24,13 +24,13 @@ function showGoals() {
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
+                        testGoals.querySelector('a').onclick = () => setSavingsData(savingsID);
+
                         testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
                         testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
                         testGoals.querySelector('.card-name').id = "name-" + savingsID;
-
                         testGoals.querySelector('.contribute').id = 'contribute-' + savingsID;
-                        testGoals.querySelector('a').onclick = () => setSavingsData(savingsID);
-
+                        testGoals.querySelector('.edit').id = 'edit-' + savingsID;
 
                         goalsCardGroup.appendChild(testGoals);
                     
@@ -43,6 +43,12 @@ function showGoals() {
 showGoals();
 
 function setSavingsData(id){
-    localStorage.setItem ('savingsID', id);
+    localStorage.setItem ('savingsID', id)
+    .then(function () {
+        var editID = 'edit-' + id;
+        document.getElementById(editID).addEventListener("click", populateInfo());
+    });
 }
+
+
                
