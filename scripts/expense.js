@@ -1,5 +1,4 @@
 
-var i = 1;
 
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
@@ -31,16 +30,16 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
                         // from demo 11
-                        testFavouriteCard.querySelector('.card-title').id = 'f-source';
-                        testFavouriteCard.querySelector('.card-amount').id = 'f-amount';
-                        testFavouriteCard.querySelector('.card-category').id = 'f-category';
-                        testFavouriteCard.querySelector('.card-date').id = 'f-date';
+                        testFavouriteCard.querySelector('.card-title').id = 'source-' + expenseID;
+                        testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
+                        testFavouriteCard.querySelector('.card-category').id = 'category-' + expenseID;
+                        testFavouriteCard.querySelector('.card-date').id = 'date-' + expenseID;
                         testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
                         testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
                         favouriteCardGroup.appendChild(testFavouriteCard);
 
 
-                        i++;
+                    
 
                     })
                 })

@@ -1,4 +1,3 @@
-var i = 1;
 
 function showGoals() {
     let goalsTemplate = document.getElementById("goalsTemplate");
@@ -25,16 +24,16 @@ function showGoals() {
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
-                        testGoals.querySelector('.card-contributions').id = "f-contributions";
-                        testGoals.querySelector('.card-goalAmount').id = "f-amount";
-                        testGoals.querySelector('.card-name').id = "f-name";
+                        testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
+                        testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
+                        testGoals.querySelector('.card-name').id = "name-" + savingsID;
 
                         testGoals.querySelector('.contribute').id = 'contribute-' + savingsID;
-                        testGoals.querySelector('.contribute').onclick = () => setSavingsData(savingsID);
+                        testGoals.querySelector('a').onclick = () => setSavingsData(savingsID);
 
 
                         goalsCardGroup.appendChild(testGoals);
-                        i++;
+                    
                     })
                 })
        }
