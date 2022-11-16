@@ -39,7 +39,6 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
                         favouriteCardGroup.appendChild(testFavouriteCard);
 
-                        document.querySelector('#add').addEventListener("click", addExistingFavourite(i));
 
                         i++;
 
