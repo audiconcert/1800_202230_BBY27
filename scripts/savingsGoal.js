@@ -29,7 +29,6 @@ function showGoals() {
                         testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
                         testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
                         testGoals.querySelector('.card-name').id = "name-" + savingsID;
-                        testGoals.querySelector('.contribute').id = 'contribute-' + savingsID;
                         testGoals.querySelector('.edit').id = 'edit-' + savingsID;
 
                         goalsCardGroup.appendChild(testGoals);
@@ -41,14 +40,20 @@ function showGoals() {
     })
 }
 showGoals();
-
 function setSavingsData(id){
-    localStorage.setItem ('savingsID', id)
+    localStorage.setItem('savingsID', id)
     .then(function () {
         var editID = 'edit-' + id;
         document.getElementById(editID).addEventListener("click", populateInfo());
     });
 }
 
+function setSavingsName(id){
+    localStorage.setItem('savingsName', id)
+    .then(function () {
+        var name = 'name-' + id;
+        document.getElementById(name).addEventListener("click", populateInfo());
+    });
+}
 
                

@@ -1,39 +1,36 @@
+let savingsID = localStorage.getItem('savingsID');
+// local storage savings name 
+// local storage savings amount 
+// local storage savings current contributions 
+// local storage savings date
 
-let savingsID = localStorage.getItem("savingsID");
 
-function contributeSavings() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
-            var userID = user.uid;
-            console.log(userID);
-    
-            currentUser.collection("savings")
-            .where("savingsID", "==", savingsID)
-            .get()
-            .then((queryGoal) => {
-                size = queryGoal.size;
-                goal = queryGoal.docs;
+const button = document.getElementById('add');
+const amount = document.getElementById('contribution');
 
-                if ((size = 1)) {
-                    var thisGoal = goal[0].data();
-                    var name = thisGoal.name;
-                    var amount = thisGoal.amount;
-                    document.getElementById("goalName").innerHTML = name;
-                    document.getElementById("goalAmount").innerHTML = amount;
-                } else {
-                    console.log("Query has more than one data");
-                }
-
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });  
-    
-        }
-    
-    })
-
+function save() {
+    alert("Saved!")
 }
 
-    
+button.addEventListener('click', (e) => {
+    console.log(amount)
+    if (amount.value > '') {
+        e.preventDefault();
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                var userID = user.uid;
+                console.log(userID);
+                var savingsAmount = db.collection("users").doc(userID).collection("savings").where("savingsID", "==", savingsID);
+                savingsAmount.get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                      doc.ref.set({
+                        contributions: parseFloat(amount)
+                        // continue setting fields with local storage variables
+                      })
+                    })
+                  })
+            };
+        })
+    }
+    setTimeout(save, 400);
+})
