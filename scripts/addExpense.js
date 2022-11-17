@@ -2,18 +2,20 @@
 const source = document.getElementById('locale')
 const amount = document.getElementById('amt')
 const category = document.getElementById('category')
-const form = document.getElementById('form')
-var favourite = document.getElementById('save')
-var date = document.getElementById('date')
+const date = document.getElementById('date')
 const EID = (""+Math.random()).substring(2,7); // new
+const form = document.getElementById('form')
+const save = document.getElementById('saveExp')
+const favourite = document.getElementById('addFav')
 
-function sendBack() {
-    alert("Added!")
-    window.location.href = "expense.html";
+function addFav() {
+    favourite.innerText = 'Added to Favourites!';
 }
-function save() {
-    alert("Saved!")
+
+function saveExp() {
+    alert('Saved Expense!');
 }
+
 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -21,6 +23,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 form.addEventListener('submit', (e) => {
+    saveExp();
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -37,12 +40,14 @@ form.addEventListener('submit', (e) => {
             form.amount.value = ''
             form.date.value = ''
         };
-    })
+    });
+    window.location.href = "expense.html"
     setTimeout(sendBack, 400);
 })
 
 
 favourite.addEventListener('click', (e) => {
+    addFav();
     if (form.amount.value > ''
         && form.source.value > ''
         && form.date.value > '') {
