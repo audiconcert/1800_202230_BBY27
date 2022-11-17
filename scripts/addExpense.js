@@ -9,7 +9,8 @@ const save = document.getElementById('saveExp')
 const favourite = document.getElementById('addFav')
 
 function addFav() {
-    favourite.innerText = 'Added to Favourites!';
+    alert('Saved and Added to Favourites!');
+    window.location.href = "expense.html";
 }
 
 function saveExp() {
@@ -30,7 +31,7 @@ form.addEventListener('submit', (e) => {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                expenseID: EID, // new
+                // expenseID: EID, 
                 source: source.value,
                 category: form.category.value,
                 amount: parseFloat(amount.value),
@@ -42,27 +43,51 @@ form.addEventListener('submit', (e) => {
         };
     });
     setTimeout(saveExp, 400);
-})
+});
 
 
-favourite.addEventListener('click', (e) => {
-    if (form.amount.value > ''
-        && form.source.value > ''
-        && form.date.value > '') {
-        e.preventDefault();
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                var userID = user.uid;
-                console.log(userID);
-                db.collection("users").doc(user.uid).collection("favourites").add({
-                    expenseID: EID,
-                    source: form.source.value,
-                    amount: parseFloat(amount.value),
-                    category: form.category.value,
-                    date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
-                });
-            }
-        })
-    }
+favourite.addEventListener('submit', (e) => {
+    e.preventDefault();
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var userID = user.uid;
+            console.log(userID);
+            db.collection("users").doc(user.uid).collection("expenses").add({
+                // expenseID: EID, 
+                source: source.value,
+                category: form.category.value,
+                amount: parseFloat(amount.value),
+                date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
+            }).then(() => {
+                db.collection("users").doc(user.uid).add({
+                    
+                })
+            })
+            // form.source.value = ''
+            // form.amount.value = ''
+            // form.date.value = ''
+        };
+    });
+    
     setTimeout(addFav, 400);
-})
+});
+
+
+// if (form.amount.value > ''
+//         && form.source.value > ''
+//         && form.date.value > '') {
+//         e.preventDefault();
+//         firebase.auth().onAuthStateChanged(user => {
+//             if (user) {
+//                 var userID = user.uid;
+//                 console.log(userID);
+//                 db.collection("users").doc(user.uid).collection("favourites").add({
+//                     expenseID: EID,
+//                     source: form.source.value,
+//                     amount: parseFloat(amount.value),
+//                     category: form.category.value,
+//                     date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
+//                 });
+//             }
+//         })
+//     }
