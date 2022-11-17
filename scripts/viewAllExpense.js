@@ -1,3 +1,8 @@
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+})
+
 function showExpenses() {
     let cardTemplate = document.getElementById("expenseCardTemplate");
 
@@ -19,7 +24,7 @@ function showExpenses() {
                         var category = doc.data().category;
                         var date = doc.data().date
                         let newcard = cardTemplate.content.cloneNode(true);
-                        newcard.querySelector('.card-amount').innerHTML = amount;
+                        newcard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
                         newcard.querySelector('.card-title').innerHTML = source;
                         newcard.querySelector('.card-category').innerHTML = category;
                         newcard.querySelector('.card-date').innerHTML = date;

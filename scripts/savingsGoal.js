@@ -1,4 +1,10 @@
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+})
+
+
 function showGoals() {
     let goalsTemplate = document.getElementById("goalsTemplate");
     let goalsCardGroup = document.getElementById("goalsCardGroup");
@@ -19,8 +25,8 @@ function showGoals() {
                         var date = doc.data().date;
                         var savingsID = doc.data().savingsID;
                         let testGoals = goalsTemplate.content.cloneNode(true);
-                        testGoals.querySelector('.card-contributions').innerHTML = contributions; // removed the string parts because it breaks the edit function
-                        testGoals.querySelector('.card-goalAmount').innerHTML = goalAmount; // ^^^
+                        testGoals.querySelector('.card-contributions').innerHTML = formatter.format(parseFloat(contributions));; // removed the string parts because it breaks the edit function
+                        testGoals.querySelector('.card-goalAmount').innerHTML = formatter.format(parseFloat(goalAmount));; // ^^^
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
