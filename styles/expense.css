@@ -1,0 +1,56 @@
+#expenseBody {
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-auto-rows: 10vh;
+    display: grid;
+}
+body {
+    margin-top: 30px;
+}
+h1 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 30pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.progress {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.card {
+    grid-column: 2 / span 1;
+    grid-row: 3;
+}
+
+.saved {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 3;
+}
+
+.button {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    justify-content: center;
+}   
+.edit-budget {
+    grid-column: 2 / span 1;
+    grid-row: 2 ;
+}
+
+.favourites-template {
+    grid-column: 2 / span 1;
+    grid-row: 4;
+    justify-content: center;
+}
+
+.favourites-title {
+    grid-column: 2 / span 1;
+    grid-row: 5;
+    justify-content: center;
+}
+.actual-button {
+    color: white;
+    justify-content: center;
+}
