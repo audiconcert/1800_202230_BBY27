@@ -16,7 +16,7 @@ function showFavourite() {
 
             currentUser.collection("favourites")
                 .limit(50)
-                .orderBy("date") 
+                .orderBy("date")
                 .get()
                 .then(function (snap) {
 
@@ -45,7 +45,7 @@ function showFavourite() {
                         favouriteCardGroup.appendChild(testFavouriteCard);
 
 
-                    
+
 
                     })
                 })
@@ -75,8 +75,8 @@ function addExistingFavourite(expenseID) {
                 .then(function () {
                     var addID = 'add-' + expenseID;
                     document.getElementById(addID).innerText = 'Added!';
-                }) 
-            }
+                })
+        }
     })
 }
 
@@ -100,10 +100,10 @@ function setExpenseData(id) {
 function deleteFavourite(id) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var favourite = db.collection("users").doc(user.uid).collection("favourites").where("expenseID", "==", id);
-            favourite.delete().then(() => {
-                alert('Favourite successfully deleted.');
-                reload();
+            var favourite = db.collection("users").doc(user.uid).collection("favourites")
+                .where("expenseID", "==", id);
+            favourite.get().then(() => {
+                favourite.delete();
             })
         }
     })
