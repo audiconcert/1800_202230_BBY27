@@ -28,7 +28,6 @@ button.addEventListener('click', (e) => {
               name: savingsName,
               amount: parseFloat(savingsAmount),
               date: firebase.firestore.Timestamp.fromDate((date.valueAsDate = new Date()))
-              // continue setting fields with local storage variables
         })
       };
     })

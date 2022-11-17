@@ -19,12 +19,13 @@ function showGoals() {
                         var date = doc.data().date;
                         var savingsID = doc.data().savingsID;
                         let testGoals = goalsTemplate.content.cloneNode(true);
-                        testGoals.querySelector('.card-contributions').innerHTML = contributions;
-                        testGoals.querySelector('.card-goalAmount').innerHTML = goalAmount;
+                        testGoals.querySelector('.card-contributions').innerHTML = contributions; // removed the string parts because it breaks the edit function
+                        testGoals.querySelector('.card-goalAmount').innerHTML = goalAmount; // ^^^
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
-                        testGoals.querySelector('a').onclick = () => setSavingsData(savingsID);
+                        testGoals.querySelector('.edit').onclick = () => setSavingsData(savingsID);
+                        testGoals.querySelector('.delete').onclick = () => deleteSavingsGoal(savingsID);
 
                         testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
                         testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
@@ -43,7 +44,7 @@ function showGoals() {
 showGoals();
 
 function setSavingsData(id) {
-    
+
     var amountID = 'amount-' + id;
     var amount = document.getElementById(amountID).innerHTML;
     var nameID = 'name-' + id;
@@ -58,3 +59,15 @@ function setSavingsData(id) {
     localStorage.setItem('savingsContributions', contributions);
 }
 
+// same issue as saving changes on a goal
+function deleteSavingsGoal(id) {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var savingsGoal = db.collection("users").doc(user.uid).collection("savings").where("savingsID", "==", id);
+            savingsGoal.delete().then(() => {
+                alert('Goal successfully deleted.');
+                reload();
+            })
+        }
+    })
+}
