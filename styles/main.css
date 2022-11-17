@@ -113,7 +113,11 @@ span {
 .round {
     border-radius: 25px;
 }
-hr {
-    width: 80vw;
-    grid-column: 2 / span 1;
+.back-button {
+    background-color:#73a589;
+    padding: 15px;
+    position: fixed;
+    border-radius: 1.5em;
+    z-index: 100;
+    cursor: pointer;
 }

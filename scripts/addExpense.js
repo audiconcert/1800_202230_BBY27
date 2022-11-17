@@ -15,6 +15,11 @@ function save() {
     alert("Saved!")
 }
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+})
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {

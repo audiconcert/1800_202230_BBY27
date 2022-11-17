@@ -1,4 +1,10 @@
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+})
+
+
 function showGoals() {
     let goalsTemplate = document.getElementById("goalsTemplate");
     let goalsCardGroup = document.getElementById("goalsCardGroup");
@@ -19,41 +25,55 @@ function showGoals() {
                         var date = doc.data().date;
                         var savingsID = doc.data().savingsID;
                         let testGoals = goalsTemplate.content.cloneNode(true);
-                        testGoals.querySelector('.card-contributions').innerHTML = "$" + contributions;
-                        testGoals.querySelector('.card-goalAmount').innerHTML = "/  $" + goalAmount;
+                        testGoals.querySelector('.card-contributions').innerHTML = formatter.format(parseFloat(contributions));; // removed the string parts because it breaks the edit function
+                        testGoals.querySelector('.card-goalAmount').innerHTML = formatter.format(parseFloat(goalAmount));; // ^^^
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
-                        testGoals.querySelector('a').onclick = () => setSavingsData(savingsID);
+                        testGoals.querySelector('.edit').onclick = () => setSavingsData(savingsID);
+                        testGoals.querySelector('.delete').onclick = () => deleteSavingsGoal(savingsID);
 
                         testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
                         testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
                         testGoals.querySelector('.card-name').id = "name-" + savingsID;
+                        testGoals.querySelector('.card-date').id = 'date-' + savingsID;
                         testGoals.querySelector('.edit').id = 'edit-' + savingsID;
 
                         goalsCardGroup.appendChild(testGoals);
-                    
+
                     })
                 })
-       }
-        
+        }
+
     })
 }
 showGoals();
-function setSavingsData(id){
-    localStorage.setItem('savingsID', id)
-    .then(function () {
-        var editID = 'edit-' + id;
-        document.getElementById(editID).addEventListener("click", populateInfo());
-    });
+
+function setSavingsData(id) {
+
+    var amountID = 'amount-' + id;
+    var amount = document.getElementById(amountID).innerHTML;
+    var nameID = 'name-' + id;
+    var name = document.getElementById(nameID).innerHTML;
+    var contID = 'contributions-' + id;
+    var contributions = document.getElementById(contID).innerHTML;
+    // var dateID = 'date-' + id;
+    // var date = document.getElementById(dateID).innerHTML;
+    localStorage.setItem('savingsID', id);
+    localStorage.setItem('savingsName', name);
+    localStorage.setItem('savingsAmount', amount);
+    localStorage.setItem('savingsContributions', contributions);
 }
 
-function setSavingsName(id){
-    localStorage.setItem('savingsName', id)
-    .then(function () {
-        var name = 'name-' + id;
-        document.getElementById(name).addEventListener("click", populateInfo());
-    });
+// same issue as saving changes on a goal
+function deleteSavingsGoal(id) {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var savingsGoal = db.collection("users").doc(user.uid).collection("savings").where("savingsID", "==", id);
+            savingsGoal.delete().then(() => {
+                alert('Goal successfully deleted.');
+                reload();
+            })
+        }
+    })
 }
-
-               

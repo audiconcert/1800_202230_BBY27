@@ -38,13 +38,12 @@
     <div id="savingsBody">
         <div class="container">
             <h1>All Expenses</h1>
-            <!-- Here is container for cards  -->
+            <br>
             <div class="container">
                 <div id="expenses-go-here" class="row row-cols-auto">
                 </div>
             </div>
         </div>
-        <!-- Templates for general use, not displayed -->
         <template id="expenseCardTemplate">
             <div class="card py-2" style="width: 100%;">
                 <div class="card-body">
@@ -57,9 +56,9 @@
                     <a onclick="alert('Added to expenses!');"
                         class="btn button round actual-button bg-BCIT add" id="get-details delete-button"
                         style="float: right">Add</a>
-                    <a href="#" class="btn button round acual-button bg-BCIT" id="get-details edit-button"
+                    <a href="editExpense.html" class="btn button round acual-button edit bg-BCIT" id="get-details edit-button"
                         style="float: right">Edit</a>
-                    <a href="#" class="btn button round actual-button bg-BCIT" id="get-details add-button"
+                    <a href="#" class="btn button round actual-button delete bg-BCIT" id="get-details add-button"
                         style="float: right">Delete</a>
                 </div>
             </div>
