@@ -7,6 +7,7 @@ function populateInfo() {
             currentUser.get().then((userDoc) => {
                 var userName = userDoc.data().name;
                 var userEmail = userDoc.data().email;
+                var treeName = userDoc.data().treeName;
 
                 if (userName != null) {
                     document.getElementById("nameInput").value = userName;
@@ -14,6 +15,10 @@ function populateInfo() {
                 if (userEmail != null) {
                     document.getElementById("emailInput").value = userEmail;
                 }
+                if (treeName != null) {
+                    document.getElementById("treeNameInput").value = treeName;
+                }
+
             });
         } else {
             console.log("No user is signed in");
@@ -22,3 +27,13 @@ function populateInfo() {
 }
 
 populateInfo();
+
+function editUserInfo() {
+    document.getElementById("personalInfoFields").disabled = true;
+}
+
+function saveUserInfo() {
+    userName = document.getElementById("nameInput").value;
+    userEmail = document.getElementById("emailInput").value;
+    treeName = document.getElementById("treeNameInput").value;
+}
