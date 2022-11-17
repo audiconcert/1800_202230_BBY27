@@ -14,7 +14,7 @@ function addFav() {
 
 function saveExp() {
     alert('Saved Expense!');
-    window.location.href = "expense.html"
+    window.location.href = "expense.html";
 }
 
 
