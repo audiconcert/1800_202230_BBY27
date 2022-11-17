@@ -43,20 +43,21 @@
     <divi id="container">
 
         <section>
-            <div class="container py-3"></div>
-            <div class="row">
-                <div class="col-lg-4 rowc">
-                    <div class="card mb-4">
-                        <div class="card-body text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                                alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                            <h5 class="my-3"><span id="name-goes-here"></h5>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="index.html"><button type="button" class="btn btn-primary">Sign Out</button></a>
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-lg-4 rowc">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                    alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                <h5 class="my-3"><span id="name-goes-here"></h5>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <a href="index.html"><button type="button" class="btn btn-primary">Sign Out</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </section>
 
@@ -75,8 +76,10 @@
                     <input type="text" id="cityInput" class="form-control" placeholder="Enter your tree's name">
                 </div>
             </fieldset>
-            <button id="edit" type="submit" class="btn btn-2 btn-lg form-favourites round" onclick="editUserInfo()">Edit</button>
-            <button id="save" type="submit" class="btn btn-2 btn-lg form-favourites round" onclick="saveUserInfo()">Save</button>
+            <div id="buttons">
+                <button id="edit" type="submit" class="btn btn-2 btn-lg form-favourites round" onclick="editUserInfo()">Edit</button>
+                <button id="save" type="submit" class="btn btn-2 btn-lg form-favourites round" onclick="saveUserInfo()">Save</button>
+            </div>
         </form>
 
     </div>
