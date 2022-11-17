@@ -34,8 +34,8 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
 
-                        testFavouriteCard.querySelector('a').onclick = () => setExpenseData(expenseID);
-                        testFavouriteCard.querySelector('.edit').onclick = () => editFavourite(expenseID)
+                        // testFavouriteCard.querySelector('a').onclick = () => setExpenseData(expenseID);
+                        testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                         testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
                         // from demo 11
                         testFavouriteCard.querySelector('.card-title').id = 'source-' + expenseID;
