@@ -19,8 +19,8 @@ function showGoals() {
                         var date = doc.data().date;
                         var savingsID = doc.data().savingsID;
                         let testGoals = goalsTemplate.content.cloneNode(true);
-                        testGoals.querySelector('.card-contributions').innerHTML = "$" + contributions;
-                        testGoals.querySelector('.card-goalAmount').innerHTML = "/  $" + goalAmount;
+                        testGoals.querySelector('.card-contributions').innerHTML = contributions;
+                        testGoals.querySelector('.card-goalAmount').innerHTML = goalAmount;
                         testGoals.querySelector('.card-name').innerHTML = name;
                         testGoals.querySelector('.card-date').innerHTML = date;
 
@@ -29,31 +29,32 @@ function showGoals() {
                         testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
                         testGoals.querySelector('.card-goalAmount').id = "amount-" + savingsID;
                         testGoals.querySelector('.card-name').id = "name-" + savingsID;
+                        testGoals.querySelector('.card-date').id = 'date-' + savingsID;
                         testGoals.querySelector('.edit').id = 'edit-' + savingsID;
 
                         goalsCardGroup.appendChild(testGoals);
-                    
+
                     })
                 })
-       }
-        
+        }
+
     })
 }
 showGoals();
-function setSavingsData(id){
-    localStorage.setItem('savingsID', id)
-    .then(function () {
-        var editID = 'edit-' + id;
-        document.getElementById(editID).addEventListener("click", populateInfo());
-    });
+
+function setSavingsData(id) {
+    
+    var amountID = 'amount-' + id;
+    var amount = document.getElementById(amountID).innerHTML;
+    var nameID = 'name-' + id;
+    var name = document.getElementById(nameID).innerHTML;
+    var contID = 'contributions-' + id;
+    var contributions = document.getElementById(contID).innerHTML;
+    // var dateID = 'date-' + id;
+    // var date = document.getElementById(dateID).innerHTML;
+    localStorage.setItem('savingsID', id);
+    localStorage.setItem('savingsName', name);
+    localStorage.setItem('savingsAmount', amount);
+    localStorage.setItem('savingsContributions', contributions);
 }
 
-function setSavingsName(id){
-    localStorage.setItem('savingsName', id)
-    .then(function () {
-        var name = 'name-' + id;
-        document.getElementById(name).addEventListener("click", populateInfo());
-    });
-}
-
-               

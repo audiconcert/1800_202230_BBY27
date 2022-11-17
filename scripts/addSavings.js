@@ -31,30 +31,30 @@ form.addEventListener("submit", (e) => {
   });
 });
 
-let savingsID = localStorage.getItem("savingsID");
+// let savingsID = localStorage.getItem("savingsID");
 
-function populateInfo() {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      var currentUser = db.collection("users").doc(user.uid);
-      currentUser
-        .collection("savings")
-        .where("savingsID", "==", savingsID)
-        .get()
-        .then((savingsDoc) => {
-            var size = savingsDoc.size;
-            var goal= savingsDoc.docs;
-            // var goalamount = userDoc.data().amount;
-            // etc
-            if((size = 1)) {
-                var thisGoal = goal[0].data();
-                var goalname = thisGoal.name;
-                var goalamount = thisGoal.amount;
-            }
+// function populateInfo() {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       var currentUser = db.collection("users").doc(user.uid);
+//       currentUser
+//         .collection("savings")
+//         .where("savingsID", "==", savingsID)
+//         .get()
+//         .then((savingsDoc) => {
+//             var size = savingsDoc.size;
+//             var goal= savingsDoc.docs;
+//             // var goalamount = userDoc.data().amount;
+//             // etc
+//             if((size = 1)) {
+//                 var thisGoal = goal[0].data();
+//                 var goalname = thisGoal.name;
+//                 var goalamount = thisGoal.amount;
+//             }
 
-            document.getElementById("name").innerHTML = goalname;
-            document.getElementById("amt").innerHTML = goalamount;
-        });
-    }
-  });
-}
+//             document.getElementById("name").innerHTML = goalname;
+//             document.getElementById("amt").innerHTML = goalamount;
+//         });
+//     }
+//   });
+// }
