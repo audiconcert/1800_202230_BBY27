@@ -70,7 +70,7 @@ function addExistingFavourite(expenseID) {
                             category: doc.data().category,
                             date: doc.data().date
                         })
-                    })
+                    })  
                 })
                 .then(function () {
                     var addID = 'add-' + expenseID;
