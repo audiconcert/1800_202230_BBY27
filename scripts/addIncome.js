@@ -1,9 +1,11 @@
-const name = document.getElementById('name')
-const amount = document.getElementById('amt')
-const date = document.getElementById('date')
-const form = document.getElementById('form')
+const name = document.getElementById('source');
+const amount = document.getElementById('amount');
+const date = document.getElementById('date');
 
-
+function save() {
+    alert('Saved income!');
+    window.location.href = "income.html";
+}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -21,4 +23,5 @@ form.addEventListener('submit', (e) => {
             form.date.value = ''
         }
     })
+    setTimeout(save, 400);
 })

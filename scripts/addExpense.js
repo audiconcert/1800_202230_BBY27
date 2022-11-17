@@ -24,6 +24,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 form.addEventListener('submit', (e) => {
+    saveExp();
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -41,11 +42,12 @@ form.addEventListener('submit', (e) => {
             form.date.value = ''
         };
     });
-    setTimeout(saveExp, 400);
+    setTimeout(sendBack, 400);
 })
 
 
 favourite.addEventListener('click', (e) => {
+    addFav();
     if (form.amount.value > ''
         && form.source.value > ''
         && form.date.value > '') {
@@ -64,5 +66,5 @@ favourite.addEventListener('click', (e) => {
             }
         })
     }
-    setTimeout(addFav, 400);
+    setTimeout(save, 400);
 })
