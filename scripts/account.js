@@ -31,21 +31,27 @@ function editUserInfo() {
   document.getElementById("personalInfoFields").disabled = false;
 }
 
-// Can't save new (edited) info yet
-function saveUserInfo() {
-  userName = form.document.getElementById("nameInput").value;
-  userEmail = form.document.getElementById("emailInput").value;
-  treeNamE = form.document.getElementById("treeNameInput").value;
+var form = document.getElementById('form');
+var newUserName = document.getElementById("nameInput");
+var newUserEmail = document.getElementById("emailInput");
+var newTreeName = document.getElementById("treeNameInput");
+var edit = document.getElementById('edit');
+var save = document.getElementById('save');
+  
 
-  currentUser
-    .update({
-      name: userName,
-      email: userEmail,
-      treeName: treeNamE,
-    })
-    .then(() => {
-      console.log("Document successfully updated");
-    });
 
-  document.getElementById("personalInfoFields").disabled = true;
-}
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          var userID = user.uid;
+          console.log(userID);
+          db.collection("users").doc(user.uid).update({
+            name: newUserName.value,
+            email: newUserEmail.value,
+            treeName: newTreeName.value,
+          });
+          document.getElementById("personalInfoFields").disabled = true;
+      };
+  });
+});
