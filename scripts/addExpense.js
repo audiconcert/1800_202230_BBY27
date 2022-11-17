@@ -9,8 +9,7 @@ const save = document.getElementById('saveExp')
 const favourite = document.getElementById('addFav')
 
 function addFav() {
-    alert('Saved and Added to Favourites!');
-    window.location.href = "expense.html";
+    favourite.innerText = 'Added to Favourites!';
 }
 
 function saveExp() {
@@ -25,14 +24,13 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 form.addEventListener('submit', (e) => {
-    saveExp();
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var userID = user.uid;
             console.log(userID);
             db.collection("users").doc(user.uid).collection("expenses").add({
-                // expenseID: EID, 
+                expenseID: EID, // new
                 source: source.value,
                 category: form.category.value,
                 amount: parseFloat(amount.value),
@@ -43,12 +41,11 @@ form.addEventListener('submit', (e) => {
             form.date.value = ''
         };
     });
-    setTimeout(sendBack, 400);
+    setTimeout(saveExp, 400);
 })
 
 
 favourite.addEventListener('click', (e) => {
-    addFav();
     if (form.amount.value > ''
         && form.source.value > ''
         && form.date.value > '') {
@@ -67,5 +64,5 @@ favourite.addEventListener('click', (e) => {
             }
         })
     }
-    setTimeout(save, 400);
+    setTimeout(addFav, 400);
 })
