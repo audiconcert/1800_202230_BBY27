@@ -70,7 +70,7 @@ function addExistingFavourite(expenseID) {
                             category: doc.data().category,
                             date: doc.data().date
                         })
-                    })
+                    })  
                 })
                 .then(function () {
                     var addID = 'add-' + expenseID;
@@ -95,7 +95,6 @@ function setExpenseData(id) {
     localStorage.setItem('expenseCategory', category);
     localStorage.setItem('expenseAmount', amount);
 }
-
 
 // same issue as saving changes on an expense
 function deleteFavourite(id) {
