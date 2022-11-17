@@ -33,7 +33,9 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.card-category').innerHTML = category;
                         testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
-                        testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
+
+                        testFavouriteCard.querySelector('a').onclick = () => setExpenseData(expenseID);
+                        testFavouriteCard.querySelector('.edit').onclick = () => editFavourite(expenseID)
                         testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
                         // from demo 11
                         testFavouriteCard.querySelector('.card-title').id = 'source-' + expenseID;
@@ -95,6 +97,7 @@ function setExpenseData(id) {
     localStorage.setItem('expenseCategory', category);
     localStorage.setItem('expenseAmount', amount);
 }
+
 
 // same issue as saving changes on an expense
 function deleteFavourite(id) {

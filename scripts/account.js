@@ -37,8 +37,6 @@ var newUserEmail = document.getElementById("emailInput");
 var newTreeName = document.getElementById("treeNameInput");
 var edit = document.getElementById('edit');
 var save = document.getElementById('save');
-  
-
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();

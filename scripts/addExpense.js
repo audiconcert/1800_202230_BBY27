@@ -14,6 +14,7 @@ function addFav() {
 
 function saveExp() {
     alert('Saved Expense!');
+    window.location.href = "expense.html"
 }
 
 
@@ -23,7 +24,6 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 form.addEventListener('submit', (e) => {
-    saveExp();
     e.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -41,13 +41,11 @@ form.addEventListener('submit', (e) => {
             form.date.value = ''
         };
     });
-    window.location.href = "expense.html"
-    setTimeout(sendBack, 400);
+    setTimeout(saveExp, 400);
 })
 
 
 favourite.addEventListener('click', (e) => {
-    addFav();
     if (form.amount.value > ''
         && form.source.value > ''
         && form.date.value > '') {
@@ -66,5 +64,5 @@ favourite.addEventListener('click', (e) => {
             }
         })
     }
-    setTimeout(save, 400);
+    setTimeout(addFav, 400);
 })
