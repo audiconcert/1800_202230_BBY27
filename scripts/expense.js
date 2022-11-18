@@ -51,6 +51,7 @@ function addExistingFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
             var currentUser = db.collection("users").doc(user.uid);
+            var addID = 'add-' + expenseID;
             currentUser.collection("expenses").doc(expenseID).get()
             .then(function(doc) {
                 var Amount = doc.data().amount;
@@ -60,7 +61,25 @@ function addExistingFavourite(expenseID) {
                         expenseCount: currentExpenseCount + Amount,
                     }, {merge:true});
                 });
+
             });
+            alert("Added to Expense!");
+           
+        }
+    });
+}
+
+function deleteFavourite(expenseID) {
+    firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+            var currentUser = db.collection("users").doc(user.uid);
+
+            currentUser.update({
+                favourites: firebase.firestore.FieldValue.arrayRemove(expenseID)
+            }).then (() => {
+                alert("Deleted from Favourites!");
+            });
+ 
         }
     });
 }
