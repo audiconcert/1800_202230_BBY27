@@ -42,10 +42,10 @@ function showGoals() {
                         goalsCardGroup.appendChild(testGoals);
 
                     })
-                })
+                });
         }
 
-    })
+    });
 }
 showGoals();
 

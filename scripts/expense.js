@@ -24,14 +24,14 @@ function showFavourite() {
                         var amount = doc.data().amount;
                         var source = doc.data().source;
                         // line 23 is new, go to expense.js to see more
-                        var expenseID = doc.data().expenseID;
+                        var expenseID = doc.id;
                         var category = doc.data().category;
-                        var date = doc.data().date;
+                        // var date = doc.data().date;
                         var testFavouriteCard = favouritestemplate.content.cloneNode(true);
                         testFavouriteCard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
                         testFavouriteCard.querySelector('.card-title').innerHTML = source;
                         testFavouriteCard.querySelector('.card-category').innerHTML = category;
-                        testFavouriteCard.querySelector('.card-date').innerHTML = date;
+                        // testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
                         testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                         testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
