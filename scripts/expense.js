@@ -2,7 +2,7 @@
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-})
+});
 
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
@@ -64,7 +64,6 @@ function addExistingFavourite(expenseID) {
 
             });
             alert("Added to Expense!");
-           
         }
     });
 }
