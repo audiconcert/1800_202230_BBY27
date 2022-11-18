@@ -2,7 +2,6 @@ const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
 })
-
 function showExpenses() {
     let cardTemplate = document.getElementById("expenseCardTemplate");
 
@@ -12,36 +11,34 @@ function showExpenses() {
             var userID = user.uid;
             console.log(userID);
 
-            currentUser.collection("expenses")
-                .orderBy("date")
-                .get()
-                .then(snap => {
+            currentUser.get().then(function (doc) {
+                var favourites = doc.data().favourites;
+                favourites.forEach(function (expenseIDs) {
+                    var expenseID = expenseIDs;
 
-                    snap.forEach(doc => {
-                        var source = doc.data().source;
-                        var amount = doc.data().amount;
-                        var expenseID = doc.data().expenseID;
-                        var category = doc.data().category;
-                        var date = doc.data().date
-                        let newcard = cardTemplate.content.cloneNode(true);
-                        newcard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
-                        newcard.querySelector('.card-title').innerHTML = source;
-                        newcard.querySelector('.card-category').innerHTML = category;
-                        newcard.querySelector('.card-date').innerHTML = date;
+                    db.collection("users").doc(user.uid).collection("expenses").doc(expenseID)
+                        .get().then(function (doc) {
+                            var amount = doc.data().amount;
+                            var source = doc.data().source;
+                            var category = doc.data().category;
+                            let newcard = cardTemplate.content.cloneNode(true);
+                            newcard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
+                            newcard.querySelector('.card-title').innerHTML = source;
+                            newcard.querySelector('.card-category').innerHTML = category;
 
-                        newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
-                        newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
+                            newcard.querySelector('.card-amount').id = 'amount-' + expenseID;
+                            newcard.querySelector('.card-title').id = 'title-' + expenseID;
+                            newcard.querySelector('.card-category').id = 'category-' + expenseID;
+                            newcard.querySelector('.add').id = 'add-' + expenseID;
 
-                        newcard.querySelector('.card-title').id = 'source-' + expenseID;
-                        newcard.querySelector('.card-amount').id = 'amount-' + expenseID;
-                        newcard.querySelector('.card-category').id = 'category-' + expenseID;
-                        newcard.querySelector('.card-date').id = 'date-' + expenseID;
-                        newcard.querySelector('.add').id = 'add-' + expenseID;
-                        newcard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
-                        document.getElementById("expenses-go-here").appendChild(newcard);
+                            newcard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
+                            newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
+                            newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
+                            document.getElementById("expenses-go-here").appendChild(newcard);
 
-                    })
+                        })
                 });
+            })
         }
     });
 }
