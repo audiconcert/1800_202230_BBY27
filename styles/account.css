@@ -1,51 +1,20 @@
 
 #container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 10vh;
 }
-
-
-section {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+#pic {
+    grid-column: 2 / span 1;
+    grid-row: 1;
 }
-
-.rowc {
-    width: 100%;   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-
-form {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 70% 30%;
-}
-
-#personalInfoFields {
-    grid-column: 1;
-    grid-row: 1 / span 1;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
 #name {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
 }
-
+form {
+    grid-column: 2 / span 1;
+}
 #email {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
@@ -62,7 +31,7 @@ form {
 
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 10vh;
 }
 #edit {
     grid-column: 2 / span 1;
@@ -70,6 +39,6 @@ form {
 }
 #save {
     grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
 }
 

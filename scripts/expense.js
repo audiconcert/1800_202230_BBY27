@@ -61,8 +61,10 @@ function addExistingFavourite(expenseID) {
                     }, {merge:true});
                 });
 
-            });
-            alert("Added to Expense!");
+            }).then(function () {
+                var addID = 'add-' + expenseID;
+                document.getElementById(addID).innerText = 'Added!';
+            })
         }
     });
 }
@@ -81,6 +83,9 @@ function deleteFavourite(expenseID) {
         }
     });
 }
+
+
+
 // function addExistingFavourite(expenseID) {
 //     firebase.auth().onAuthStateChanged(user => {
 //         if (user) {
