@@ -34,28 +34,23 @@
 </head>
 
 <body>
-
-    <template id="imgTemplate">
-        <img class="ernieImg" src="./images/tree1.png">
-    </template>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
+    
     <nav id="navbarPlaceholder"></nav>
-
-
     <div id="container">
         <h1>The Forest</h1>
-
+        <template id="imgTemplate">
+            <img class="ernieImg" src="./images/tree1.png">
+        </template>
         <div class="imgContainer">
             <div id="imgCard"></div>
         </div>
     </div>
-    <div class="chartBox">
-        <canvas id="expenseChart"></canvas>
+    <div id="charts">
+        <div class="chartBox">
+            <canvas id="expenseChart"></canvas>
+        </div>
     </div>
+    
 
     
     <nav id="footerPlaceholder"></nav>

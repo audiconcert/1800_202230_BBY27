@@ -31,7 +31,7 @@ function showExpenses() {
                             newcard.querySelector('.card-category').id = 'category-' + expenseID;
                             newcard.querySelector('.add').id = 'add-' + expenseID;
 
-                            newcard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
+                            newcard.querySelector('.add').onclick = () => addExistingExpense(expenseID);
                             newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                             newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
                             document.getElementById("expenses-go-here").appendChild(newcard);
@@ -56,9 +56,7 @@ function addExistingExpense(expenseID) {
                         currentUser.collection("expenses").add({
                             amount: doc.data().amount,
                             source: doc.data().source,
-                            expenseID: doc.data().expenseID,
                             category: doc.data().category,
-                            date: doc.data().date
                         })
                     })
                 })

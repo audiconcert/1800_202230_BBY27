@@ -18,7 +18,6 @@ function showFavourite() {
                 var favourites = doc.data().favourites;
                 favourites.forEach(function(expenseIDs) {
                     var expenseID = expenseIDs;
-
                     db.collection("users").doc(user.uid).collection("expenses").doc(expenseID)
                     .get().then(function(doc) {
                         var amount = doc.data().amount;
@@ -35,7 +34,7 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
 
                         testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
-                        testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
+                        // testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                         testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
 
                         favouriteCardGroup.appendChild(testFavouriteCard);
@@ -72,18 +71,16 @@ function deleteFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if(user) {
             var currentUser = db.collection("users").doc(user.uid);
-
             currentUser.update({
                 favourites: firebase.firestore.FieldValue.arrayRemove(expenseID)
             }).then (() => {
                 alert("Deleted from Favourites!");
+                window.location.href = 'expense.html';
             });
  
         }
     });
 }
-
-// LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 // function addExistingFavourite(expenseID) {
 //     firebase.auth().onAuthStateChanged(user => {
 //         if (user) {
