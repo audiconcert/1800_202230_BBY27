@@ -24,6 +24,16 @@ h1 {
     text-align: center;
 }
 
+.stitles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#slash {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 .card-title {
     grid-column: 1 / span 2;
 }

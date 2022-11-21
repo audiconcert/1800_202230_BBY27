@@ -62,9 +62,9 @@ function addExistingFavourite(expenseID) {
                 });
 
             }).then(function () {
-                var addID = 'add-' + expenseID;
                 document.getElementById(addID).innerText = 'Added!';
-            })
+                setTimeout(function(){document.getElementById(addID).innerText = 'Add'}, 3500);
+            });
         }
     });
 }
