@@ -27,7 +27,7 @@ function showFavourite() {
 
                 
                     // testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
-                    // testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
+                    testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(incomeID);
 
                     favouriteCardGroup.appendChild(testFavouriteCard);
                    
@@ -61,17 +61,15 @@ showFavourite();
 //     });
 // }
 
-// function deleteFavourite(expenseID) {
-//     firebase.auth().onAuthStateChanged(user => {
-//         if(user) {
-//             var currentUser = db.collection("users").doc(user.uid);
-//             currentUser.update({
-//                 favourites: firebase.firestore.FieldValue.arrayRemove(expenseID)
-//             }).then (() => {
-//                 alert("Deleted from Favourites!");
-//                 window.location.href = 'expense.html';
-//             });
+function deleteFavourite(ID) {
+    firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+            var currentUser = db.collection("users").doc(user.uid);
+            currentUser.collection("income").doc(ID).delete().then(() => {
+                alert("Deleted Income!");
+                window.location.href = "income.html";
+            });
  
-//         }
-//     });
-// }
+        }
+    });
+}
