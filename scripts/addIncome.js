@@ -1,6 +1,7 @@
-const name = document.getElementById('source');
+const Name = document.getElementById('source');
 const amount = document.getElementById('amount');
-const date = document.getElementById('date');
+const button = document.getElementById('logIncome');
+// const date = document.getElementById('date');
 
 function save() {
     alert('Saved income!');
@@ -13,15 +14,15 @@ form.addEventListener('submit', (e) => {
         if (user) {
             var userID = user.uid;
             console.log(userID);
-            db.collection("users").doc(user.uid).collection("income").add({
-                name: name.value,
+            db.collection("users").doc(userID).collection("income").add({
+                name: Name.value,
                 amount: parseFloat(amount.value),
-                date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
+                // date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
             });
             form.name.value = ''
             form.amount.value = ''
             form.date.value = ''
         }
-    })
+    });
     setTimeout(save, 400);
-})
+});
