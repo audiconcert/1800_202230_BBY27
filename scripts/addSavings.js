@@ -2,7 +2,6 @@ const Name = document.getElementById("name");
 const amount = document.getElementById("amt");
 const contributions = document.getElementById("contributions");
 const form = document.getElementById("form");
-const SID = ("" + Math.random()).substring(2, 7);
 
 function save() {
   alert("Saved!")
@@ -19,7 +18,6 @@ form.addEventListener("submit", (e) => {
         .doc(user.uid)
         .collection("savings")
         .add({
-          savingsID: SID,
           name: Name.value,
           amount: parseFloat(amount.value),
           contributions: parseFloat(contributions.value)

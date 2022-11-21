@@ -33,7 +33,34 @@
 
 <body>
     <nav id="navbarPlaceholder" class="test"></nav>
-    <h1>My Budget</h1>
+    <div id="container">
+        <h1>My Budget</h1>
+
+        <form action="">
+            <fieldset>
+              <div class="form-group">
+                <label class="label" for="exampleFormControlInput1"></label>
+                <input name="essentialExpense" type="number" class="form-control round required" id="essentialExpense" placeholder="$" required="required">
+              </div>
+              <div class="form-group form-amount">
+                <label class="label" for="exampleFormControlInput1">How much do you want to save?</label>
+                <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="10000000000000" step=”any” class="form-control round required" id="amt" placeholder="$" required="required">
+              </div>
+              <div class="form-group form-category">
+                <label class="label" for="exampleFormControlInput1">How much have you already saved?</label>
+                <input name="contributions" type="number" min="0" max="100000000" step=”any” class="form-control round required" id="contributions" placeholder="$" required="required">
+              </div>
+              <!-- <div class="form-group form-date">
+                <label class="label" for="exampleFormControlInput1">When do you want to achieve your goal by?</label>
+                <input name="date" type="date" class="form-control round required"  id="date" required="required">
+              </div> -->
+            </fieldset>
+            <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round"></input>
+    
+          </form>
+    </div>
+
+
     <nav id="footerPlaceholder"></nav>
 
     <!-- Link to scripts of your own -->
