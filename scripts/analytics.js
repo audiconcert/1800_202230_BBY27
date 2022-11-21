@@ -2,6 +2,8 @@ var currentUser;
 var treeImg = document.getElementById('ernieImg');
 var imgTemplate = document.getElementById('imgTemplate');
 var imgCard = document.getElementById('imgCard');
+var now = new Date();
+now.setDate(now.getDate() + 14);
 
 // var startDate = document.getElementById('startDate').value;
 // var endDate = document.getElementById('endDate').value;

@@ -13,11 +13,11 @@ h1 {
 }
 #form {
     grid-column: 2 / span 1;
-    grid-row: 2 / span 11;
+    grid-row: 2 / span 8;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80% 10% 10%;
+    grid-template-rows: 80% 20%;
 }
 
 #savingsGoalFields {
@@ -39,14 +39,14 @@ h1 {
     grid-row: 2 / span 1;
     justify-self: center;
 }
-.form-category {
+/* .form-category {
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
     justify-self: center;
-}
+} */
 .form-date {
     grid-column: 1 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
     justify-self: center;
 }
 .form-add {
@@ -68,4 +68,8 @@ h1 {
 }
 .label {
     font-size: 20px;
+}
+#logIncome {
+    grid-column: 1;
+    grid-row: 2 / span 1;
 }

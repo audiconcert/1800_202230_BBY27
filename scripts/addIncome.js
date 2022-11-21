@@ -1,5 +1,6 @@
 const Name = document.getElementById('source');
 const amount = document.getElementById('amount');
+const date = document.getElementById('date');
 const button = document.getElementById('logIncome');
 // const date = document.getElementById('date');
 
@@ -17,7 +18,7 @@ form.addEventListener('submit', (e) => {
             db.collection("users").doc(userID).collection("income").add({
                 name: Name.value,
                 amount: parseFloat(amount.value),
-                // date: firebase.firestore.Timestamp.fromDate(date.valueAsDate = new Date())
+                date: date.value,
             });
             form.name.value = ''
             form.amount.value = ''

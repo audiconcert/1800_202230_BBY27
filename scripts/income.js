@@ -14,11 +14,11 @@ function showFavourite() {
                     var incomeID = doc.id;
                     var amount = doc.data().amount;
                     var Name = doc.data().name;
-          
+                    var date = doc.data().date;
                     var testFavouriteCard = favouritestemplate.content.cloneNode(true);
                     testFavouriteCard.querySelector('.card-amount').innerHTML = parseFloat(amount);
                     testFavouriteCard.querySelector('.card-title').innerHTML = Name;
-                   
+                    testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
                     // testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
                     // testFavouriteCard.querySelector('.card-title').id = 'title-' + expenseID;
