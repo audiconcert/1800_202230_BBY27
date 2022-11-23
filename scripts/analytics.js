@@ -2,6 +2,7 @@ var currentUser;
 var treeImg = document.getElementById('ernieImg');
 var imgTemplate = document.getElementById('imgTemplate');
 var imgCard = document.getElementById('imgCard');
+var progressBar = document.getElementsByClassName('progress-bar');
 var now = new Date();
 
 

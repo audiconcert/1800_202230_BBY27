@@ -34,7 +34,7 @@ function showFavourite() {
                         testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
 
                         testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
-                        // testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
+                        testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                         testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
 
                         favouriteCardGroup.appendChild(testFavouriteCard);
@@ -45,6 +45,10 @@ function showFavourite() {
     });
 }
 showFavourite();
+
+function setExpenseData(expenseID) {
+    localStorage.setItem('id', expenseID);
+}
 
 function addExistingFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
