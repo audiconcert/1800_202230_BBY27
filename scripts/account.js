@@ -15,7 +15,7 @@ function populateInfo() {
         if (userEmail != null) {
           document.getElementById("emailInput").value = userEmail;
         }
-        if (treeNamE != null) {
+        if (treeName != null) {
           document.getElementById("treeNameInput").value = treeNamE;
         }
       });

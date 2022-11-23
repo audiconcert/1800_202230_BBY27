@@ -10,7 +10,8 @@ var uiConfig = {
             db.collection("users").doc(user.uid).set({         
                     name: user.displayName,                  
                     email: user.email, 
-                    treeName: "Ernie",  
+                    treeName: "Ernie",
+                    budget: 0,  
                     favourites: firebase.firestore.FieldValue.arrayUnion(),  
                     expenseCount: 0,
                     incomeCount: 0            

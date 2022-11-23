@@ -4,6 +4,22 @@ const formatter = new Intl.NumberFormat('en-US', {
     currency: 'USD',
 });
 
+function insertBudget() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid);
+            currentUser.get().then((userDoc) => {
+                var budget = userDoc.data().budget;
+                var expenses = userDoc.data().expenseCount;
+                document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
+            })
+        } else {
+            console.log('No user is signed in');
+        }
+    });
+}
+insertBudget();
+
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
     let favouriteCardGroup = document.getElementById("favouriteCardGroup");
