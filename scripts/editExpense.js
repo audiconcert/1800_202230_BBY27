@@ -1,4 +1,3 @@
-
 var sourceInput = document.getElementById("locale");
 var amountInput = document.getElementById("amt");
 // var categoryInput = document.getElementById("category");
