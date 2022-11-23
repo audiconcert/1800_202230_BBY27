@@ -12,7 +12,8 @@ var uiConfig = {
                     email: user.email, 
                     treeName: "Ernie",  
                     favourites: firebase.firestore.FieldValue.arrayUnion(),  
-                    expenseCount: 0,                  
+                    expenseCount: 0,
+                    incomeCount: 0            
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");       //re-direct to main.html after signup

@@ -15,8 +15,7 @@ firebase.auth().onAuthStateChanged(user => {
         var userID = user.uid;
         console.log(userID);
         currentUser.get().then(function (doc) {
-            expenses = doc.data().expenseCount;
-            return expenses;
+            var expenses = doc.data().expenseCount;
         }); 
     }
 });

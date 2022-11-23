@@ -20,10 +20,17 @@ form.addEventListener('submit', (e) => {
                 amount: parseFloat(amount.value),
                 date: date.value,
             });
+            var Amount = parseFloat(amount.value);
+            db.collection("users").doc(user.uid).get().then(function (doc) {
+                var currentIncomeCount = doc.data().incomeCount;
+                db.collection("users").doc(user.uid).set({
+                    incomeCount: currentIncomeCount + Amount
+                }, { merge: true });
+            });
             form.name.value = ''
             form.amount.value = ''
             form.date.value = ''
         }
     });
-    setTimeout(save, 400);
+    setTimeout(save, 2000);
 });
