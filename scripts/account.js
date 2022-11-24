@@ -118,6 +118,16 @@ function saveUserInfo() {
   })
 }
 
-logout.addEventListener('click', (e) => {
+function sendBack() {
   window.location.href = 'index.html';
-});
+}
+
+function logout() {
+  console.log("logging out user");
+  firebase.auth().signOut().then(() => {
+      alert('Signed out!');
+      setTimeout(sendBack, 1000);
+    }).catch((error) => {
+      // An error happened.
+    });
+}

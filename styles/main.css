@@ -192,7 +192,7 @@ span {
     color:  #E9EB9E;
 }
 
-img {
+.ernie-image {
     width: 150px;
     grid-area: a;
     justify-self: center;
@@ -213,14 +213,23 @@ img {
     text-decoration: none;
     color: #53a076;
 }
-
 .pfp-contain {
     display: grid;
     grid-gap: 20px;
-    justify-content: center;
     grid-template-areas:
     'a'
     'a'
     'b'
     'b';
+}
+.pfp-img {
+    justify-self: center;
+    grid-area: a;
+}
+.pfp-choose {
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    grid-area: b;
+    font-size: 100%;
 }
