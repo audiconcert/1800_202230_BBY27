@@ -181,6 +181,7 @@ span {
     margin-left: 5vw;
     margin-right: 5vw;
     border-radius: 50px;
+    border-color: #9c9e6534;
     grid-template-areas:
     'a b b'
     'a c c';
@@ -213,3 +214,13 @@ img {
     color: #53a076;
 }
 
+.pfp-contain {
+    display: grid;
+    grid-gap: 20px;
+    justify-content: center;
+    grid-template-areas:
+    'a'
+    'a'
+    'b'
+    'b';
+}
