@@ -7,6 +7,7 @@ body {
     font-family: josefin;
     padding-top: 70px;
     margin-top: 30px;
+    background-color: #e5f0e0;
 }
 .nav {
     justify-content: center;
@@ -73,7 +74,11 @@ a {
 }
 .savings-home {
     text-decoration: none;
-    color: #5dab7f;
+    color: #53a076;
+}
+.savings-home:hover {
+    color: rgb(18, 65, 62);
+    font-size: 1.3em;
 }
 
 .save-grid {
