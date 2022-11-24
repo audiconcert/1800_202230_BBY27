@@ -52,6 +52,8 @@ h1 {
     color: rgb(187, 196, 204);
 }
 
+
+
 .card-title {
     grid-column: 1 / span 2;
 }
