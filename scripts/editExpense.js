@@ -1,10 +1,11 @@
+
 var sourceInput = document.getElementById("locale");
 var amountInput = document.getElementById("amt");
 // var categoryInput = document.getElementById("category");
 const expenseID = localStorage.getItem('id');
 
 function populateInfo() {
-    firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged((user) => {
         if(user) {
             var currentUser = db.collection("users").doc(user.uid);
             currentUser.collection("expenses").doc(expenseID).get().then(function(doc) {

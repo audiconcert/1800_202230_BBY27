@@ -1,28 +1,4 @@
 #container {
-    display:grid;
-    grid-template-columns: 10vw 80vw 10vw;
-    grid-auto-rows: 10vh;
-    margin-top: 3%;  
-}
-
-h1 {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    text-align: center;
-
-}
-
-p {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-}
-
-.contribution {
-    grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
-}
-
-.button {
-    grid-column: 2 / span 1;
-    grid-row: 5 / span 1;
+    display: flex;
+    margin-top: 3%;
 }

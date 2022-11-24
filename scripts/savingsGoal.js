@@ -31,7 +31,7 @@ function showGoals() {
                         // testGoals.querySelector('.card-date').innerHTML = date;
 
 
-                        // testGoals.querySelector('.edit').onclick = () => editSavingsGoal(savingsID);
+                        testGoals.querySelector('.edit').onclick = () => editSavingsGoal(savingsID);
                         testGoals.querySelector('.delete').onclick = () => deleteSavingsGoal(savingsID);
 
                         // testGoals.querySelector('.card-contributions').id = "contributions-" + savingsID;
@@ -49,6 +49,10 @@ function showGoals() {
     });
 }
 showGoals();
+
+function editSavingsGoal(savingsID) {
+    localStorage.setItem('id', savingsID);
+}
 
 // function setSavingsData(id) {
 
