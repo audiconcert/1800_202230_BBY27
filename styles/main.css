@@ -148,7 +148,7 @@ span {
 }
 
 img {
-    width: 170px;
+    width: 150px;
     grid-area: a;
     justify-self: center;
 }
@@ -156,11 +156,11 @@ img {
 .ernie-heading {
     grid-area: b;
     justify-self: start;
-    font-size: 30px;
+    font-size: 25px;
 }
 .ernie-text {
     grid-area: c;
-    font-size: 40px;
+    font-size: 35px;
     justify-self: start;
 }
 .ernie-button {
