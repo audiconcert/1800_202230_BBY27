@@ -2,3 +2,9 @@ body {
     margin-top: 30px;
     text-align: center;
 }
+#loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}

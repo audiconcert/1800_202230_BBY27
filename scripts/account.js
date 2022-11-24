@@ -58,6 +58,7 @@ var newUserEmail = document.getElementById("emailInput");
 var newTreeName = document.getElementById("treeNameInput");
 var edit = document.getElementById('edit');
 var save = document.getElementById('save');
+var logout = document.getElementById('logout');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -76,4 +77,8 @@ form.addEventListener('submit', (e) => {
         window.location.href = 'login.html';
       }
   });
+});
+
+logout.addEventListener('click', (e) => {
+  window.location.href = 'index.html';
 });
