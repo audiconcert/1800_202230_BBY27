@@ -18,6 +18,10 @@ h1 {
     justify-content: center;
 }
 
+.edit {
+    color: white;
+}
+
 .titles {
     display:grid;
     grid-template-columns: 1fr 1fr;

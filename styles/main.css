@@ -25,6 +25,11 @@ span {
     background-color: #aae1c2;
 }
 
+.total-head {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .btn-1 {
     align-self: center;
     background-color: rgb(107, 137, 110);
@@ -130,7 +135,35 @@ span {
     cursor: pointer;
 }
 
-
 .ernie-button {
     text-align: center;
+}
+
+.ernie-grid {
+    display: grid;
+    grid-template-areas:
+    'a b b'
+    'a c c';
+    align-items: center;
+}
+
+img {
+    width: 100px;
+    grid-area: a;
+    justify-self: center;
+}
+
+.ernie-heading {
+    grid-area: b;
+    justify-self: start;
+    font-size: 30px;
+}
+.ernie-text {
+    grid-area: c;
+    font-size: 40px;
+    justify-self: start;
+}
+.ernie-button {
+    text-decoration: none;
+    color: #53a076;
 }
