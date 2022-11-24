@@ -58,8 +58,16 @@ h1 {
 .buttons {
     display: flex;
     justify-content: center;
+    gap: 1em;
 }
 .view-all {
     grid-column: 2 / span 1;
     grid-row: 4;
+}
+
+.edit {
+    color: white;
+}
+.edit:hover {
+    color: black;
 }
