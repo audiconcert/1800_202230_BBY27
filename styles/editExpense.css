@@ -1,0 +1,44 @@
+
+
+.editContainer {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    justify-content:center;
+    align-items: center;
+}
+h1 {
+    font-weight: bold;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+    width: 80vw;
+}
+
+#savingsGoalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    font-size: 1.2em;
+}
+
+.form-source {
+    display: flex;
+    flex-direction: column;
+}
+.form-amount {
+    display: flex;
+    flex-direction: column;
+}
+.form-category {
+    display: flex;
+    flex-direction: column;
+}
+
+#save {
+    width: 100%;
+}
+
