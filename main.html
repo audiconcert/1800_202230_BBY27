@@ -27,7 +27,7 @@
     <!-- Link to styles of your own -->
     <link href="styles/main.css" rel="stylesheet">
     <link href="styles/icon.ico" rel="icon">
-    
+
 
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
@@ -43,15 +43,28 @@
     
     <div id="mainBody">
         <div class="welcome-back">
-            <h1 class="welcome-back-heading"><h1 id="name-goes-here"></span></h1>
+            <h1 class="welcome-back-heading">
+                <h1 id="name-goes-here"></span></h1>
+        </div>
+        <p>
+            <button class="ernie-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Button with data-bs-target
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Some placeholder content for the collapse component. This panel is hidden by default but revealed when
+                the user activates the relevant trigger.
+            </div>
         </div>
         <!--Quick analytics button-->
-        <a class="savings-home" href="./analytics.html">
+        <!-- <a class="savings-home" href="./analytics.html">
             <div class="save-grid">
                 <span class="material-icons save-logo md-48">park</span>
                 <p class="save-heading" id="tree-name-goes-here">Placeholder</p>
             </div>
-        </a><br>
+        </a><br> -->
         <!--Savings button-->
         <a class="savings-home" href="./savingsGoal.html">
             <div class="save-grid">
