@@ -1,14 +1,28 @@
+body {
+    display: flex;
+    flex-direction:column;
+    gap: 0.5em;
+}
+
 .title,h1 {
     font-size: 210%;
-    color: #78b090;
+    color: #ACC196;
     font-weight: bold;
     text-align: center;
 }
 h2 {
     text-align: center;
     font-size: 200%;
+    color: aliceblue;
 }
 .btn {
     padding: 15px;
     font-size: 200%;
+    background-color: #ACC196;
+    color: #49475B;
+}
+
+.btn:hover {
+    font-size: 3em;
+    color: black;
 }

@@ -86,7 +86,7 @@ function addExistingFavourite(expenseID) {
 
                 }).then(function () {
                     document.getElementById(addID).innerText = 'Added!';
-                    setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 3500);
+                    setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 2000);
                 });
         }
     });
