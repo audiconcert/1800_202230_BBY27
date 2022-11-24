@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
         var SavedContributions = doc.data().contributions;
         currentUser.collection('savings').doc(savingsID).update({
           amount: amountInput.value,
-          contributions: parseFloat(SavedContributions + contributions.value),
+          contributions: parseFloat(SavedContributions + parseFloat(contributions.value)),
           name: nameInput.value
         });
       });

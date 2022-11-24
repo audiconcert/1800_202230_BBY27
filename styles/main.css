@@ -99,7 +99,7 @@ span {
     margin-top: 2%;
     grid-area: save-heading;
     font-size: 175%;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     font-weight: bold;
     justify-self: start;
     align-self: start;
@@ -123,4 +123,9 @@ span {
     border-radius: 1.5em;
     z-index: 100;
     cursor: pointer;
+}
+
+
+.ernie-button {
+    text-align: center;
 }
