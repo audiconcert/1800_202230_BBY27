@@ -11,7 +11,13 @@ function insertBudget() {
             currentUser.get().then((userDoc) => {
                 var budget = userDoc.data().budget;
                 var expenses = userDoc.data().expenseCount;
-                document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
+                if (budget > expenses) {
+                    document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
+                } else {
+                    document.getElementById("text-budget").style.color = 'red';
+                    document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
+
+                }
             })
         } else {
             console.log('No user is signed in');

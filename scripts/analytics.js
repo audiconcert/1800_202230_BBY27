@@ -43,23 +43,35 @@ function insertTree() {
 
                 var tree = document.getElementById('tree');
                 var health = document.getElementById('treeHealth');
+                var health2 = document.getElementById('treeHealth2');
+                var health3 = document.getElementById('treeHealth3');
+                var health4 = document.getElementById('treeHealth4');
+
 
                 if (expenses > income) {
                     if ((expenses - 100) < income) {     // 100 is a baseline net value. change if you have a better idea
                         tree.src = '/images/tree2.png';
-                        health.innerText = "66%"        // percentages are dumb. change if you have a better idea
+                        health.innerText = "favorite";
+                        health2.innerText = "favorite";  
+                        health3.innerText = "favorite_border";  
                     } else {
                         tree.src = '/images/tree3.png';
-                        health.innerText = "<33%"
+                        health.innerText = "favorite";
+                        health2.innerText = "favorite_border";
+                        health3.innerText = "favorite_border";
                     }
                 }
                 if (expenses < income) {
                     if ((income - 100) < expenses) {     // 100 is a baseline net value. change if you have a better idea
                         tree.src = '/images/tree2.png';
-                        health.innerText = "66%"        // percentages are dumb. change if you have a better idea
+                        health.innerText = "favorite";
+                        health2.innerText = "favorite";  
+                        health3.innerText = "favorite_border";  
                     } else {
                         tree.src = '/images/tree1.png';
-                        health.innerText = "100%"
+                        health.innerText = "favorite";
+                        health2.innerText = "favorite";  
+                        health3.innerText = "favorite";  
                     }
                 }
             })
