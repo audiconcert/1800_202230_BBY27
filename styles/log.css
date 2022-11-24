@@ -1,7 +1,12 @@
+@font-face {
+    font-family: josefinBold;
+    src: url(JosefinSans-Bold.ttf);
+}
 h1 {
-    padding: 4%;
+    margin-top: 30px;
+    text-align: center;
     font-size: 210%;
-    font-weight: bold;
+    font-family: josefinBold;
 }
 .btn1 {
     font-size: 2em;

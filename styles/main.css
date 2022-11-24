@@ -2,6 +2,10 @@
     font-family: josefin;
     src: url(JosefinSans-Regular.ttf);
 }
+@font-face {
+    font-family: josefinBold;
+    src: url(JosefinSans-Bold.ttf);
+}
 
 body {
     font-family: josefin;
@@ -27,9 +31,8 @@ span {
 
 .total-head {
     font-size: 20px;
-    font-weight: bold;
+    font-family: josefinBold;
 }
-
 .btn-1 {
     align-self: center;
     background-color: rgb(107, 137, 110);
@@ -110,7 +113,7 @@ span {
     grid-area: save-heading;
     font-size: 175%;
     letter-spacing: 4px;
-    font-weight: bold;
+    font-family: josefinBold;
     justify-self: start;
     align-self: start;
 }
@@ -141,14 +144,21 @@ span {
 
 .ernie-grid {
     display: grid;
+    border: 2px solid;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 50px;
     grid-template-areas:
     'a b b'
     'a c c';
     align-items: center;
 }
+.ernie-grid:hover {
+    color: rgb(18, 65, 62);
+}
 
 img {
-    width: 100px;
+    width: 150px;
     grid-area: a;
     justify-self: center;
 }
@@ -156,11 +166,12 @@ img {
 .ernie-heading {
     grid-area: b;
     justify-self: start;
-    font-size: 30px;
+    align-self: end;
+    font-size: 25px;
 }
 .ernie-text {
     grid-area: c;
-    font-size: 40px;
+    font-size: 35px;
     justify-self: start;
 }
 .ernie-button {

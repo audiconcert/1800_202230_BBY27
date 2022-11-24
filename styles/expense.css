@@ -6,11 +6,15 @@
 body {
     margin-top: 30px;
 }
+@font-face {
+    font-family: josefinBold;
+    src: url(JosefinSans-Bold.ttf);
+}
 h1 {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     font-size: 30pt;
-    font-weight: bold;
+    font-family: josefinBold;
     text-align: center;
 }
 
