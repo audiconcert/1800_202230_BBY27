@@ -33,7 +33,6 @@ span {
     font-size: 20px;
     font-family: josefinBold;
 }
-
 .btn-1 {
     align-self: center;
     background-color: rgb(107, 137, 110);
@@ -145,10 +144,17 @@ span {
 
 .ernie-grid {
     display: grid;
+    border: 2px solid;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 50px;
     grid-template-areas:
     'a b b'
     'a c c';
     align-items: center;
+}
+.ernie-grid:hover {
+    color: rgb(18, 65, 62);
 }
 
 img {
@@ -160,6 +166,7 @@ img {
 .ernie-heading {
     grid-area: b;
     justify-self: start;
+    align-self: end;
     font-size: 25px;
 }
 .ernie-text {
