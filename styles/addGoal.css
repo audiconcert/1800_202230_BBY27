@@ -1,9 +1,10 @@
 
-.csContainer {
+
+.addGoalContainer {
     margin-top: 2em;
     display: flex;
     flex-direction: column;
-    gap: 3em;
+    gap: 5em;
     justify-content:center;
     align-items: center;
 }
@@ -13,17 +14,19 @@ h1 {
 #form {
     display: flex;
     flex-direction: column;
-    gap: 3.2em;
+    gap: 6em;
     width: 80vw;
 }
 
 #savingsGoalFields {
     display: flex;
     flex-direction: column;
-    gap: 1.2em;
+    gap: 3em;
     font-size: 1.2em;
 }
-
+form input {
+    height: 3em;
+}
 .form-source {
     display: flex;
     flex-direction: column;
@@ -37,7 +40,7 @@ h1 {
     flex-direction: column;
 }
 
-#save {
+#add {
     width: 100%;
 }
 

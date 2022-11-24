@@ -27,7 +27,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!-- Link to styles of your own -->
   <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/add.css" rel="stylesheet" />
+  <link href="styles/addExpense.css" rel="stylesheet" />
   <link href="styles/icon.ico" rel="icon">
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 </head>
@@ -39,7 +39,7 @@
 
   <nav id="navbarPlaceholder"></nav>
 
-  <div class="container">
+  <div class="addExpenseContainer">
     <h1>Log Expense</h1>
 
     <form id="form">
@@ -66,8 +66,11 @@
         </div>
       </fieldset>
       
-      <button id="addFav" type="submit" class="btn btn-2 btn-lg form-add button round" >Log Expense + Add to Favourites</button>
-      <button id="saveExp"  type="submit" class="btn btn-2 btn-lg form-favourites favourites round">Log Expense</button>
+      <div id="buttons">
+        <button id="addFav" type="submit" class="btn btn-2 btn-lg form-add button round" >Log Expense + Add to Favourites</button>
+        <button id="saveExp"  type="submit" class="btn btn-2 btn-lg form-favourites favourites round">Log Expense</button>
+      </div>
+      
     </form>
     
 
