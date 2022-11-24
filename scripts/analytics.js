@@ -5,6 +5,10 @@ var imgCard = document.getElementById('imgCard');
 var progressBar = document.getElementsByClassName('progress-bar');
 var now = new Date();
 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
 
 function insertTreeName() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -32,18 +36,18 @@ function insertTree() {
             currentUser = db.collection("users").doc(user.uid);
             currentUser.get().then((userDoc) => {
                 var expenses = userDoc.data().expenseCount;
-                document.getElementById('total-expenses').innerText = "Total Expenses: $" + expenses;
+                document.getElementById('total-expenses').innerText = "Total Expenses: " + formatter.format(expenses);
                 var income = userDoc.data().incomeCount;
-                document.getElementById('total-income').innerText = "Total Income: $" + income;
+                document.getElementById('total-income').innerText = "Total Income: " + formatter.format(income);
                 var net = document.getElementById('net');
                 var worth = parseFloat(income) - parseFloat(expenses);
                 if (expenses > income) {
                     net.style.color = 'red';
-                    net.innerHTML = "Net Loss: $" + worth;
+                    net.innerHTML = "Net Loss: " + formatter.format(worth);
                 }
                 if (expenses < income) {
                     net.style.color = '#73a589';
-                    net.innerHTML = "Net Gain: $" + worth;
+                    net.innerHTML = "Net Gain: " + formatter.format(worth);
                 }
 
                 var tree = document.getElementById('tree');

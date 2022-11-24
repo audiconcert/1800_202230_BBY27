@@ -14,7 +14,8 @@ function insertBudget() {
                 if (budget > expenses) {
                     document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
                 } else {
-                    document.getElementById("text-budget").style.color = 'red';
+                    document.getElementById("text-budget").style.color = 'rgb(255, 75, 75)';
+
                     document.getElementById("text-budget").innerText = "Budget: " + formatter.format(expenses) + " / " + formatter.format(budget);
 
                 }

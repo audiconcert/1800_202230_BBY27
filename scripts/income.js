@@ -1,3 +1,8 @@
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+})
+
 function showFavourite() {
     let favouritestemplate = document.getElementById("favouritestemplate");
     let favouriteCardGroup = document.getElementById("favouriteCardGroup");
@@ -16,7 +21,7 @@ function showFavourite() {
                     var Name = doc.data().name;
                     var date = doc.data().date;
                     var testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                    testFavouriteCard.querySelector('.card-amount').innerHTML = parseFloat(amount);
+                    testFavouriteCard.querySelector('.card-amount').innerHTML =  formatter.format(parseFloat(amount));
                     testFavouriteCard.querySelector('.card-title').innerHTML = Name;
                     testFavouriteCard.querySelector('.card-date').innerHTML = date;
 
