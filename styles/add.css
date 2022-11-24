@@ -5,11 +5,16 @@
     grid-auto-rows: 58px;
     justify-content: center;
 }
+@font-face {
+    font-family: josefinBold;
+    src: url(JosefinSans-Bold.ttf);
+}
+
 h1 {
     justify-self: center;
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
-    font-weight: bold;
+    font-family: josefinBold;
 }
 #form {
     grid-column: 2 / span 1;

@@ -2,6 +2,10 @@
     font-family: josefin;
     src: url(JosefinSans-Regular.ttf);
 }
+@font-face {
+    font-family: josefinBold;
+    src: url(JosefinSans-Bold.ttf);
+}
 
 body {
     font-family: josefin;
@@ -27,7 +31,7 @@ span {
 
 .total-head {
     font-size: 20px;
-    font-weight: bold;
+    font-family: josefinBold;
 }
 
 .btn-1 {
@@ -110,7 +114,7 @@ span {
     grid-area: save-heading;
     font-size: 175%;
     letter-spacing: 4px;
-    font-weight: bold;
+    font-family: josefinBold;
     justify-self: start;
     align-self: start;
 }
