@@ -130,7 +130,9 @@ span {
     cursor: pointer;
 }
 
-
+img {
+    width: 25%;
+}
 .ernie-button {
     text-align: center;
 }
