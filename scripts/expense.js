@@ -30,33 +30,36 @@ function showFavourite() {
             var userID = user.uid;
             console.log(userID);
 
-            currentUser.get().then(function(doc) {
+            currentUser.get().then(function (doc) {
                 var favourites = doc.data().favourites;
-                favourites.forEach(function(expenseIDs) {
+                favourites.forEach(function (expenseIDs) {
                     var expenseID = expenseIDs;
                     db.collection("users").doc(user.uid).collection("expenses").doc(expenseID)
-                    .get().then(function(doc) {
-                        var amount = doc.data().amount;
-                        var source = doc.data().source;
-                        var category = doc.data().category;
-                        var testFavouriteCard = favouritestemplate.content.cloneNode(true);
-                        testFavouriteCard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
-                        testFavouriteCard.querySelector('.card-title').innerHTML = source;
-                        testFavouriteCard.querySelector('.card-category').innerHTML = category;
+                        .get().then(function (doc) {
+                            var amount = doc.data().amount;
+                            var source = doc.data().source;
+                            var category = doc.data().category;
+                            var testFavouriteCard = favouritestemplate.content.cloneNode(true);
+                            testFavouriteCard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
+                            testFavouriteCard.querySelector('.card-title').innerHTML = source;
+                            testFavouriteCard.querySelector('.card-category').innerHTML = category;
 
-                        testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
-                        testFavouriteCard.querySelector('.card-title').id = 'title-' + expenseID;
-                        testFavouriteCard.querySelector('.card-category').id = 'category-' + expenseID;
-                        testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
+                            testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
+                            testFavouriteCard.querySelector('.card-title').id = 'title-' + expenseID;
+                            testFavouriteCard.querySelector('.card-category').id = 'category-' + expenseID;
+                            testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
 
-                        testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
-                        testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
-                        testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
+                            testFavouriteCard.querySelector('.add').onclick = () => addExistingFavourite(expenseID);
+                            testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
+                            testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
 
-                        favouriteCardGroup.appendChild(testFavouriteCard);
-                    });
+                            favouriteCardGroup.appendChild(testFavouriteCard);
+                        });
                 });
             });
+        } else {
+            console.log("No user is signed in");
+            window.location.href = 'login.html';
         }
     });
 }
@@ -68,38 +71,38 @@ function setExpenseData(expenseID) {
 
 function addExistingFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
-        if(user) {
+        if (user) {
             var currentUser = db.collection("users").doc(user.uid);
             var addID = 'add-' + expenseID;
             currentUser.collection("expenses").doc(expenseID).get()
-            .then(function(doc) {
-                var Amount = doc.data().amount;
-                db.collection("users").doc(user.uid).get().then(function(doc) {
-                    var currentExpenseCount = doc.data().expenseCount;
-                    db.collection("users").doc(user.uid).set({
-                        expenseCount: currentExpenseCount + Amount,
-                    }, {merge:true});
-                });
+                .then(function (doc) {
+                    var Amount = doc.data().amount;
+                    db.collection("users").doc(user.uid).get().then(function (doc) {
+                        var currentExpenseCount = doc.data().expenseCount;
+                        db.collection("users").doc(user.uid).set({
+                            expenseCount: currentExpenseCount + Amount,
+                        }, { merge: true });
+                    });
 
-            }).then(function () {
-                document.getElementById(addID).innerText = 'Added!';
-                setTimeout(function(){document.getElementById(addID).innerText = 'Add'}, 3500);
-            });
+                }).then(function () {
+                    document.getElementById(addID).innerText = 'Added!';
+                    setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 3500);
+                });
         }
     });
 }
 
 function deleteFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
-        if(user) {
+        if (user) {
             var currentUser = db.collection("users").doc(user.uid);
             currentUser.update({
                 favourites: firebase.firestore.FieldValue.arrayRemove(expenseID)
-            }).then (() => {
+            }).then(() => {
                 alert("Deleted from Favourites!");
                 window.location.href = 'expense.html';
             });
- 
+
         }
     });
 }
@@ -121,7 +124,7 @@ function deleteFavourite(expenseID) {
 //                             category: doc.data().category,
 //                             date: doc.data().date
 //                         })
-//                     })  
+//                     })
 //                 })
 //                 .then(function () {
 //                     var addID = 'add-' + expenseID;

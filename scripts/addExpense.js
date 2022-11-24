@@ -46,7 +46,7 @@ favourite.addEventListener('click', (e) => {
                     }, { merge: true });
                 });
             })
-        }
+        } 
     });
     setTimeout(addFav, 2000);
 });

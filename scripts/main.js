@@ -9,8 +9,6 @@ function insertName() {
                 var treeName = userDoc.data().treeName;
                 document.getElementById("name-goes-here").innerText = "Good to see you, " + userName;
             });
-        } else {
-            console.log('No user is signed in');
         }
     });
 }
