@@ -34,7 +34,7 @@
 
 </head>
 
-<body  class="bg-PC">
+<body class="bg-PC">
 
     <!------------------------------>
     <!-- Your HTML Layout go here -->
@@ -57,13 +57,26 @@
             </div>
         </a>
         <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <p>You can change your tree's name in Account > Tree Name.</p>
+            <div class="card card-body stats">
+                <p id="change-info"></p>
                 <p class="total-head" id="total-expenses"></p>
                 <p class="total-head" id="total-income"></p>
                 <p class="total-head" id="net"></p>
             </div>
         </div><br>
+        <a class="info-button savings-home2" href="./savingsGoal.html" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                <div class="save-grid">
+                    <span class="material-icons save-logo md-48">info</span>
+                    <p class="save-heading tip-text" id="tip-text" style="margin-top: 1em;"></p>
+                </div>
+            </a>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body stats">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div><br>
         <!--Quick analytics button-->
         <!-- <a class="savings-home" href="./analytics.html">
             <div class="save-grid">
@@ -74,24 +87,25 @@
         <!--Savings button-->
         <div id="savings-home-container">
             <a class="savings-home" href="./savingsGoal.html">
-                <div class="save-grid" >
+                <div class="save-grid">
                     <span class="material-icons save-logo md-48">savings</span>
                     <p class="save-heading" style="margin-top: 1em;">SAVINGS</p>
                 </div>
             </a><br>
             <a class="savings-home" href="./expense.html">
-                <div class="save-grid" >
+                <div class="save-grid">
                     <span class="material-icons save-logo md-48">account_balance</span>
                     <p class="save-heading" style="margin-top: 1em;">EXPENSES</p>
                 </div>
             </a>
             <br>
             <a class="savings-home" href="./income.html">
-                <div class="save-grid" >
+                <div class="save-grid">
                     <span class="material-icons save-logo md-48">payments</span>
                     <p class="save-heading" style="margin-top: 1em;">INCOME</p>
                 </div>
-            </a>
+            </a><br>
+            
 
         </div>
         <br>

@@ -83,11 +83,20 @@ function addExistingFavourite(expenseID) {
             currentUser.collection("expenses").doc(expenseID).get()
                 .then(function (doc) {
                     var Amount = doc.data().amount;
+                    var Name = doc.data().source;
+                    var Category = doc.data().category;
                     db.collection("users").doc(user.uid).get().then(function (doc) {
                         var currentExpenseCount = doc.data().expenseCount;
                         db.collection("users").doc(user.uid).set({
                             expenseCount: currentExpenseCount + Amount,
-                        }, { merge: true });
+                        }, { merge: true })
+                        .then(()=>{
+                            currentUser.collection("expenses").add({
+                                amount: Amount,
+                                source: Name,
+                                category: Category
+                            })
+                        });
                     });
 
                 }).then(function () {

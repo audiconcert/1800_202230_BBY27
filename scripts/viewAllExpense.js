@@ -30,7 +30,7 @@ function showExpenses() {
 
                         newcard.querySelector('.add').onclick = () => addExistingExpense(expenseID);
                         // newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
-                        newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
+                        // newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
                         document.getElementById("expenses-go-here").appendChild(newcard);
 
                     })
@@ -49,22 +49,32 @@ function addExistingExpense(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
+            var addID = 'add-' + expenseID;
             currentUser.collection("expenses").doc(expenseID).get()
                 .then(function (doc) {
                     var Amount = doc.data().amount;
+                    var Name = doc.data().source;
+                    var Category = doc.data().category;
                     db.collection("users").doc(user.uid).get().then(function (doc) {
                         var currentExpenseCount = doc.data().expenseCount;
                         db.collection("users").doc(user.uid).set({
                             expenseCount: currentExpenseCount + Amount,
-                        }, { merge: true });
+                        }, { merge: true })
+                        .then(()=>{
+                            currentUser.collection("expenses").add({
+                                amount: Amount,
+                                source: Name,
+                                category: Category
+                            })
+                        });
                     });
 
                 }).then(function () {
-                    var addID = 'add-' + expenseID;
                     document.getElementById(addID).innerText = 'Added!';
-                })
+                    setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 2000);
+                });
         }
-    })
+    });
 }
 
 function setExpenseData(id) {

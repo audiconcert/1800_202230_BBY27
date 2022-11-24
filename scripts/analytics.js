@@ -13,6 +13,11 @@ function insertTreeName() {
             currentUser.get().then((userDoc) => {
                 var treeName = userDoc.data().treeName;
                 document.getElementById("treeName").innerText = treeName + "'s Health";
+                var changeInfo = document.getElementById('change-info');
+                changeInfo.innerText = "You can change " + treeName + "'s name in Account > Tree Name"
+                var tip = document.getElementById('tip-text');
+                let treeName2 = treeName.toUpperCase();
+                tip.innerText = treeName2 + "'S DAILY";
             })
         } else {
             console.log('No user is signed in');
@@ -27,9 +32,9 @@ function insertTree() {
             currentUser = db.collection("users").doc(user.uid);
             currentUser.get().then((userDoc) => {
                 var expenses = userDoc.data().expenseCount;
-                document.getElementById('total-expenses').innerText = "Total Expenses: " + expenses;
+                document.getElementById('total-expenses').innerText = "Total Expenses: $" + expenses;
                 var income = userDoc.data().incomeCount;
-                document.getElementById('total-income').innerText = "Total Income: " + income;
+                document.getElementById('total-income').innerText = "Total Income: $" + income;
                 var net = document.getElementById('net');
                 var worth = parseFloat(income) - parseFloat(expenses);
                 if (expenses > income) {
