@@ -25,14 +25,17 @@ function showFavourite() {
                     // testFavouriteCard.querySelector('.card-category').id = 'category-' + expenseID;
                     // testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
 
-                
+
                     // testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                     testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(incomeID);
 
                     favouriteCardGroup.appendChild(testFavouriteCard);
-                   
+
                 });
             });
+        } else {
+            console.log("No user is signed in");
+            window.location.href = 'login.html';
         }
     });
 }
@@ -63,13 +66,13 @@ showFavourite();
 
 function deleteFavourite(ID) {
     firebase.auth().onAuthStateChanged(user => {
-        if(user) {
+        if (user) {
             var currentUser = db.collection("users").doc(user.uid);
             currentUser.collection("income").doc(ID).delete().then(() => {
                 alert("Deleted Income!");
                 window.location.href = "income.html";
             });
- 
+
         }
     });
 }

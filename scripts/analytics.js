@@ -40,10 +40,10 @@ function insertTree() {
                     net.style.color = '#73a589';
                     net.innerHTML = "Net Gain: $" + worth;
                 }
-                
+
                 var tree = document.getElementById('tree');
                 var health = document.getElementById('treeHealth');
-                
+
                 if (expenses > income) {
                     if ((expenses - 100) < income) {     // 100 is a baseline net value. change if you have a better idea
                         tree.src = '/images/tree2.png';
@@ -63,6 +63,9 @@ function insertTree() {
                     }
                 }
             })
+        } else {
+            console.log("No user is signed in");
+            window.location.href = 'login.html';
         }
     })
 }

@@ -35,6 +35,9 @@ function showExpenses() {
 
                     })
                 });
+        } else {
+            console.log("No user is signed in");
+            window.location.href = 'login.html';
         }
     })
 }

@@ -21,6 +21,7 @@ function populateInfo() {
       });
     } else {
       console.log("No user is signed in");
+      window.location.href = 'login.html';
     }
   });
 }
@@ -70,6 +71,9 @@ form.addEventListener('submit', (e) => {
             treeName: newTreeName.value,
           });
           document.getElementById("personalInfoFields").disabled = true;
-      };
+      } else {
+        console.log("No user is signed in");
+        window.location.href = 'login.html';
+      }
   });
 });

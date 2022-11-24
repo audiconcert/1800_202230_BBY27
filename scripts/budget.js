@@ -11,6 +11,7 @@ function populateInfo() {
             });
         } else {
             console.log("No user is signed in");
+            window.location.href = 'login.html';
         }
     });
 }
@@ -26,15 +27,15 @@ function editUserInfo() {
 }
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-          var userID = user.uid;
-          console.log(userID);
-          db.collection("users").doc(user.uid).update({
-            budget: parseFloat(newBudget.value)
-          });
-          document.getElementById("personalInfoFields").disabled = true;
-      };
-  });
+    e.preventDefault();
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            var userID = user.uid;
+            console.log(userID);
+            db.collection("users").doc(user.uid).update({
+                budget: parseFloat(newBudget.value)
+            });
+            document.getElementById("personalInfoFields").disabled = true;
+        };
+    });
 });
