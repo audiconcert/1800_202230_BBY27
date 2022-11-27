@@ -89,11 +89,11 @@ span {
 }
 .btn-3 {
     background-color: #ACC196;
-    color: white;
+    color: black;
     width: 100%;
 }
 .btn-3:hover {
-    color: black;
+    font-weight: bold;
 }
 .material-icons.md-18 {
     font-size: 18px;
