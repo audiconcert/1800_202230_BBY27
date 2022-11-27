@@ -14,7 +14,7 @@ var uiConfig = {
                     budget: 0,  
                     favourites: firebase.firestore.FieldValue.arrayUnion(),  
                     expenseCount: 0,
-                    incomeCount: 0            
+                    incomeCount: 0,           
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");       //re-direct to main.html after signup

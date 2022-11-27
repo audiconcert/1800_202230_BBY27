@@ -41,6 +41,15 @@ form.addEventListener('submit', (e) => {
                 });
                 alert('New expense limit saved!');
                 document.getElementById("personalInfoFields").disabled = true;
+
+                var endDate = new Date();
+                endDate.setTime(endDate.getTime() + 604800000);
+                var today = new Date();
+                currentUser.set({
+                    expenseCountStartDate: today,
+                    expenseCountEndDate: endDate
+                }, {merge:true});
+
             } else {
                 currentUser.update({
                     budget: 0
@@ -50,29 +59,29 @@ form.addEventListener('submit', (e) => {
         };
     });
 });
+// 604800000
+// function restartExpenseCount() {
+//     firebase.auth().onAuthStateChanged(user => {
+//         if(user) {
+//             var currentUser = db.collection("users").doc(user.uid);
 
-function restartExpenseCount() {
-    firebase.auth().onAuthStateChanged(user => {
-        if(user) {
-            var currentUser = db.collection("users").doc(user.uid);
+//             var newDate = new Date();
+//             newDate.setTime(newDate.getTime() + 5000);
+//             var countDownDate = newDate.getTime();
 
-            var newDate = new Date();
-            newDate.setTime(newDate.getTime() + 5000);
-            var countDownDate = newDate.getTime();
-
-            setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-                if (distance < 0) {
-                    currentUser.update({
-                        expenseCount: 0
-                    });
-                    restartExpenseCount();
-                }
-            }, 1000);
-        }
-    });
-}
+//             setInterval(function() {
+//                 var now = new Date().getTime();
+//                 var distance = countDownDate - now;
+//                 if (distance < 0) {
+//                     currentUser.update({
+//                         expenseCount: 0
+//                     });
+//                     restartExpenseCount();
+//                 }
+//             }, 1000);
+//         }
+//     });
+// }
 
 
 // function restartExpenseCount() {

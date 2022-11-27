@@ -21,7 +21,7 @@ function insertTreeName() {
                 changeInfo.innerText = "You can change " + treeName + "'s name in Account > Tree Name"
                 var tip = document.getElementById('tip-text');
                 let treeName2 = treeName.toUpperCase();
-                tip.innerText = treeName2 + "'S DAILY";
+                // tip.innerText = treeName2 + "'S DAILY";
             })
         } else {
             console.log('No user is signed in');
@@ -56,6 +56,7 @@ function insertTree() {
                 var health3 = document.getElementById('treeHealth3');
                 var health4 = document.getElementById('treeHealth4');
 
+                
 
                 if (expenses > income) {
                     if ((expenses - 100) < income) {     // 100 is a baseline net value. change if you have a better idea

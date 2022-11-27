@@ -35,7 +35,25 @@ body {
 .nav {
     justify-content: center;
 }
-
+#updateButton {
+    display: flex;
+    justify-content: center;
+}
+#actualButton {
+    width: 70vw;
+    height: 2em;
+    font-size: 1.5em;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #9c9e65;
+    background-color: #14080E;
+    color: #9c9e65;
+}
+#actualButton:hover {
+    color: #E9EB9E;
+    border-color: #E9EB9E;
+    font-size: 2em;
+}
 #title,
 span {
     font-size: 200%;
