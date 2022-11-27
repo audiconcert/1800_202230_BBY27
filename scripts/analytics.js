@@ -37,6 +37,17 @@ function insertTree() {
             currentUser.get().then((userDoc) => {
                 var expenses = userDoc.data().expenseCount;
                 document.getElementById('total-expenses').innerText = "Total Expenses: " + formatter.format(expenses);
+                var budget = userDoc.data().budget;
+                if (budget < expenses) {
+                    let bud = document.getElementById('total-budget');
+                    bud.style.color = 'red';
+                    bud.innerText = "You have surpassed your weekly budget by " + formatter.format((expenses - budget));
+                } else {
+                    let bud = document.getElementById('total-budget');
+                    bud.style.color = '#73a589';
+                     bud.innerText = "You're currently under your weekly budget, with " + formatter.format((budget - expenses)) + " to spare.";
+
+                }
                 var income = userDoc.data().incomeCount;
                 document.getElementById('total-income').innerText = "Total Income: " + formatter.format(income);
                 var net = document.getElementById('net');
