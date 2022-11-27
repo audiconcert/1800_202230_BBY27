@@ -1,6 +1,6 @@
 const Name = document.getElementById('source');
 const amount = document.getElementById('amount');
-const date = document.getElementById('date');
+const category = document.getElementById('category');
 const button = document.getElementById('logIncome');
 // const date = document.getElementById('date');
 
@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
             db.collection("users").doc(userID).collection("income").add({
                 name: Name.value,
                 amount: parseFloat(amount.value),
-                date: date.value,
+                category: category.value,
             });
             var Amount = parseFloat(amount.value);
             db.collection("users").doc(user.uid).get().then(function (doc) {

@@ -54,6 +54,7 @@ chooseFileListener();
 
 function editUserInfo() {
   document.getElementById("personalInfoFields").disabled = false;
+  document.getElementById('emailInput').disable = true; // prevents users from changing their email.
 }
 
 // var form = document.getElementById('form');

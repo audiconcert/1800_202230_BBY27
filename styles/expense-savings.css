@@ -89,3 +89,13 @@ h1 {
 .edit:hover {
     color: black;
 }
+
+label {
+    color: white;
+}
+
+#totalIncome {
+    font-size: 1.5em;
+    color: white;
+}
+

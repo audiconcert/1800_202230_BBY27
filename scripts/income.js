@@ -13,17 +13,22 @@ function showFavourite() {
             var userID = user.uid;
 
             console.log(userID);
+            currentUser.get().then((doc) => {
+                var incomeCount = doc.data().incomeCount;
+                document.getElementById('totalIncome').innerHTML = "Total Income: $ " + incomeCount;
 
+            })
             currentUser.collection("income").get().then(function (snap) {
                 snap.forEach(function (doc) {
+                    
                     var incomeID = doc.id;
                     var amount = doc.data().amount;
                     var Name = doc.data().name;
-                    var date = doc.data().date;
+                    var category = doc.data().category;
                     var testFavouriteCard = favouritestemplate.content.cloneNode(true);
                     testFavouriteCard.querySelector('.card-amount').innerHTML =  formatter.format(parseFloat(amount));
                     testFavouriteCard.querySelector('.card-title').innerHTML = Name;
-                    testFavouriteCard.querySelector('.card-date').innerHTML = date;
+                    testFavouriteCard.querySelector('.card-category').innerHTML = category;
 
                     // testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
                     // testFavouriteCard.querySelector('.card-title').id = 'title-' + expenseID;
@@ -73,11 +78,20 @@ function deleteFavourite(ID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
-            currentUser.collection("income").doc(ID).delete().then(() => {
-                alert("Deleted Income!");
-                window.location.href = "income.html";
-            });
+            currentUser.get().then((doc) => {
+                var currentIncome = doc.data().incomeCount;
+                currentUser.collection("income").doc(ID).get().then((doc) => {
+                    var deletingIncome = doc.data().amount;
+                    currentUser.update({
+                        incomeCount: currentIncome - deletingIncome
+                    });
+                });
+                currentUser.collection("income").doc(ID).delete().then(() => {
+                    alert("Deleted Income!");
+                    window.location.href = "income.html";
+                });
 
+            });
         }
     });
 }

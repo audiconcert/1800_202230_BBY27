@@ -26,7 +26,7 @@ function showExpenses() {
                         newcard.querySelector('.card-amount').id = 'amount-' + expenseID;
                         newcard.querySelector('.card-title').id = 'title-' + expenseID;
                         newcard.querySelector('.card-category').id = 'category-' + expenseID;
-                        newcard.querySelector('.add').id = 'add-' + expenseID;
+                        newcard.querySelector('.delete').onclick = () => deleteExpense(expenseID);
 
                         newcard.querySelector('.add').onclick = () => addExistingExpense(expenseID);
                         // newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
@@ -77,31 +77,12 @@ function addExistingExpense(expenseID) {
     });
 }
 
-function setExpenseData(id) {
-
-    var amountID = 'amount-' + id;
-    var amount = document.getElementById(amountID).innerHTML;
-    var sourceID = 'source-' + id;
-    var source = document.getElementById(sourceID).innerHTML;
-    var catID = 'category-' + id;
-    var category = document.getElementById(catID).innerHTML;
-    // var dateID = 'date-' + id;
-    // var date = document.getElementById(dateID).innerHTML;
-    localStorage.setItem('expenseID', id);
-    localStorage.setItem('expenseSource', source);
-    localStorage.setItem('expenseCategory', category);
-    localStorage.setItem('expenseAmount', amount);
-}
-
-// same issue as saving changes on an expense
-function deleteFavourite(id) {
+function deleteExpense(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var favourite = db.collection("users").doc(user.uid).collection("expenses").where("expenseID", "==", id);
-            favourite.delete().then(() => {
-                alert('Favourite successfully deleted.');
-                reload();
-            })
+            var currentUser = db.collection("users").doc(user.uid);
+            currentUser.collection("expenses").doc(expenseID).delete();
         }
     })
 }
+

@@ -112,6 +112,7 @@ function deleteFavourite(expenseID) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid);
+            currentUser.collection("expenses").doc(expenseID).delete();
             currentUser.update({
                 favourites: firebase.firestore.FieldValue.arrayRemove(expenseID)
             }).then(() => {
