@@ -1,13 +1,14 @@
 function populateInfo() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            currentUser = db.collection("users").doc(user.uid);
+            var currentUser = db.collection("users").doc(user.uid);
             currentUser.get().then((userDoc) => {
                 var budget = userDoc.data().budget;
 
                 if (budget != null) {
-                    document.getElementById('budget').value = budget;
-                }
+                    var budgetInput = document.getElementById('budget');
+                    budgetInput.value = budget;
+                } 
             });
         } else {
             console.log("No user is signed in");
@@ -32,33 +33,45 @@ form.addEventListener('submit', (e) => {
         if (user) {
             var userID = user.uid;
             console.log(userID);
+            var currentUser = db.collection("users").doc(user.uid);
 
-            db.collection("users").doc(user.uid).update({
-                budget: parseFloat(newBudget.value)
-            });
-            restartExpenseCount(userID);
-            document.getElementById("personalInfoFields").disabled = true;
+            if (newBudget.value > 0) {
+                currentUser.update({
+                    budget: parseFloat(newBudget.value)
+                });
+                alert('New expense limit saved!');
+                document.getElementById("personalInfoFields").disabled = true;
+            } else {
+                currentUser.update({
+                    budget: 0
+                });
+                alert("Please enter a number greater than zero.");
+            }
         };
     });
 });
 
-function restartExpenseCount(user) {
-    var newDate = new Date();
-    newDate.setTime(newDate.getTime() + 8000);
-    var countDownDate = newDate.getTime();
+function restartExpenseCount() {
+    firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+            var currentUser = db.collection("users").doc(user.uid);
 
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        if (distance < 0) {
-            clearInterval(x);
-            db.collection("users").doc(user).update({
-                expenseCount: 0
-            }).then(restartExpenseCount(user));
+            var newDate = new Date();
+            newDate.setTime(newDate.getTime() + 5000);
+            var countDownDate = newDate.getTime();
+
+            setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                if (distance < 0) {
+                    currentUser.update({
+                        expenseCount: 0
+                    });
+                    restartExpenseCount();
+                }
+            }, 1000);
         }
-
-    }, 1000);
-
+    });
 }
 
 
