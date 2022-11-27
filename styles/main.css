@@ -132,12 +132,17 @@ h1 {
     text-decoration: none;
     color: #9c9e65;
     display: flex;
+    transition: all 0.2s;
     flex-direction:column;
     justify-content: center;
 }
 .savings-home:hover {
     color: #E9EB9E;
     font-size: 1.2em;
+}
+.savings-home:hover:after {
+    color: #E9EB9E;
+    font-size: 1.4em;
 }
 .savings-home2 {
     text-decoration: none;
@@ -199,6 +204,11 @@ span {
     border-radius: 1.5em;
     z-index: 100;
     cursor: pointer;
+    transition: all 0.2s;
+}
+.back-button:hover {
+    background-color:#809071;
+
 }
 
 .ernie-button {

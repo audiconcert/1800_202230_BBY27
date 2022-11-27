@@ -84,12 +84,10 @@ h1 {
 }
 
 .edit {
-    color: white;
+    color: rgb(255, 255, 255);
+    font-family: josefinBold;
+    transition: all 0.2s;
 }
-.edit:hover {
-    color: black;
-}
-
 label {
     color: white;
 }

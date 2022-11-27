@@ -20,9 +20,14 @@ h2 {
     font-size: 200%;
     background-color: #ACC196;
     color: #49475B;
+    transition: all 0.2s;
 }
 
 .btn:hover {
-    font-size: 3em;
+    font-size: 2.5em;
+    color: black;
+}
+.btn:hover:after {
+    font-size: 2.5em;
     color: black;
 }
