@@ -80,16 +80,23 @@ function deleteFavourite(ID) {
             var currentUser = db.collection("users").doc(user.uid);
             currentUser.get().then((doc) => {
                 var currentIncome = doc.data().incomeCount;
-                currentUser.collection("income").doc(ID).get().then((doc) => {
-                    var deletingIncome = doc.data().amount;
-                    currentUser.update({
+
+                currentUser.collection("income").doc(ID).get().then((incomeDoc) => {
+                    var deletingIncome = incomeDoc.data().amount;
+                    currentUser.set({
                         incomeCount: currentIncome - deletingIncome
-                    });
+                    }, {merge:true});
+                }).then(() => {
+                    currentUser.collection("income").doc(ID).delete().then(() => {
+                        alert("Deleted Income!");
+                        window.location.href = "income.html";
+                    })
                 });
-                currentUser.collection("income").doc(ID).delete().then(() => {
-                    alert("Deleted Income!");
-                    window.location.href = "income.html";
-                });
+                
+                // currentUser.collection("income").doc(ID).delete().then(() => {
+                //     alert("Deleted Income!");
+                //     window.location.href = "income.html";
+                // });
 
             });
         }
