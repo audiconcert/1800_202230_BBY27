@@ -106,7 +106,7 @@ function saveUserInfo() {
             db.collection("users").doc(user.uid).update({
               name: userName,
               email: userEmail,
-              treeNmae: userTree,
+              treeName: userTree,
               profilePic: url // Save the URL into users collection
             })
               .then(function () {
