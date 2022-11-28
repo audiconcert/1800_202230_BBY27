@@ -88,9 +88,9 @@ function addExistingFavourite(expenseID) {
                     var Category = doc.data().category;
                     db.collection("users").doc(user.uid).get().then(function (doc) {
                         var currentExpenseCount = doc.data().expenseCount;
-                        db.collection("users").doc(user.uid).set({
+                        db.collection("users").doc(user.uid).update({
                             expenseCount: currentExpenseCount + Amount,
-                        }, { merge: true })
+                        });
                         .then(()=>{
                             currentUser.collection("expenses").add({
                                 amount: Amount,

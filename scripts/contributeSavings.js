@@ -45,7 +45,20 @@ form.addEventListener('submit', (e) => {
           amount: amountInput.value,
           contributions: parseFloat(SavedContributions + parseFloat(contributions.value)),
           name: nameInput.value
-        });
+        }).then((doc) => {
+          var contributions = doc.data().contributions;
+          var goalAmount = doc.data().amount;
+
+          if (contributions == goalAmount) {
+            alert('Congratulations! You achieved your savings goal!');
+            currentUser.get().then((doc) => {
+              var completedGoalsCount = doc.data().completedGoalsCount;
+              currentUser.set({
+                completedGoalsCount: completedGoalsCount + 1
+              }, {merge:true});
+            })
+          }
+        })
       });
     }
   });

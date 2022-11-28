@@ -1,3 +1,5 @@
+
+
 function populateInfo() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -9,6 +11,34 @@ function populateInfo() {
                     var budgetInput = document.getElementById('budget');
                     budgetInput.value = budget;
                 } 
+
+                var weekly;
+                var biWeekly;
+                var monthly;
+                var yearly;
+
+                currentUser.collection("income").get().then(function (snap) {
+                    snap.forEach(function (doc) {
+                        let amount = doc.data().amount;
+                        let category = doc.data().category;
+
+                        if (category === "Weekly") {
+                            weekly += amount;
+                        } else if (category === "Bi-Weekly") {
+                            biWeekly += (amount/2);
+                        } else if (category === "Monthly") {
+                            monthly += (amount/4);
+                        } else if (category === "Yearly") {
+                            yearly += (amount/52);
+                        }
+
+                    });
+                });
+                
+                var recommendation = document.getElementById('recommendation-here');
+                var recommendedBudget = 0.8 * (weekly + biWeekly + monthly + yearly);
+                recommendation.innerText = formatter.format(recommendedBudget);
+
             });
         } else {
             console.log("No user is signed in");
@@ -22,6 +52,7 @@ var form = document.getElementById('form');
 var newBudget = document.getElementById('budget');
 var edit = document.getElementById('edit');
 var save = document.getElementById('save');
+
 
 function editUserInfo() {
     document.getElementById("personalInfoFields").disabled = false;
