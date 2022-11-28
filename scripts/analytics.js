@@ -67,10 +67,9 @@ function insertTree() {
                 var health3 = document.getElementById('treeHealth3');
                 var health4 = document.getElementById('treeHealth4');
 
-                
 
-                if (expenses > income) {
-                    if ((expenses - 100) < income) {     // 100 is a baseline net value. change if you have a better idea
+                if (expenses > budget) {
+                    if (expenses < (income * 0.9)) {     // 100 is a baseline net value. change if you have a better idea
                         tree.src = '/images/tree2.png';
                         health.innerText = "favorite";
                         health2.innerText = "favorite";  
@@ -82,8 +81,8 @@ function insertTree() {
                         health3.innerText = "favorite_border";
                     }
                 }
-                if (expenses < income) {
-                    if ((income - 100) < expenses) {     // 100 is a baseline net value. change if you have a better idea
+                if (expenses < budget) {
+                    if (expenses > (income * 0.9)) {     // 100 is a baseline net value. change if you have a better idea
                         tree.src = '/images/tree2.png';
                         health.innerText = "favorite";
                         health2.innerText = "favorite";  
