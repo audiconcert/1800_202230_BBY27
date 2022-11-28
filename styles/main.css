@@ -32,6 +32,16 @@ body {
     margin-top: 30px;
     background-color: #14080E;
 }
+
+.navuptopvibes {
+    font-family: josefinBold;
+    transition: all 0.2s;
+}
+.navuptopvibes:hover {
+    letter-spacing: 3px;
+    color: #000000;
+
+}
 .nav {
     justify-content: center;
 }
