@@ -12,10 +12,10 @@ function populateInfo() {
                     budgetInput.value = budget;
                 } 
 
-                var weekly;
-                var biWeekly;
-                var monthly;
-                var yearly;
+                var weekly = 0;
+                var biWeekly = 0;
+                var monthly = 0;
+                var yearly = 0;
 
                 currentUser.collection("income").get().then(function (snap) {
                     snap.forEach(function (doc) {
@@ -30,14 +30,17 @@ function populateInfo() {
                             monthly += (amount/4);
                         } else if (category === "Yearly") {
                             yearly += (amount/52);
+                        } else {
+
                         }
 
                     });
+                    var recommendation = document.getElementById('recommendation-here');
+                    var recommendedBudget = 0.8 * (weekly + biWeekly + monthly + yearly);
+                    recommendation.innerText = formatter.format(recommendedBudget);
                 });
                 
-                var recommendation = document.getElementById('recommendation-here');
-                var recommendedBudget = 0.8 * (weekly + biWeekly + monthly + yearly);
-                recommendation.innerText = formatter.format(recommendedBudget);
+                
 
             });
         } else {
