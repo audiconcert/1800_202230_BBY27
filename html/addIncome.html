@@ -22,59 +22,50 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/addExpense.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon">
+  <link href="/styles/main.css" rel="stylesheet" />
+  <link href="/styles/addIncome.css" rel="stylesheet" />
+  <link href="/styles/icon.ico" rel="icon">
 </head>
 
 <body>
   <nav id="navbarPlaceholder"></nav>
-  <div class="addExpenseContainer">
-    <h1>Log Expense</h1>
+  <div class="addIncomeContainer">
+    <h1>Log Income</h1>
     <form id="form">
       <fieldset id="savingsGoalFields">
         <div class="form-group form-source">
-          <label class="label" for="exampleFormControlInput1">Where did you spend money?</label>
-          <input name="source" type="text" class="form-control round required" id="locale" placeholder="Source"
+          <label class="label" for="exampleFormControlInput1">What is the source of this income?</label>
+          <input name="source" type="text" class="form-control round required" id="source" placeholder="Source Name"
             required="required">
         </div>
         <div class="form-group form-amount">
-          <label class="label" for="exampleFormControlInput1">How much did you spend?</label>
+          <label class="label" for="exampleFormControlInput1">How much did you get?</label>
           <input name="amount" type="number" min="0" max="100000000" step="0.01" class="form-control round required"
-            id="amt" placeholder="$" required="required">
+            id="amount" placeholder="$" required="required">
         </div>
         <div class="form-group form-category">
-          <label class="label" for="exampleFormControlSelect1">What kind of purchase was it?</label>
+          <label class="label" for="exampleFormControlSelect1">How often do you receive this income?</label>
           <select name="category" class="form-control round required" id="category" required="required">
-            <option>Food and Beverage</option>
-            <option>Clothing</option>
-            <option>Technology (Games/MTX, Hardware etc)</option>
-            <option>Hotels, Clubs, Gambling etc</option>
-            <option>Transportation (Gas, Insurance etc)</option>
-            <option>Subscription (Netflix, Spotify etc)</option>
-            <option>Other</option>
+            <option>One Time</option>
+            <option>Weekly</option>
+            <option>Bi-Weekly</option>
+            <option>Monthly</option>
+            <option>Yearly</option>
           </select>
         </div>
       </fieldset>
-      <div id="buttons">
-        <button id="addFav" type="submit" class="btn btn-2 btn-lg form-add button round">Log Expense + Add to
-          Favourites</button>
-        <button id="saveExp" type="submit" class="btn btn-2 btn-lg form-favourites favourites round">Log
-          Expense</button>
-      </div>
+      <button id="logIncome" type="submit" class="btn btn-2 btn-lg form-add button round">Log Income</button>
     </form>
   </div>
   <nav id="footerPlaceholder"></nav>
   <!-- Link to scripts of your own -->
-  <script src="./scripts/addExpense.js"></script>
-  <script src="./scripts/firebaseAPI_BBY27.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/script.js"></script>
+  <script src="/scripts/firebaseAPI_BBY27.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/addIncome.js"></script>
 </body>
 
 </html>

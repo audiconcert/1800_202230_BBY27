@@ -22,54 +22,51 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
   <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/expense-savings.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon">
+  <link href="/styles/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/addGoal.css" />
+  <link href="/styles/icon.ico" rel="icon">
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 </head>
 
 <body>
   <nav id="navbarPlaceholder"></nav>
-
-  <div id="savingsBody">
-
-    <div class="container favourites-title">
-      <div class="container">
-        <h1>Income</h1>
-        <br>
-        <p id="totalIncome">placeholder</p>
-        <p style="color: white; font-size: 1.1em;">* Add all of your incomes here</p>
-        <a href="addIncome.html" class="btn btn-2 btn-lg button round">
-          Add
-        </a>
-        <br>
-        <br>
-        <div id="favouriteCardGroup" class="row row-cols-auto">
-          <template id="favouritestemplate">
-            <div class="card py-2 round" style="width: 100%; margin-bottom: 1em;">
-              <div class="card-body">
-                <p class="card-amount" style="text-align:center;font-size: 1.8em;"></p>
-                <h5 class="card-title" style="text-align:center;font-size: 1.5em;"></h5>
-                <p class="card-category" style="text-align:center;"></p>
-              </div>
-              <div class="buttons">
-                <a href="#" class="btn button round delete actual-button btn-3" id="get-details add-button"
-                  style="float: right">Delete</a>
-              </div>
-            </div>
-          </template>
+  <div class="addGoalContainer">
+    <h1>Add Savings Goal</h1>
+    <form action="savingsGoal.html" id="form">
+      <fieldset id="savingsGoalFields">
+        <div class="form-group form-source">
+          <label class="label" for="exampleFormControlInput1">What are you saving for?</label>
+          <input name="name" type="text" class="form-control box round required" id="name" placeholder="Name"
+            required="required">
         </div>
-      </div>
+        <div class="form-group form-amount">
+          <label class="label" for="exampleFormControlInput1">How much do you want to save?</label>
+          <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="10000000000000" step=”any”
+            class="form-control box round required" id="amt" placeholder="$" required="required">
+        </div>
+        <div class="form-group form-category">
+          <label class="label" for="exampleFormControlInput1">How much have you already saved?</label>
+          <input name="contributions" type="number" min="0" max="100000000" step=”any”
+            class="form-control box round required" id="contributions" placeholder="$" required="required">
+        </div>
+      </fieldset>
+      <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round"></input>
 
+    </form>
+  </div>
   <nav id="footerPlaceholder"></nav>
   <!-- Link to scripts of your own -->
-  <script src="./scripts/firebaseAPI_BBY27.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/income.js"></script>
+  <script src="/scripts/firebaseAPI_BBY27.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/addSavings.js"></script>
+  <script src="/scripts/savingsGoal.js"></script>
 </body>
 
 </html>
