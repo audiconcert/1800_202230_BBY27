@@ -9,14 +9,12 @@ const favourite = document.getElementById('addFav')
 function addFav() {
     alert('Logged Expense and Added to Favourites!');
     window.location.href = "expense.html";
-
 }
 
 function saveExp() {
     alert('Logged Expense!');
     window.location.href = "expense.html";
 }
-
 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -74,4 +72,3 @@ save.addEventListener('click', (e) => {
     });
     setTimeout(saveExp, 2000);
 });
-

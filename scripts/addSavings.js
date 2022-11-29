@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
         })
     }
   })
-  setTimeout(save, 2000);
+  setTimeout(save, 1600);
 })
 
 

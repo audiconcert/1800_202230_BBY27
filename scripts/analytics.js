@@ -19,9 +19,6 @@ function insertTreeName() {
                 document.getElementById("treeName").innerText = treeName + "'s Health";
                 var changeInfo = document.getElementById('change-info');
                 changeInfo.innerText = "You can change " + treeName + "'s name in Account > Tree Name"
-                var tip = document.getElementById('tip-text');
-                let treeName2 = treeName.toUpperCase();
-                // tip.innerText = treeName2 + "'S DAILY";
             })
         } else {
             console.log('No user is signed in');
@@ -30,7 +27,7 @@ function insertTreeName() {
 }
 insertTreeName();
 
-function insertTree() {
+function insertAnalytics() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             currentUser = db.collection("users").doc(user.uid);
@@ -45,17 +42,29 @@ function insertTree() {
                 } else {
                     let bud = document.getElementById('total-budget');
                     bud.style.color = '#73a589';
-                     bud.innerText = "You're currently under your weekly budget, with " + formatter.format((budget - expenses)) + " to spare.";
+                    bud.innerText = "You're currently under your weekly budget, with " + formatter.format((budget - expenses)) + " to spare.";
 
                 }
+
+                var goals = userDoc.data().completedGoalsCount;
+                if (goals > 2) {
+                    let txt = document.getElementById('total-goalscomplete');
+                    txt.style.color = '#73a589';
+                    txt.innerText = "Completed Goals: " + goals;
+                } else {
+                    document.getElementById('total-goalscomplete').innerText = "Completed Goals: " + goals;
+                }
+
                 var income = userDoc.data().incomeCount;
                 document.getElementById('total-income').innerText = "Total Income: " + formatter.format(income);
                 var net = document.getElementById('net');
                 var worth = parseFloat(income) - parseFloat(expenses);
+
                 if (expenses > income) {
                     net.style.color = 'red';
                     net.innerHTML = "Net Loss: " + formatter.format(worth);
                 }
+
                 if (expenses < income) {
                     net.style.color = '#73a589';
                     net.innerHTML = "Net Gain: " + formatter.format(worth);
@@ -65,15 +74,14 @@ function insertTree() {
                 var health = document.getElementById('treeHealth');
                 var health2 = document.getElementById('treeHealth2');
                 var health3 = document.getElementById('treeHealth3');
-                var health4 = document.getElementById('treeHealth4');
 
 
                 if (expenses > budget) {
-                    if (expenses < (income * 0.9)) {     // 100 is a baseline net value. change if you have a better idea
+                    if (expenses < (income * 0.9)) {
                         tree.src = '/images/tree2.png';
                         health.innerText = "favorite";
-                        health2.innerText = "favorite";  
-                        health3.innerText = "favorite_border";  
+                        health2.innerText = "favorite";
+                        health3.innerText = "favorite_border";
                     } else {
                         tree.src = '/images/tree3.png';
                         health.innerText = "favorite";
@@ -82,16 +90,16 @@ function insertTree() {
                     }
                 }
                 if (expenses < budget) {
-                    if (expenses > (income * 0.9)) {     // 100 is a baseline net value. change if you have a better idea
+                    if (expenses > (income * 0.9)) {
                         tree.src = '/images/tree2.png';
                         health.innerText = "favorite";
-                        health2.innerText = "favorite";  
-                        health3.innerText = "favorite_border";  
+                        health2.innerText = "favorite";
+                        health3.innerText = "favorite_border";
                     } else {
                         tree.src = '/images/tree1.png';
                         health.innerText = "favorite";
-                        health2.innerText = "favorite";  
-                        health3.innerText = "favorite";  
+                        health2.innerText = "favorite";
+                        health3.innerText = "favorite";
                     }
                 }
             })
@@ -101,4 +109,4 @@ function insertTree() {
         }
     })
 }
-insertTree();
+insertAnalytics();

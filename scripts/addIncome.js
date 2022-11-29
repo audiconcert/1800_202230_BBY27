@@ -2,7 +2,6 @@ const Name = document.getElementById('source');
 const amount = document.getElementById('amount');
 const category = document.getElementById('category');
 const button = document.getElementById('logIncome');
-// const date = document.getElementById('date');
 
 function save() {
     alert('Saved income!');

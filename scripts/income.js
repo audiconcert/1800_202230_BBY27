@@ -29,14 +29,6 @@ function showFavourite() {
                     testFavouriteCard.querySelector('.card-amount').innerHTML =  formatter.format(parseFloat(amount));
                     testFavouriteCard.querySelector('.card-title').innerHTML = Name;
                     testFavouriteCard.querySelector('.card-category').innerHTML = category;
-
-                    // testFavouriteCard.querySelector('.card-amount').id = 'amount-' + expenseID;
-                    // testFavouriteCard.querySelector('.card-title').id = 'title-' + expenseID;
-                    // testFavouriteCard.querySelector('.card-category').id = 'category-' + expenseID;
-                    // testFavouriteCard.querySelector('.add').id = 'add-' + expenseID;
-
-
-                    // testFavouriteCard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
                     testFavouriteCard.querySelector('.delete').onclick = () => deleteFavourite(incomeID);
 
                     favouriteCardGroup.appendChild(testFavouriteCard);
@@ -50,29 +42,6 @@ function showFavourite() {
     });
 }
 showFavourite();
-
-// function addExistingFavourite(expenseID) {
-//     firebase.auth().onAuthStateChanged(user => {
-//         if(user) {
-//             var currentUser = db.collection("users").doc(user.uid);
-//             var addID = 'add-' + expenseID;
-//             currentUser.collection("expenses").doc(expenseID).get()
-//             .then(function(doc) {
-//                 var Amount = doc.data().amount;
-//                 db.collection("users").doc(user.uid).get().then(function(doc) {
-//                     var currentExpenseCount = doc.data().expenseCount;
-//                     db.collection("users").doc(user.uid).set({
-//                         expenseCount: currentExpenseCount + Amount,
-//                     }, {merge:true});
-//                 });
-
-//             }).then(function () {
-//                 document.getElementById(addID).innerText = 'Added!';
-//                 setTimeout(function(){document.getElementById(addID).innerText = 'Add'}, 3500);
-//             });
-//         }
-//     });
-// }
 
 function deleteFavourite(ID) {
     firebase.auth().onAuthStateChanged(user => {
@@ -92,12 +61,6 @@ function deleteFavourite(ID) {
                         window.location.href = "income.html";
                     })
                 });
-                
-                // currentUser.collection("income").doc(ID).delete().then(() => {
-                //     alert("Deleted Income!");
-                //     window.location.href = "income.html";
-                // });
-
             });
         }
     });

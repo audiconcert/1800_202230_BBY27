@@ -1,95 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Streams</title>
-    <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Streams</title>
+  <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <!-- Boostrap Library JS CDN  go here -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Other libraries go here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-   
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
-    <!-- Link to styles of your own -->
-    <link href="styles/main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/addGoal.css" />
-    <link href="styles/icon.ico" rel="icon">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-  </head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <nav id="navbarPlaceholder"></nav>
+  <!-- Link to styles of your own -->
+  <link href="styles/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/addGoal.css" />
+  <link href="styles/icon.ico" rel="icon">
+  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+</head>
 
-    <div class="addGoalContainer">
-      <h1>Add Savings Goal</h1>
+<body>
+  <nav id="navbarPlaceholder"></nav>
+  <div class="addGoalContainer">
+    <h1>Add Savings Goal</h1>
+    <form action="savingsGoal.html" id="form">
+      <fieldset id="savingsGoalFields">
+        <div class="form-group form-source">
+          <label class="label" for="exampleFormControlInput1">What are you saving for?</label>
+          <input name="name" type="text" class="form-control box round required" id="name" placeholder="Name"
+            required="required">
+        </div>
+        <div class="form-group form-amount">
+          <label class="label" for="exampleFormControlInput1">How much do you want to save?</label>
+          <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="10000000000000" step=”any”
+            class="form-control box round required" id="amt" placeholder="$" required="required">
+        </div>
+        <div class="form-group form-category">
+          <label class="label" for="exampleFormControlInput1">How much have you already saved?</label>
+          <input name="contributions" type="number" min="0" max="100000000" step=”any”
+            class="form-control box round required" id="contributions" placeholder="$" required="required">
+        </div>
+      </fieldset>
+      <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round"></input>
 
-      <form action="savingsGoal.html" id="form">
-        <fieldset id="savingsGoalFields">
-          <div class="form-group form-source">
-            <label class="label" for="exampleFormControlInput1">What are you saving for?</label>
-            <input name="name" type="text" class="form-control box round required" id="name" placeholder="Name" required="required">
-          </div>
-          <div class="form-group form-amount">
-            <label class="label" for="exampleFormControlInput1">How much do you want to save?</label>
-            <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="10000000000000" step=”any” class="form-control box round required" id="amt" placeholder="$" required="required">
-          </div>
-          <div class="form-group form-category">
-            <label class="label" for="exampleFormControlInput1">How much have you already saved?</label>
-            <input name="contributions" type="number" min="0" max="100000000" step=”any” class="form-control box round required" id="contributions" placeholder="$" required="required">
-          </div>
-          <!-- <div class="form-group form-date">
-            <label class="label" for="exampleFormControlInput1">When do you want to achieve your goal by?</label>
-            <input name="date" type="date" class="form-control round required"  id="date" required="required">
-          </div> -->
-        </fieldset>
-        <input id="add" type="submit" value="Add" class="btn btn-2 btn-lg form-add button round"></input>
+    </form>
+  </div>
+  <nav id="footerPlaceholder"></nav>
+  <!-- Link to scripts of your own -->
+  <script src="./scripts/firebaseAPI_BBY27.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/addSavings.js"></script>
+  <script src="./scripts/savingsGoal.js"></script>
+</body>
 
-      </form>
-    </div>
-    <nav id="footerPlaceholder"></nav>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <script src="./scripts/firebaseAPI_BBY27.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/addSavings.js"></script>
-    <script src="./scripts/savingsGoal.js"></script>
-  </body>
 </html>
