@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-Streams intended for students who are looking for an easy way to
+Streams is intended for students who are looking for an easy way to
 keep track of their spending habits.
 * Hello I'm Chelsey and I really like this program. Bye.
 * Hi, my name is Eric.
