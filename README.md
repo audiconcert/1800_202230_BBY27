@@ -1,11 +1,11 @@
-## My Web Application (Add your Title here)
+## Streams
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
-This browser based web application is intended for students who are looking for an easy way to
+Streams is intended for students who are looking for an easy way to
 keep track of their spending habits.
 * Hello I'm Chelsey and I really like this program. Bye.
 * Hi, my name is Eric.
