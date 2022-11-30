@@ -36,7 +36,7 @@ function populateInfo() {
 
                     });
                     var recommendation = document.getElementById('recommendation-here');
-                    var recommendedBudget = 0.8 * (weekly + biWeekly + monthly + yearly);
+                    var recommendedBudget = 0.7 * (weekly + biWeekly + monthly + yearly);
                     recommendation.innerText = formatter.format(recommendedBudget);
                 });
                 
