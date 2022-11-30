@@ -5,7 +5,7 @@ var categoryInput = document.getElementById("category");
 const expenseID = localStorage.getItem("id");
 
 function populateExpenseInfo() {
-    firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged(user => {
     if (user) {
       var currentUser = db.collection("users").doc(user.uid);
       currentUser
@@ -35,24 +35,24 @@ function populateExpenseInfo() {
 populateExpenseInfo();
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user) {
-        var currentUser = db.collection('users').doc(user.uid);
-  
-        currentUser.collection('expenses').doc(expenseID).get().then((doc) => {
-          currentUser.collection('expenses').doc(expenseID).update({
-            amount: amountInput.value,
-            category: categoryInput.value,
-            source: sourceInput.value
-          });
+  e.preventDefault();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      var currentUser = db.collection('users').doc(user.uid);
+
+      currentUser.collection('expenses').doc(expenseID).get().then((doc) => {
+        currentUser.collection('expenses').doc(expenseID).update({
+          amount: amountInput.value,
+          category: categoryInput.value,
+          source: sourceInput.value
         });
-      }
-    });
-    setTimeout(save, 2000);
+      });
+    }
   });
-  
-  function save() {
-    alert("Saved!")
-    window.location.href = "expense.html";
-  }
+  setTimeout(save, 2000);
+});
+
+function save() {
+  alert("Saved!")
+  window.location.href = "expense.html";
+}

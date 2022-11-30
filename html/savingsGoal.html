@@ -21,56 +21,52 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
   <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/expense-savings.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon">
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link href="/styles/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/savingsGoals.css" />
+  <link href="/styles/icon.ico" rel="icon" />
 </head>
 
 <body>
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
-
   <nav id="navbarPlaceholder"></nav>
 
   <div id="savingsBody">
-
     <div class="container favourites-title">
-      <div class="container">
-        <h1>Income</h1>
+      <div class="savingsGoalsContainer">
+        <h1>Savings Goals</h1>
         <br>
-        <p id="totalIncome">placeholder</p>
-        <p style="color: white; font-size: 1.1em;">* Add all of your incomes here</p>
-        <a href="addIncome.html" class="btn btn-2 btn-lg button round">
+        <a href="addSavings.html" class="btn btn-2 btn-lg button round">
           Add
         </a>
         <br>
-        <br>
-        <div id="favouriteCardGroup" class="row row-cols-auto">
-          <template id="favouritestemplate">
-            <div class="card py-2 round" style="width: 100%; margin-bottom: 1em;">
+        <div id="goalsCardGroup" class="row row-cols-auto">
+          <template id="goalsTemplate">
+            <div class="card round" style="margin-bottom: 1em; width: 75vw;">
               <div class="card-body">
-                <p class="card-amount" style="text-align:center;font-size: 1.8em;"></p>
-                <h5 class="card-title" style="text-align:center;font-size: 1.5em;"></h5>
-                <!-- <p class="card-category" style="text-align:center;color: rgb(107, 137, 110);"></p> -->
-                <p class="card-category" style="text-align:center;"></p>
-              </div>
-              <div class="buttons">
-                <!-- <a class="btn button round actual-button bg-BCIT add" id="get-details delete-button"
-                  style="float: right">Add</a> -->
-                <a href="#" class="btn button round delete actual-button btn-3" id="get-details add-button"
-                  style="float: right">Delete</a>
+                <div class="stitles">
+                  <h5 id="saved" class="card-contributions" style="font-size: 1.8em;">placeholder</h5>
+                  <h4 id="slash">/</h4>
+                  <h5 id="toSave" class="card-goalAmount" style="font-size: 1.8em;">placeholder</h5>
+                </div>
+                <p class="card-name" style="text-align:center;font-size: 1.5em;">placeholder</p>
+                <div class="buttons">
+                  <a href="contributeSavings.html" class="btn button round btn-3 edit" id="get-details edit-button"
+                    style="float: right;">Edit/Contribute</a>
+                  <a onclick="" href="#" class="btn button round  btn-3 delete" id="get-details add-button"
+                    style="float: right;">Delete</a>
+                </div>
               </div>
             </div>
           </template>
         </div>
       </div>
+    </div>
+  </div>
 
   <nav id="footerPlaceholder"></nav>
 
@@ -79,9 +75,9 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <script src="./scripts/firebaseAPI_BBY27.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/income.js"></script>
+  <script src="/scripts/firebaseAPI_BBY27.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/savingsGoal.js"></script>
 </body>
 
 </html>

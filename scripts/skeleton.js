@@ -1,11 +1,7 @@
-//---------------------------------------------------
-// This function loads the parts of your skeleton 
-// (navbar, footer, and other things) into html doc. 
-//---------------------------------------------------
 function loadSkeleton(){
-    console.log($('#navbarPlaceholder').load('./text/nav.html'));
-    console.log($('#footerPlaceholder').load('./text/footer.html'));
-    console.log($('#navbarPlaceholderHome').load('./text/navHome.html'));
+    console.log($('#navbarPlaceholder').load('/html/nav.html'));
+    console.log($('#footerPlaceholder').load('/html/footer.html'));
+    console.log($('#navbarPlaceholderHome').load('/html/navHome.html'));
 }
 loadSkeleton();  //invoke the function
 

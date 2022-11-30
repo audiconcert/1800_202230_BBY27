@@ -20,42 +20,39 @@
   <!-- Other libraries go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <scrip src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js">
+    </script>
 
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-  <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/addExpense.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon">
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-- Link to styles of your own -->
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/editExpense.css" rel="stylesheet" />
+    <link href="styles/icon.ico" rel="icon">
 </head>
 
 <body>
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
-
   <nav id="navbarPlaceholder"></nav>
-
-  <div class="addExpenseContainer">
-    <h1>Log Expense</h1>
-
-    <form id="form">
+  <div class="editContainer">
+    <h1>Edit Expense</h1>
+    <form action="expense.html" id="form">
       <fieldset id="savingsGoalFields">
         <div class="form-group form-source">
-          <label class="label" for="exampleFormControlInput1">Where did you spend money?</label>
-          <input name="source" type="text" class="form-control round required" id="locale" placeholder="Source" required="required">
+          <label class="label" for="exampleFormControlInput1">Source</label>
+          <input name="source" type="text" class="form-control round required" id="locale" placeholder="Source"
+            required="required" style="height: 3em;">
         </div>
         <div class="form-group form-amount">
-          <label class="label" for="exampleFormControlInput1">How much did you spend?</label>
-          <input name="amount" type="number" min="0" max="100000000" step="0.01" class="form-control round required" id="amt" placeholder="$" required="required">
+          <label class="label" for="exampleFormControlInput1">Amount</label>
+          <input name="amount" type="number" min="0" max="100000000" step="0.01" class="form-control round required"
+            id="amt" placeholder="$" required="required" style="height: 3em;">
         </div>
         <div class="form-group form-category">
-          <label class="label" for="exampleFormControlSelect1">What kind of purchase was it?</label>
-          <select name="category" class="form-control round required" id="category" required="required">
+          <label class="label" for="exampleFormControlSelect1">Category</label>
+          <select name="category" class="form-control round required" id="category" required="required"
+            style="height: 3em;">
             <option>Food and Beverage</option>
             <option>Clothing</option>
             <option>Technology (Games/MTX, Hardware etc)</option>
@@ -66,29 +63,20 @@
           </select>
         </div>
       </fieldset>
-      
-      <div id="buttons">
-        <button id="addFav" type="submit" class="btn btn-2 btn-lg form-add button round" >Log Expense + Add to Favourites</button>
-        <button id="saveExp"  type="submit" class="btn btn-2 btn-lg form-favourites favourites round">Log Expense</button>
-      </div>
-      
+      <input id="save" value="Save" type="submit" class="btn btn-2 btn-lg form-favourites favourites round">
+      </input>
     </form>
-    
-
   </div>
 
 
-  
+
   <nav id="footerPlaceholder"></nav>
 
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
-
   <!-- Link to scripts of your own -->
-  <script src="./scripts/addExpense.js"></script>
+
   <script src="./scripts/firebaseAPI_BBY27.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/editExpense.js"></script>
 
 </html>

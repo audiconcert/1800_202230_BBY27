@@ -1,14 +1,15 @@
-## My Web Application (Add your Title here)
+## Streams
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+Streams is intended for students who are looking for an easy way to
+keep track of their spending habits.
 * Hello I'm Chelsey and I really like this program. Bye.
 * Hi, my name is Eric.
-* RIP Scott
+* Rip Scott fr.
 	
 ## Technologies
 Technologies used for this project:
@@ -23,24 +24,78 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── .firebaserc
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+├── package-lock.json
+├── package.json
+├── storage.rules
 └── README.md
 
+
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /tree1.jpg
+    /tree2.jpg  
+    /tree3.jpg  
+
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /account.js
+    /addExpense.js  
+    /addIncome.js  
+    /addSavings.js                   
+    /analytics.js  
+    /authentication.js  
+    /budget.js  
+    /contributeSavings.js  
+    /editExpense.js  
+    /expense.js
+    /income.js  
+    /main.js  
+    /savingsGoal.js  
+    /script.js  
+    /skeleton.js  
+    /viewAllExpense.js  
+
+├── html                      # Folder for pages
+    /404.html
+    /account.html
+    /addExpense.html  
+    /addIncome.html  
+    /addSavings.html                   
+    /budget.html  
+    /contributeSavings.html
+    /editExpense.html  
+    /expense.html
+    /footer.html
+    /income.html
+    /index.html 
+    /log.html
+    /login.html 
+    /main.html  
+    /nav.html
+    /navHome.html
+    /savingsGoal.html   
+    /viewAllExpense.html  
+
 ├── styles                   # Folder for styles
-    /blah.css                # 
-
-Firebase hosting files: 
-├── .firebaserc...
-
-
-```
-
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
+    /account.css
+    /add.css     
+    /addExpense.css                      
+    /addGoal.css     
+    /addIncome.css     
+    /analytics.css     
+    /contributeSavings.css     
+    /edit-expense.css 
+    /expense-savings.css         
+    /expense.css     
+    /income.css     
+    /index.css  
+    /log.css        
+    /login.css     
+    /main.css     
+    /savingsGoals.css     
+    /icon.ico
+    /JosefinSans-Bold.ttf
+    /JosefinSans-Reagular.ttf 

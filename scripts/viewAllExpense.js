@@ -26,11 +26,7 @@ function showExpenses() {
                         newcard.querySelector('.card-amount').id = 'amount-' + expenseID;
                         newcard.querySelector('.card-title').id = 'title-' + expenseID;
                         newcard.querySelector('.card-category').id = 'category-' + expenseID;
-                        newcard.querySelector('.delete').onclick = () => deleteExpense(expenseID);
-
                         newcard.querySelector('.add').onclick = () => addExistingExpense(expenseID);
-                        // newcard.querySelector('.edit').onclick = () => setExpenseData(expenseID);
-                        // newcard.querySelector('.delete').onclick = () => deleteFavourite(expenseID);
                         document.getElementById("expenses-go-here").appendChild(newcard);
 
                     })
@@ -41,8 +37,6 @@ function showExpenses() {
         }
     })
 }
-
-
 showExpenses();
 
 function addExistingExpense(expenseID) {
@@ -68,7 +62,6 @@ function addExistingExpense(expenseID) {
                             })
                         });
                     });
-
                 }).then(function () {
                     document.getElementById(addID).innerText = 'Added!';
                     setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 2000);
@@ -76,13 +69,3 @@ function addExistingExpense(expenseID) {
         }
     });
 }
-
-function deleteExpense(expenseID) {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            var currentUser = db.collection("users").doc(user.uid);
-            currentUser.collection("expenses").doc(expenseID).delete();
-        }
-    })
-}
-

@@ -26,11 +26,9 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
-    <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/expense-savings.css" rel="stylesheet">
-    <link href="styles/icon.ico" rel="icon">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="/styles/expense-savings.css" rel="stylesheet">
+    <link href="/styles/icon.ico" rel="icon">
 </head>
 
 <body>
@@ -54,29 +52,20 @@
                     <p class="card-date" style="text-align:center;color: rgb(107, 137, 110);"></p>
                 </div>
                 <div class="buttons">
-                    <a onclick="alert('Added to expenses!');"
-                        class="btn button round actual-button bg-BCIT add" id="get-details delete-button"
-                        style="float: right">Add</a>
-                    <a onclick="alert('Deleted from expenses!');"
-                    class="btn button round actual-button bg-BCIT delete" id="get-details delete-button"
-                    style="float: right">Delete</a>
-                    <!-- <a href="editExpense.html" class="btn button round acual-button edit bg-BCIT" id="get-details edit-button"
-                        style="float: right">Edit</a> -->
+                    <a onclick="alert('Added to expenses!');" class="btn button round actual-button bg-BCIT add"
+                        id="get-details delete-button" style="float: right">Add</a>
+                    <a onclick="alert('Deleted from expenses!');" class="btn button round actual-button bg-BCIT delete"
+                        id="get-details delete-button" style="float: right">Delete</a>
                 </div>
             </div>
         </template>
-
-
     </div>
-
     </div>
-
     <nav id="footerPlaceholder"></nav>
-
     <!-- Link to scripts of your own -->
-    <script src="./scripts/firebaseAPI_BBY27.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/viewAllExpense.js"></script>
+    <script src="/scripts/firebaseAPI_BBY27.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/viewAllExpense.js"></script>
     <!-- <script src="./scripts/expense.js"></script> -->
 
 </body>

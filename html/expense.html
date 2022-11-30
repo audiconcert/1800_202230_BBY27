@@ -26,38 +26,15 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/expense-savings.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon" />
+  <link href="/styles/main.css" rel="stylesheet" />
+  <link href="/styles/expense-savings.css" rel="stylesheet" />
+  <link href="/styles/icon.ico" rel="icon" />
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 </head>
 
 <body>
   <nav id="navbarPlaceholder" class="test"></nav>
-
-  <!-- <div class="container favourites-title">
-      <h1>Favourites</h1>
-      <div class="container">
-        <div id="favouriteCardGroup" class="row row-cols-auto">
-        </div>
-      </div>
-    </div>
-    <template id="favouritestemplate">
-      <div class="card">
-        <img class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">placeholder</h5>
-          <p class="card-length">placeholder</p>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-          </p>
-          <a href="#" class="btn button round actual-button bg-BCIT" id="get-details delete-button" style="float: right">Delete</a>
-          <a href="#" class="btn button round acual-button bg-BCIT" id="get-details edit-button" style="float: right">Edit</a>
-          <a onclick="alert('Added to expenses!');addExistingFavourite()" href="#" class="btn button round actual-button bg-BCIT" id="get-details add-button" style="float: right">Add</a>
-        </div>
-      </div>
-    </template> -->
   <div id="savingsBody">
-
     <div class="container favourites-title">
       <div class="container">
         <h1>Expenses</h1>
@@ -91,7 +68,7 @@
                   style="float: right">Add</a>
                 <a href="editExpense.html" class="btn button round edit btn-3" id="get-details edit-button"
                   style="float: right">Edit</a>
-                <a href="#" class="btn button round delete btn-3" id="get-details add-button"
+                <a class="btn button round delete btn-3" id="get-details add-button"
                   style="float: right">Remove</a>
               </div>
             </div>
@@ -102,9 +79,9 @@
       <nav id="footerPlaceholder"></nav>
 
       <!-- Link to scripts of your own -->
-      <script src="./scripts/firebaseAPI_BBY27.js"></script>
-      <script src="./scripts/skeleton.js"></script>
-      <script src="./scripts/expense.js"></script>
+      <script src="/scripts/firebaseAPI_BBY27.js"></script>
+      <script src="/scripts/skeleton.js"></script>
+      <script src="/scripts/expense.js"></script>
 </body>
 
 </html>

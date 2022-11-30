@@ -25,45 +25,45 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
   <!-- Link to styles of your own -->
-  <link href="styles/main.css" rel="stylesheet" />
-  <link href="styles/expense-savings.css" rel="stylesheet" />
-  <link href="styles/icon.ico" rel="icon" />
-  <link href="styles/account.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link href="/styles/main.css" rel="stylesheet" />
+  <link href="/styles/contributeSavings.css" rel="stylesheet" />
+  <link href="/styles/add.css" rel="stylesheet" />
+  <link href="/styles/icon.ico" rel="icon" />
 </head>
 
 <body>
-  <nav id="navbarPlaceholder" class="test"></nav>
-  
-  <div id="container">
-    <h1>My Budget</h1>
+  <nav id="navbarPlaceholder"></nav>
+  <div class="csContainer">
+    <h1>Edit Savings Goal</h1>
     <form id="form">
-      <fieldset id="personalInfoFields" disabled>
-        <div class="form-group" id="treeName">
-          <label>Weekly Budget</label>
-          <input type="text" id="budget" class="form-control" placeholder="Budget"></input>
-        </div><br>
-        <p style="color: white;">We recommend that you budget less than<span style="font-size: 1em;" id="recommendation-here"></span></p>
-        <p style="color: rgb(232, 197, 197);">*Editing your budget will restart your budget count.</p>
+      <fieldset id="savingsGoalFields">
+        <div class="form-group form-source">
+          <label class="label" for="exampleFormControlInput1">Goal Name</label>
+          <input name="name" type="text" class="form-control round required" placeholder="Name" id="name"
+            required="required">
+        </div>
+        <div class="form-group form-amount">
+          <label class="label" for="exampleFormControlInput1">Goal Amount</label>
+          <input name="amount" type="number" min="0" max="100000000" step="0.01" min="0" max="10000000000000" step=”any”
+            class="form-control round required" id="amt" placeholder="$" required="required">
+        </div>
+        <div class="form-group form-category">
+          <label class="label" for="exampleFormControlInput1">Make Contribution</label>
+          <input name="contributions" type="number" min="0" max="100000000" step=”any”
+            class="form-control round required" id="contributions" placeholder="$" required="required">
+        </div>
       </fieldset>
-      <div id="buttons">
-        <button id="edit" type="button" class="btn btn-2 btn-lg form-favourites round"
-          onclick="editUserInfo()">Edit</button>
-        <button id="save" type="submit" class="btn btn-2 btn-lg form-favourites round">Save</button>
-      </div>
+      <button id="save" type="submit" class="btn btn-2 btn-lg form-add button round">Save
+      </button>
     </form>
-
   </div>
-
-
-    <nav id="footerPlaceholder"></nav>
-
-    <!-- Link to scripts of your own -->
-    <script src="./scripts/firebaseAPI_BBY27.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/expense.js"></script>
-    <script src="./scripts/budget.js"></script>
+  <nav id="footerPlaceholder"></nav>
+  <!-- Link to scripts of your own -->
+  <script src="/scripts/firebaseAPI_BBY27.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/contributeSavings.js"></script>
 </body>
 
 </html>

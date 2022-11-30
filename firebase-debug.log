@@ -1,0 +1,36 @@
+[debug] [2022-11-29T10:17:11.968Z] ----------------------------------------------------------------------
+[debug] [2022-11-29T10:17:11.970Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eric\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-29T10:17:11.970Z] CLI Version:   11.16.1
+[debug] [2022-11-29T10:17:11.970Z] Platform:      win32
+[debug] [2022-11-29T10:17:11.970Z] Node Version:  v16.15.0
+[debug] [2022-11-29T10:17:11.971Z] Time:          Tue Nov 29 2022 02:17:11 GMT-0800 (Pacific Standard Time)
+[debug] [2022-11-29T10:17:11.971Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-29T10:17:12.026Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-29T10:17:12.027Z] > authorizing via signed-in user (erictatch@gmail.com)
+[debug] [2022-11-29T10:17:12.027Z] [iam] checking project streams-386f5 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-11-29T10:17:12.028Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/streams-386f5:testIamPermissions [none]
+[debug] [2022-11-29T10:17:12.029Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/streams-386f5:testIamPermissions x-goog-quota-user=projects/streams-386f5
+[debug] [2022-11-29T10:17:12.029Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/streams-386f5:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-29T10:17:12.367Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/streams-386f5:testIamPermissions 200
+[debug] [2022-11-29T10:17:12.367Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/streams-386f5:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-29T10:17:12.367Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/streams-386f5 [none]
+[debug] [2022-11-29T10:17:12.777Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/streams-386f5 200
+[debug] [2022-11-29T10:17:12.777Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/streams-386f5 {"projectId":"streams-386f5","projectNumber":"535251798495","displayName":"1800-BBY27","name":"projects/streams-386f5","resources":{"hostingSite":"streams-386f5","storageBucket":"streams-386f5.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_e1f2571a-0996-4a43-a1a8-96b77fec39c2"}
+[info] 
+[info] === Deploying to 'streams-386f5'...
+[info] 
+[info] i  deploying storage, firestore, hosting 
+[debug] [2022-11-29T10:17:12.779Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/streams-386f5 [none]
+[debug] [2022-11-29T10:17:13.194Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/streams-386f5 200
+[debug] [2022-11-29T10:17:13.194Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/streams-386f5 {"name":"apps/streams-386f5","id":"streams-386f5","authDomain":"gmail.com","locationId":"us-central","codeBucket":"staging.streams-386f5.appspot.com","servingStatus":"SERVING","defaultHostname":"streams-386f5.uc.r.appspot.com","defaultBucket":"streams-386f5.appspot.com","serviceAccount":"streams-386f5@appspot.gserviceaccount.com","gcrDomain":"us.gcr.io","databaseType":"CLOUD_FIRESTORE","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2022-11-29T10:17:13.196Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test [none]
+[debug] [2022-11-29T10:17:13.196Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test [omitted]
+[debug] [2022-11-29T10:17:13.778Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test 200
+[debug] [2022-11-29T10:17:13.778Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test {}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-11-29T10:17:13.780Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test [none]
+[debug] [2022-11-29T10:17:13.780Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/streams-386f5:test [omitted]

@@ -4,11 +4,6 @@ var amountInput = document.getElementById('amt');
 var contributions = document.getElementById('contributions'); 
 var savingsID = localStorage.getItem('id');
 
-// const button = document.getElementById('add');
-// const contributions = document.getElementById('contributions');
-// const savingsName = document.getElementById('name');
-// const savingsAmount = document.getElementById('amt');
-
 function populateGoalInfo() {
   firebase.auth().onAuthStateChanged(user => {
     if(user) {
@@ -70,25 +65,3 @@ function save() {
   window.location.href = "savingsGoal.html";
 }
 
-
-// button.addEventListener('click', (e) => {
-//   if (contributions.value > ''
-//     && savingsName > ''
-//     && savingsAmount > '') {
-//     e.preventDefault();
-//     firebase.auth().onAuthStateChanged(user => {
-//       if (user) {
-//         var userID = user.uid;
-//         console.log(userID);
-//         var savingsGoal = db.collection("users").doc(userID).collection("savings").where("savingsID", "==", savingsID);
-//         savingsGoal.set({
-//               contributions: parseFloat(contributions),
-//               name: savingsName,
-//               amount: parseFloat(savingsAmount),
-//               date: firebase.firestore.Timestamp.fromDate((date.valueAsDate = new Date()))
-//         })
-//       };
-//     })
-//   }
-//   setTimeout(save, 400);
-// })

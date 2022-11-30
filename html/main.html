@@ -26,20 +26,11 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Link to styles of your own -->
-    <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/icon.ico" rel="icon">
-    <link href="styles/index.sass" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+    <link href="/styles/icon.ico" rel="icon">
+    </head>
 
-
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-
-</head>
-
-<body class="bg-PC" onload="updateExpenseCount()">
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+<body class="bg-PC" onload="updateExpenseCount()">>
 
     <nav id="navbarPlaceholderHome"></nav>
     <div id="mainBody">
@@ -47,7 +38,7 @@
             <h1 class="welcome-back-heading">
                 <h1 id="name-goes-here"></span></h1>
         </div>
-        <a class="ernie-button" href="./savingsGoal.html" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+        <a class="ernie-button" href="html/savingsGoal.html" data-bs-toggle="collapse" data-bs-target="#collapseExample"
             aria-expanded="false" aria-controls="collapseExample">
             <div class="ernie-grid">
                 <img class="ernie-image" src="" id="tree">
@@ -60,71 +51,43 @@
         <div class="collapse" id="collapseExample">
             <div class="card card-body stats">
                 <p id="change-info"></p>
+                <p class="total-head" id="total-goalscomplete"></p>
                 <p class="total-head" id="total-expenses"></p>
                 <p class="total-head" id="total-budget"></p>
                 <p class="total-head" id="total-income"></p>
                 <p class="total-head" id="net"></p>
             </div>
         </div><br>
-       
-        <!-- <a class="info-button savings-home2" href="./savingsGoal.html" data-bs-toggle="collapse"
-                data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                <div class="save-grid">
-                    <span class="material-icons save-logo md-48">info</span>
-                    <p class="save-heading tip-text" id="tip-text" style="margin-top: 1em;"></p>
-                </div>
-            </a>
-            <div class="collapse" id="collapseExample1">
-                <div class="card card-body stats">
-                    <h4></h4>
-                    <p></p>
-                </div>
-            </div><br> -->
-        <!--Quick analytics button-->
-        <!-- <a class="savings-home" href="./analytics.html">
-            <div class="save-grid">
-                <span class="material-icons save-logo md-48">park</span>
-                <p class="save-heading" id="tree-name-goes-here">Placeholder</p>
-            </div>
-        </a><br> -->
-        <!--Savings button-->
         <div id="savings-home-container">
-            <a class="savings-home" href="./savingsGoal.html">
+            <a class="savings-home" href="savingsGoal.html">
                 <div class="save-grid">
                     <span class="material-icons save-logo md-48">savings</span>
                     <p class="save-heading" style="margin-top: 1em;">SAVINGS</p>
                 </div>
             </a><br>
-            <a class="savings-home" href="./expense.html">
+            <a class="savings-home" href="expense.html">
                 <div class="save-grid">
                     <span class="material-icons save-logo md-48">account_balance</span>
                     <p class="save-heading" style="margin-top: 1em;">EXPENSES</p>
                 </div>
             </a>
             <br>
-            <a class="savings-home" href="./income.html">
+            <a class="savings-home" href="income.html">
                 <div class="save-grid">
                     <span class="material-icons save-logo md-48">payments</span>
                     <p class="save-heading" style="margin-top: 1em;">INCOME</p>
                 </div>
             </a><br>
-            
-
         </div>
         <br>
     </div>
 
     <nav id="footerPlaceholder"></nav>
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
     <!-- Link to scripts of your own -->
-    <script src="./scripts/firebaseAPI_BBY27.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/main.js"></script>
-    <script src="./scripts/analytics.js"></script>
+    <script src="/scripts/firebaseAPI_BBY27.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/analytics.js"></script>
 
 </body>
 
