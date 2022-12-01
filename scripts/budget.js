@@ -69,8 +69,12 @@ form.addEventListener('submit', (e) => {
                 var today = new Date();
                 currentUser.set({
                     expenseCountStartDate: today,
-                    expenseCountEndDate: endDate
-                }, {merge:true});
+                    expenseCountEndDate: endDate,
+                }, {merge:true}).then(() => {
+                    currentUser.update({
+                        expenseCount: 0,
+                    });
+                });
 
             } else {
                 currentUser.update({
