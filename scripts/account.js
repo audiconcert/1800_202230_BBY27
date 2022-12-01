@@ -53,20 +53,32 @@ function editUserInfo() {
 function saveUserInfo() {
   firebase.auth().onAuthStateChanged(function (user) {
     var storageRef = storage.ref("images/" + user.uid + ".jpg");
+
+    //Asynch call to put File Object (global variable ImageFile) onto Cloud
     storageRef.put(ImageFile)
       .then(function () {
+        console.log('Uploaded to Cloud Storage.');
+
+        //Asynch call to get URL from Cloud
         storageRef.getDownloadURL()
-        userName = document.getElementById('nameInput').value;
-        userEmail = document.getElementById('emailInput').value;
-        userTree = document.getElementById('treeNameInput').value;
-        db.collection("users").doc(user.uid).update({
-          name: userName,
-          email: userEmail,
-          treeName: userTree,
-          profilePic: url
-        })
-          .then(function () {
-            document.getElementById('personalInfoFields').disabled = true;
+          .then(function (url) { // Get "url" of the uploaded file
+            console.log("Got the download URL.");
+            //get values from the from
+            userName = document.getElementById('nameInput').value;
+            userEmail = document.getElementById('emailInput').value;
+            userTree = document.getElementById('treeNameInput').value;
+
+            db.collection("users").doc(user.uid).update({
+              name: userName,
+              email: userEmail,
+              treeName: userTree,
+              profilePic: url
+            })
+              .then(function () {
+                console.log('Added Profile Pic URL to Firestore.');
+                console.log('Saved use profile info');
+                document.getElementById('personalInfoFields').disabled = true;
+              })
           })
       })
   })
