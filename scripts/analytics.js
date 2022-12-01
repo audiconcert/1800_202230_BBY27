@@ -1,3 +1,4 @@
+
 var currentUser;
 var treeImg = document.getElementById('ernieImg');
 var imgTemplate = document.getElementById('imgTemplate');
@@ -75,6 +76,21 @@ function insertAnalytics() {
                 var health2 = document.getElementById('treeHealth2');
                 var health3 = document.getElementById('treeHealth3');
 
+                if (budget == 0) {
+                    tree.style.width = '1%';
+                    tree.style.display = 'none';
+                    let text = document.getElementById("treeName");
+                    let collapse = document.getElementById('collapseExample');
+                    collapse.style.display = 'none';
+                    text.style.fontSize = '30px';
+                    text.innerText = 'Set a budget to get started!';
+                    text.style.justifySelf = 'center';
+                    text.style.marginTop = '15px';
+                    text.style.marginRight = '15px';
+                    health.style.display =  'none';
+                    health2.style.display = 'none';
+                    health3.style.display = 'none';
+                }
 
                 if (expenses > budget) {
                     if (expenses < (income * 0.9)) {
