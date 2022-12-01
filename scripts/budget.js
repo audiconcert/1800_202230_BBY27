@@ -27,7 +27,7 @@ function populateInfo() {
                         }
                     });
                     var recommendation = document.getElementById('recommendation-here');
-                    var recommendedBudget = 0.8 * (weekly + biWeekly + monthly + yearly);
+                    var recommendedBudget = 0.7 * (weekly + biWeekly + monthly + yearly);
                     recommendation.innerText = formatter.format(recommendedBudget);
                 });
             });
@@ -69,8 +69,12 @@ form.addEventListener('submit', (e) => {
                 var today = new Date();
                 currentUser.set({
                     expenseCountStartDate: today,
-                    expenseCountEndDate: endDate
-                }, {merge:true});
+                    expenseCountEndDate: endDate,
+                }, {merge:true}).then(() => {
+                    currentUser.update({
+                        expenseCount: 0,
+                    });
+                });
 
             } else {
                 currentUser.update({
