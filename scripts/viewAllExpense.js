@@ -22,11 +22,14 @@ function showExpenses() {
                         newcard.querySelector('.card-amount').innerHTML = formatter.format(parseFloat(amount));
                         newcard.querySelector('.card-title').innerHTML = source;
                         newcard.querySelector('.card-category').innerHTML = category;
+                        
 
                         newcard.querySelector('.card-amount').id = 'amount-' + expenseID;
                         newcard.querySelector('.card-title').id = 'title-' + expenseID;
                         newcard.querySelector('.card-category').id = 'category-' + expenseID;
+                        newcard.querySelector('.add').id = 'add-' + expenseID;
                         newcard.querySelector('.add').onclick = () => addExistingExpense(expenseID);
+                        
                         document.getElementById("expenses-go-here").appendChild(newcard);
 
                     })
@@ -50,9 +53,9 @@ function addExistingExpense(expenseID) {
                     var Name = doc.data().source;
                     var Category = doc.data().category;
                     db.collection("users").doc(user.uid).get().then(function (doc) {
-                        var currentExpenseCount = doc.data().expenseCount;
+                        var currentExpenseCount = parseFloat(doc.data().expenseCount);
                         db.collection("users").doc(user.uid).set({
-                            expenseCount: currentExpenseCount + Amount,
+                            expenseCount: (currentExpenseCount + parseFloat(Amount)),
                         }, { merge: true })
                         .then(()=>{
                             currentUser.collection("expenses").add({
@@ -62,6 +65,7 @@ function addExistingExpense(expenseID) {
                             })
                         });
                     });
+
                 }).then(function () {
                     document.getElementById(addID).innerText = 'Added!';
                     setTimeout(function () { document.getElementById(addID).innerText = 'Add' }, 2000);
