@@ -87,7 +87,7 @@ function insertAnalytics() {
                     text.style.justifySelf = 'center';
                     text.style.marginTop = '15px';
                     text.style.marginRight = '15px';
-                    health.style.display =  'none';
+                    health.style.display = 'none';
                     health2.style.display = 'none';
                     health3.style.display = 'none';
                 }

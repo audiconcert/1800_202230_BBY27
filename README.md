@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-Streams is intended for students who are looking for an easy way to
+Our browser-based web application Streams is a simplified spending tracker intended for students who are looking to start building healthy spending habits.
 keep track of their spending habits.
 * Hello I'm Chelsey and I really like this program. Bye.
 * Hi, my name is Eric.
